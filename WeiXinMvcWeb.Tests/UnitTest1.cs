@@ -9,6 +9,7 @@ namespace WeiXinMvcWeb.Tests
         [TestMethod]
         public void TestMethod1()
         {
+
         }
     }
 }
