@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b0ca5d99a2ed45519e09938e5c45386d" Name="Diagram1">
+        <EntityTypeShape EntityType="WeiXinDBModel.Test" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WeiXinDBModel.Nav_Item" Width="1.5" PointX="5" PointY="0.75" />
+        <EntityTypeShape EntityType="WeiXinDBModel.Nav_Items" Width="1.5" PointX="7.75" PointY="0.625" />
+        <AssociationConnector Association="WeiXinDBModel.Nav_ItemsNav_Item" />
+        <EntityTypeShape EntityType="WeiXinDBModel.Base_Resp" Width="1.5" PointX="9.875" PointY="0.75" />
+        <AssociationConnector Association="WeiXinDBModel.Base_RespNav_Items" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

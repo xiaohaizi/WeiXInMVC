@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeiXinMvcWeb", "WeiXinMvcWeb\WeiXinMvcWeb.csproj", "{EC203228-1A91-452E-96F4-BE09D53D8CB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeiXinMvcWeb.Tests", "WeiXinMvcWeb.Tests\WeiXinMvcWeb.Tests.csproj", "{D86A7811-5095-4BE2-B962-7C94671BF1B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC203228-1A91-452E-96F4-BE09D53D8CB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC203228-1A91-452E-96F4-BE09D53D8CB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC203228-1A91-452E-96F4-BE09D53D8CB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC203228-1A91-452E-96F4-BE09D53D8CB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D86A7811-5095-4BE2-B962-7C94671BF1B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D86A7811-5095-4BE2-B962-7C94671BF1B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D86A7811-5095-4BE2-B962-7C94671BF1B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D86A7811-5095-4BE2-B962-7C94671BF1B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

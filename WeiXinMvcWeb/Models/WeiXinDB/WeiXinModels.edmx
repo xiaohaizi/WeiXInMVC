@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="WeiXinDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Base_Resp">
+          <Key>
+            <PropertyRef Name="Cgi_ID" />
+          </Key>
+          <Property Name="Cgi_ID" Type="int" Nullable="false" />
+          <Property Name="Ret" Type="int" Nullable="false" />
+          <Property Name="Err_Msg" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Svr_Time" Type="int" Nullable="false" />
+          <Property Name="Token" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Media_Ticket" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Master_Ticket" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Master_Ticket_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sp_Login" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Nav_Item">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Url" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="New_Flag" Type="int" Nullable="false" />
+          <Property Name="New_Seq" Type="int" Nullable="false" />
+          <Property Name="Nav_ItemsID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Nav_Items">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Logo_Url" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="New_Flag" Type="int" Nullable="false" />
+          <Property Name="Is_Can_Click" Type="int" Nullable="false" />
+          <Property Name="New_Seq" Type="int" Nullable="false" />
+          <Property Name="Base_RespCgi_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Test">
+          <Key>
+            <PropertyRef Name="TestID" />
+          </Key>
+          <Property Name="TestID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="WeiXinDBModelStoreContainer">
+          <EntitySet Name="Base_Resp" EntityType="Self.Base_Resp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nav_Item" EntityType="Self.Nav_Item" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nav_Items" EntityType="Self.Nav_Items" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Test" EntityType="Self.Test" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WeiXinDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Test">
+          <Key>
+            <PropertyRef Name="TestID" />
+          </Key>
+          <Property Name="TestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="WeiXinEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Test" EntityType="Self.Test" />
+          <EntitySet Name="Nav_Item" EntityType="WeiXinDBModel.Nav_Item" />
+          <EntitySet Name="Nav_Items" EntityType="WeiXinDBModel.Nav_Items" />
+          <AssociationSet Name="Nav_ItemsNav_Item" Association="WeiXinDBModel.Nav_ItemsNav_Item">
+            <End Role="Nav_Items" EntitySet="Nav_Items" />
+            <End Role="Nav_Item" EntitySet="Nav_Item" />
+          </AssociationSet>
+          <EntitySet Name="Base_Resp" EntityType="WeiXinDBModel.Base_Resp" />
+          <AssociationSet Name="Base_RespNav_Items" Association="WeiXinDBModel.Base_RespNav_Items">
+            <End Role="Base_Resp" EntitySet="Base_Resp" />
+            <End Role="Nav_Items" EntitySet="Nav_Items" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Nav_Item">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Url" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="New_Flag" Type="Int32" Nullable="false" />
+          <Property Name="New_Seq" Type="Int32" Nullable="false" />
+          <Property Name="Nav_ItemsID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Nav_Items" Relationship="WeiXinDBModel.Nav_ItemsNav_Item" FromRole="Nav_Item" ToRole="Nav_Items" />
+        </EntityType>
+        <EntityType Name="Nav_Items">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Logo_Url" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="New_Flag" Type="Int32" Nullable="false" />
+          <Property Name="Is_Can_Click" Type="Int32" Nullable="false" />
+          <Property Name="New_Seq" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Nav_Item" Relationship="WeiXinDBModel.Nav_ItemsNav_Item" FromRole="Nav_Items" ToRole="Nav_Item" />
+          <Property Name="Base_RespCgi_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Base_Resp" Relationship="WeiXinDBModel.Base_RespNav_Items" FromRole="Nav_Items" ToRole="Base_Resp" />
+        </EntityType>
+        <Association Name="Nav_ItemsNav_Item">
+          <End Type="WeiXinDBModel.Nav_Items" Role="Nav_Items" Multiplicity="1" />
+          <End Type="WeiXinDBModel.Nav_Item" Role="Nav_Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nav_Items">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Nav_Item">
+              <PropertyRef Name="Nav_ItemsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Base_Resp">
+          <Key>
+            <PropertyRef Name="Cgi_ID" />
+          </Key>
+          <Property Name="Cgi_ID" Type="Int32" Nullable="false" />
+          <Property Name="Ret" Type="Int32" Nullable="false" />
+          <Property Name="Err_Msg" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Svr_Time" Type="Int32" Nullable="false" />
+          <Property Name="Token" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Media_Ticket" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Master_Ticket" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Master_Ticket_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sp_Login" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Nav" Relationship="WeiXinDBModel.Base_RespNav_Items" FromRole="Base_Resp" ToRole="Nav_Items" />
+        </EntityType>
+        <Association Name="Base_RespNav_Items">
+          <End Type="WeiXinDBModel.Base_Resp" Role="Base_Resp" Multiplicity="1" />
+          <End Type="WeiXinDBModel.Nav_Items" Role="Nav_Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Base_Resp">
+              <PropertyRef Name="Cgi_ID" />
+            </Principal>
+            <Dependent Role="Nav_Items">
+              <PropertyRef Name="Base_RespCgi_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WeiXinDBModelStoreContainer" CdmEntityContainer="WeiXinEntities">
+          <EntitySetMapping Name="Test">
+            <EntityTypeMapping TypeName="WeiXinDBModel.Test">
+              <MappingFragment StoreEntitySet="Test">
+                <ScalarProperty Name="TestID" ColumnName="TestID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nav_Item">
+            <EntityTypeMapping TypeName="WeiXinDBModel.Nav_Item">
+              <MappingFragment StoreEntitySet="Nav_Item">
+                <ScalarProperty Name="Nav_ItemsID" ColumnName="Nav_ItemsID" />
+                <ScalarProperty Name="New_Seq" ColumnName="New_Seq" />
+                <ScalarProperty Name="New_Flag" ColumnName="New_Flag" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nav_Items">
+            <EntityTypeMapping TypeName="WeiXinDBModel.Nav_Items">
+              <MappingFragment StoreEntitySet="Nav_Items">
+                <ScalarProperty Name="Base_RespCgi_ID" ColumnName="Base_RespCgi_ID" />
+                <ScalarProperty Name="New_Seq" ColumnName="New_Seq" />
+                <ScalarProperty Name="Is_Can_Click" ColumnName="Is_Can_Click" />
+                <ScalarProperty Name="New_Flag" ColumnName="New_Flag" />
+                <ScalarProperty Name="Logo_Url" ColumnName="Logo_Url" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Base_Resp">
+            <EntityTypeMapping TypeName="WeiXinDBModel.Base_Resp">
+              <MappingFragment StoreEntitySet="Base_Resp">
+                <ScalarProperty Name="Sp_Login" ColumnName="Sp_Login" />
+                <ScalarProperty Name="Master_Ticket_ID" ColumnName="Master_Ticket_ID" />
+                <ScalarProperty Name="Master_Ticket" ColumnName="Master_Ticket" />
+                <ScalarProperty Name="Media_Ticket" ColumnName="Media_Ticket" />
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="Svr_Time" ColumnName="Svr_Time" />
+                <ScalarProperty Name="Err_Msg" ColumnName="Err_Msg" />
+                <ScalarProperty Name="Ret" ColumnName="Ret" />
+                <ScalarProperty Name="Cgi_ID" ColumnName="Cgi_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

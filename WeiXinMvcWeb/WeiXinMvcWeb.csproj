@@ -1,0 +1,554 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EC203228-1A91-452E-96F4-BE09D53D8CB0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WeiXinMvcWeb</RootNamespace>
+    <AssemblyName>WeiXinMvcWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.1.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.1.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.1.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.1.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.1.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.1.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\mpres\htmledition\base2fde18.css" />
+    <Content Include="Content\css\mpres\htmledition\date_range218878.css" />
+    <Content Include="Content\css\mpres\htmledition\dropdown2f12f7.css" />
+    <Content Include="Content\css\mpres\htmledition\images\bg_logo2491a6.png" />
+    <Content Include="Content\css\mpres\htmledition\images\getheadimg.png" />
+    <Content Include="Content\css\mpres\htmledition\images\icon_notice_dot_left2880f5.png" />
+    <Content Include="Content\css\mpres\htmledition\images\icon_notice_dot_right2880f5.png" />
+    <Content Include="Content\css\mpres\htmledition\images\layout_head_z26f6ea.png" />
+    <Content Include="Content\css\mpres\htmledition\layout_head2880f5.css" />
+    <Content Include="Content\css\mpres\htmledition\lib2f613f.css" />
+    <Content Include="Content\css\mpres\htmledition\pagination218878.css" />
+    <Content Include="Content\css\mpres\htmledition\stat_overview2f3a2e.css" />
+    <Content Include="Content\images\bg_logo2491a6.png" />
+    <Content Include="Content\images\calendar_all218877.png" />
+    <Content Include="Content\images\date_range\calendar_all218877.png" />
+    <Content Include="Content\images\getheadimg.png" />
+    <Content Include="Content\images\layout_head_z26f6ea.png" />
+    <Content Include="Content\images\menu\icon_menu_function.png" />
+    <Content Include="Content\js\mpres\htmledition\add\member_info_flag25676c.js" />
+    <Content Include="Content\js\mpres\htmledition\add\msg_operate_type_html2ebf96.js" />
+    <Content Include="Content\js\mpres\htmledition\attr\attr-bars271dfd.js" />
+    <Content Include="Content\js\mpres\htmledition\attr\attr-cities27cccc.js" />
+    <Content Include="Content\js\mpres\htmledition\attr\attr-provinces27cccc.js" />
+    <Content Include="Content\js\mpres\htmledition\attr\attr-state271dfd.js" />
+    <Content Include="Content\js\mpres\htmledition\attr\attr-table27cccc.js" />
+    <Content Include="Content\js\mpres\htmledition\attr\attr-types280571.js" />
+    <Content Include="Content\js\mpres\htmledition\attr\attr27cccc.js" />
+    <Content Include="Content\js\mpres\htmledition\biz_common\moment26d05a.js" />
+    <Content Include="Content\js\mpres\htmledition\cardticket\card_preview.html22bfc4.js" />
+    <Content Include="Content\js\mpres\htmledition\cardticket\card_quantity.html2ef103.js" />
+    <Content Include="Content\js\mpres\htmledition\cardticket\card_quantity2ef103.js" />
+    <Content Include="Content\js\mpres\htmledition\cardticket\card_table.html2d3016.js" />
+    <Content Include="Content\js\mpres\htmledition\cardticket\choose_card_type.html2fd720.js" />
+    <Content Include="Content\js\mpres\htmledition\cardticket\common_template_helper2ef103.js" />
+    <Content Include="Content\js\mpres\htmledition\cardticket\create_card_select2df3fb.js" />
+    <Content Include="Content\js\mpres\htmledition\cardticket\parse_data2f8f1a.js" />
+    <Content Include="Content\js\mpres\htmledition\cardticket\select_sub_merchant_table.html2ebf96.js" />
+    <Content Include="Content\js\mpres\htmledition\cardticket\select_sub_merchant_table2ec961.js" />
+    <Content Include="Content\js\mpres\htmledition\cardticket\send_card.html28a82e.js" />
+    <Content Include="Content\js\mpres\htmledition\cardticket\send_card2d3016.js" />
+    <Content Include="Content\js\mpres\htmledition\cardticket\send_card_table2ef103.js" />
+    <Content Include="Content\js\mpres\htmledition\cardticket\store_cgi2f12f7.js" />
+    <Content Include="Content\js\mpres\htmledition\chart\jquery-chart2f2f7f.js" />
+    <Content Include="Content\js\mpres\htmledition\common\lib27616c.js" />
+    <Content Include="Content\js\mpres\htmledition\common\wx301ae4.js" />
+    <Content Include="Content\js\mpres\htmledition\components\event-emitter271dfd.js" />
+    <Content Include="Content\js\mpres\htmledition\components\tab-bar2a4e1d.js" />
+    <Content Include="Content\js\mpres\htmledition\dialog\appmsg_layout.html2a7519.js" />
+    <Content Include="Content\js\mpres\htmledition\dialog\file.html236289.js" />
+    <Content Include="Content\js\mpres\htmledition\dialog\file_layout.html27d7ed.js" />
+    <Content Include="Content\js\mpres\htmledition\dialog\image_group.html236289.js" />
+    <Content Include="Content\js\mpres\htmledition\dialog\image_layout.html29f4d5.js" />
+    <Content Include="Content\js\mpres\htmledition\dialog\image_list.html2f7de7.js" />
+    <Content Include="Content\js\mpres\htmledition\dialog\image_water.html2be341.js" />
+    <Content Include="Content\js\mpres\htmledition\dialog\videomsg_layout.html27bb72.js" />
+    <Content Include="Content\js\mpres\htmledition\jquery.plugin\tab25df2d.js" />
+    <Content Include="Content\js\mpres\htmledition\jquery.ui\jquery.ui.draggable26d05a.js" />
+    <Content Include="Content\js\mpres\htmledition\jserr2fa4d8.js" />
+    <Content Include="Content\js\mpres\htmledition\lib\highcharts218878.js" />
+    <Content Include="Content\js\mpres\htmledition\lib\json218878.js" />
+    <Content Include="Content\js\mpres\htmledition\lib\MockJax218877.js" />
+    <Content Include="Content\js\mpres\htmledition\lib\soundmanager226f6ea.js" />
+    <Content Include="Content\js\mpres\htmledition\lib\spin218878.js" />
+    <Content Include="Content\js\mpres\htmledition\lib\swfobject218878.js" />
+    <Content Include="Content\js\mpres\htmledition\lib\video218878.js" />
+    <Content Include="Content\js\mpres\htmledition\mass\list301ae4.js" />
+    <Content Include="Content\js\mpres\htmledition\mass\original_popup2.html2d3a79.js" />
+    <Content Include="Content\js\mpres\htmledition\mass\reprint_status2d6c77.js" />
+    <Content Include="Content\js\mpres\htmledition\mass\send2e42db.js" />
+    <Content Include="Content\js\mpres\htmledition\mass\sendqueue_popup.html29ab02.js" />
+    <Content Include="Content\js\mpres\htmledition\media\appmsg.html2ff3d7.js" />
+    <Content Include="Content\js\mpres\htmledition\media\appmsg301ae4.js" />
+    <Content Include="Content\js\mpres\htmledition\media\appmsg_temp_url2ebf96.js" />
+    <Content Include="Content\js\mpres\htmledition\media\audio.html2880f5.js" />
+    <Content Include="Content\js\mpres\htmledition\media\audio26f6ea.js" />
+    <Content Include="Content\js\mpres\htmledition\media\cardmsg.html236289.js" />
+    <Content Include="Content\js\mpres\htmledition\media\cardmsg2c4ded.js" />
+    <Content Include="Content\js\mpres\htmledition\media\card_ticket.html2ebf96.js" />
+    <Content Include="Content\js\mpres\htmledition\media\factory27bb72.js" />
+    <Content Include="Content\js\mpres\htmledition\media\idCard218877.js" />
+    <Content Include="Content\js\mpres\htmledition\media\id_card.html236289.js" />
+    <Content Include="Content\js\mpres\htmledition\media\imageDialog2f7de7.js" />
+    <Content Include="Content\js\mpres\htmledition\media\img.html2f613f.js" />
+    <Content Include="Content\js\mpres\htmledition\media\img29ab02.js" />
+    <Content Include="Content\js\mpres\htmledition\media\media_cgi2f6327.js" />
+    <Content Include="Content\js\mpres\htmledition\media\media_dialog304d55.js" />
+    <Content Include="Content\js\mpres\htmledition\media\multipleAppmsg262dd6.js" />
+    <Content Include="Content\js\mpres\htmledition\media\multiple_appmsg.html301ae4.js" />
+    <Content Include="Content\js\mpres\htmledition\media\qqmusicaudio.html25df2d.js" />
+    <Content Include="Content\js\mpres\htmledition\media\simpleAppmsg2ebf96.js" />
+    <Content Include="Content\js\mpres\htmledition\media\simple_appmsg.html301ae4.js" />
+    <Content Include="Content\js\mpres\htmledition\media\simple_videomsg.html2f613f.js" />
+    <Content Include="Content\js\mpres\htmledition\media\simple_videomsg_new.html2f613f.js" />
+    <Content Include="Content\js\mpres\htmledition\media\video.html238f6d.js" />
+    <Content Include="Content\js\mpres\htmledition\media\video2c69bb.js" />
+    <Content Include="Content\js\mpres\htmledition\media\videocard.html2c5354.js" />
+    <Content Include="Content\js\mpres\htmledition\media\videoDialog2e7579.js" />
+    <Content Include="Content\js\mpres\htmledition\media\videomsg.html2c27dd.js" />
+    <Content Include="Content\js\mpres\htmledition\media\word.html2dab5d.js" />
+    <Content Include="Content\js\mpres\htmledition\media\wxvideo.html24329a.js" />
+    <Content Include="Content\js\mpres\htmledition\message\message_cgi2e42db.js" />
+    <Content Include="Content\js\mpres\htmledition\plprecorder\audiojs218877.swf" />
+    <Content Include="Content\js\mpres\htmledition\plprecorder\cut-round218877.gif" />
+    <Content Include="Content\js\mpres\htmledition\plprecorder\video-js218877.swf" />
+    <Content Include="Content\js\mpres\htmledition\plprecorder\webuploader230dc3.swf" />
+    <Content Include="Content\js\mpres\htmledition\plprecorder\ZeroClipboard_new2ee4ed.swf" />
+    <Content Include="Content\js\mpres\htmledition\plprecorder\zoom230dc3.swf" />
+    <Content Include="Content\js\mpres\htmledition\plugin\audio.html2767e5.js" />
+    <Content Include="Content\js\mpres\htmledition\plugin\audio304d55.js" />
+    <Content Include="Content\js\mpres\htmledition\plugin\audioItem.html26f6ea.js" />
+    <Content Include="Content\js\mpres\htmledition\qq\emoji2b5ae0.js" />
+    <Content Include="Content\js\mpres\htmledition\qq\events2a4e1d.js" />
+    <Content Include="Content\js\mpres\htmledition\qq\mask218877.js" />
+    <Content Include="Content\js\mpres\htmledition\raphael2.0-min271dfd.js" />
+    <Content Include="Content\js\mpres\htmledition\resp_types\base_resp.rt2c4ded.js" />
+    <Content Include="Content\js\mpres\htmledition\resp_types\file_cnt.rt2c4ded.js" />
+    <Content Include="Content\js\mpres\htmledition\richEditor\editorRange218877.js" />
+    <Content Include="Content\js\mpres\htmledition\richEditor\emotion.html238f6d.js" />
+    <Content Include="Content\js\mpres\htmledition\richEditor\emotion218877.js" />
+    <Content Include="Content\js\mpres\htmledition\richEditor\emotionEditor.html26a916.js" />
+    <Content Include="Content\js\mpres\htmledition\richEditor\emotionEditor29b5c0.js" />
+    <Content Include="Content\js\mpres\htmledition\richEditor\msgSender2b2fad.js" />
+    <Content Include="Content\js\mpres\htmledition\richEditor\wysiwyg2bff4a.js" />
+    <Content Include="Content\js\mpres\htmledition\safe\Mobile2cc465.js" />
+    <Content Include="Content\js\mpres\htmledition\safe\safe_check2ea0fb.js" />
+    <Content Include="Content\js\mpres\htmledition\safe\Scan305364.js" />
+    <Content Include="Content\js\mpres\htmledition\sea27d2ff.js" />
+    <Content Include="Content\js\mpres\htmledition\statistics\common2f2f7f.js" />
+    <Content Include="Content\js\mpres\htmledition\statistics\tab-bar.html2a4e1d.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl10\date-range22edfc1.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl10\empty-pie2bff4a.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl10\main2e1c42.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl10\misc-date2bff4a.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl10\table-date2bff4a.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl10\tooltip265438.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl11\common2f2f7f.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl11\data-helper2a0043.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl11\date-range.html2a4e1d.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl11\date-range2bff4a.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl11\summary-chart2a0043.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl11\summary-state2940d6.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl11\summary2e1c42.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl11\tab-bar22a0043.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl11\top2940d6.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl11\version-tab2a0043.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl11\version-tree2a0043.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl12\msg-tab265438.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl12\msg2e1c42.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl12\msg_top265438.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl13\chart284317.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl13\detail284317.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl13\interface2e1c42.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl13\key-index284317.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl13\models284317.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl13\state284317.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl13\top284317.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl13\vars284317.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl14\common2edfc1.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl14\popover.html300498.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl14\popover300498.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl14\summary-chart2edfc1.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl14\summary-state2edfc1.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl14\summary-type-options2edfc1.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl14\summary2edfc1.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl1\cgiReport218877.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl1\dateRange.html265438.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl1\dialog.html253a4f.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl1\dropdown.html218877.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl1\events2a4e1d.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl1\highcharts218878.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl1\jquery-chart2f2f7f.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl1\jquery.ui.draggable26d05a.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl1\mask218877.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl1\MockJax218877.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl1\pagebar.html218877.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl1\pagebar2bff4a.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl1\spin218878.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl1\top.html218877.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl1\top300498.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl2\common2a4e1d.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl2\common2f2f7f.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl2\date-range.html2a4e1d.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl2\date-range22edfc1.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl2\date-range2bff4a.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl2\dateRange2c4ded.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl2\dropdown218878.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl2\event-emitter271dfd.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl2\report_util2edfc1.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl2\summary-chart271dfd.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl2\summary-state271dfd.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl2\tab-bar2.html2a0043.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl2\top271dfd.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl3\moment26d05a.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl3\summary2e1c42.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl3\tab-bar22a0043.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl4\article-item-nested-media.html2f2f7f.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl4\article-table.html2c21e2.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl4\data-process2f2f7f.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl4\map271dfd.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl4\pagebar2bff4a.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl4\renderers2f2f7f.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl4\state2f2f7f.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl4\tab-bar2.html2a0043.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl4\video-player2f2f7f.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl4\virtual-template2bff4a.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl5\article-item.html2f2f7f.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl5\dateRange2c4ded.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl5\dropdown218878.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl5\overview2bff4a.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl5\pie2bff4a.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl5\province2bff4a.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl5\trapezoid27cccc.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl5\trend2bff4a.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl6\article-item2f2f7f.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl6\click-report284317.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl6\common2f2f7f.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl6\filters-menu2bff4a.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl6\main2f2f7f.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl6\moment26d05a.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl6\pager2bff4a.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl6\pies2f2f7f.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl6\sortable2bff4a.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl6\tab-bar.html2a4e1d.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl6\tab-bar22a0043.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl6\top2bff4a.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl7\all2f2f7f.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl7\compare27cccc.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl7\event-emitter271dfd.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl7\main2f2f7f.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl7\state27cccc.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl7\tab-bar2a4e1d.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl8\date-submenu.html2a4e1d.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl8\dateRange.html265438.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl8\dialog.html253a4f.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl8\event-emitter265438.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl8\index2a4e1d.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl8\jquery-chart2f2f7f.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl8\jquery.ui.draggable26d05a.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl8\keydata.html27cccc.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl8\pagebar2bff4a.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl8\spin218878.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl8\tab-bar.html2a4e1d.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl8\tab-date2bff4a.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl8\top.html218877.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl9\common_util2bff4a.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl9\events2a4e1d.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl9\highcharts-v4.2.12bff4a.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl9\misc-date.html2bff4a.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl9\report_util2edfc1.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl\dialog.html253a4f.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl\pagebar.html218877.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl\popover.html300498.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl\popup.html253a4f.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl\safe_check.html2ea0fb.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl\step.html218877.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl\tab.html2968da.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl\tooltip.html218877.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl\tooltips.html29bc6c.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl\top.html218877.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl\uploader.html230dc4.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl\verifycode.html244d4b.js" />
+    <Content Include="Content\js\mpres\htmledition\ui\checkbox.html218877.js" />
+    <Content Include="Content\js\mpres\htmledition\ui\checkbox2880f5.js" />
+    <Content Include="Content\js\mpres\htmledition\ui\dateRange.html265438.js" />
+    <Content Include="Content\js\mpres\htmledition\ui\dateRange2c4ded.js" />
+    <Content Include="Content\js\mpres\htmledition\ui\dropdown.html218877.js" />
+    <Content Include="Content\js\mpres\htmledition\ui\dropdown218878.js" />
+    <Content Include="Content\js\mpres\htmledition\ui\map271dfd.js" />
+    <Content Include="Content\js\mpres\htmledition\user_stat\common2a4e1d.js" />
+    <Content Include="Content\js\mpres\htmledition\user_stat\top271dfd.js" />
+    <Content Include="Content\js\mpres\htmledition\utils\norefererimg26d05a.js" />
+    <Content Include="Content\js\mpres\htmledition\utils\upload2d61e9.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\cgiReport218877.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\overseasList2e2bf4.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\pagebar2bff4a.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\popover300498.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\region2c2080.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\report_util2edfc1.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\Step218877.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\time253a4f.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\tooltip218877.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\tooltips29f4d5.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\tooltipsManager218877.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\top300498.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\upload2a1b00.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\verifycode293560.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\widgetBridge218877.js" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\WeiXinDB\WeiXinModels.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WeiXinModels.edmx</DependentUpon>
+      <LastGenOutput>WeiXinModels.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\WeiXinDB\WeiXinModels.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WeiXinModels.edmx</DependentUpon>
+      <LastGenOutput>WeiXinModels.cs</LastGenOutput>
+    </Content>
+    <Content Include="scripts\ai.0.22.19-build00125.js" />
+    <Content Include="scripts\ai.0.22.19-build00125.min.js" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="json.json" />
+    <None Include="scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="scripts\jquery-1.10.2.js" />
+    <Content Include="scripts\jquery-1.10.2.min.js" />
+    <Content Include="scripts\modernizr-2.6.2.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MiscController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WeiXinDB\Base_Resp.cs">
+      <DependentUpon>WeiXinModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WeiXinDB\Nav_Item.cs">
+      <DependentUpon>WeiXinModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WeiXinDB\Nav_Items.cs">
+      <DependentUpon>WeiXinModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WeiXinDB\Test.cs">
+      <DependentUpon>WeiXinModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WeiXinDB\WeiXinModels.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WeiXinModels.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WeiXinDB\WeiXinModels.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WeiXinModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WeiXinDB\WeiXinModels.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WeiXinModels.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="Models\WeiXinDB\WeiXinModels.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WeiXinModels.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\WeiXinDB\WeiXinModels.edmx.diagram">
+      <DependentUpon>WeiXinModels.edmx</DependentUpon>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Misc\Useranalysis.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\images\pic\date_range\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54895</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54895/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
