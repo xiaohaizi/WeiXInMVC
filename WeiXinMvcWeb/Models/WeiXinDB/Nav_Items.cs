@@ -9,11 +9,9 @@
 
 namespace WeiXinMvcWeb.Models.WeiXinDB
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
-
+    
     public partial class Nav_Items
     {
         public Nav_Items()
@@ -28,10 +26,8 @@ namespace WeiXinMvcWeb.Models.WeiXinDB
         public int Is_Can_Click { get; set; }
         public int New_Seq { get; set; }
         public int Base_RespCgi_ID { get; set; }
-
-       
+    
         public virtual ICollection<Nav_Item> Nav_Item { get; set; }
-        [JsonIgnore]
         public virtual Base_Resp Base_Resp { get; set; }
     }
 }

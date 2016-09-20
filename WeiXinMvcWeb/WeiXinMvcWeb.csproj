@@ -448,6 +448,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Base_Acl.cs" />
+    <Compile Include="Models\Ivr_Acl.cs" />
+    <Compile Include="Models\Merchant_Acl.cs" />
+    <Compile Include="Models\Msg_Acl.cs" />
     <Compile Include="Models\WeiXinDB\Base_Resp.cs">
       <DependentUpon>WeiXinModels.tt</DependentUpon>
     </Compile>
@@ -458,6 +462,12 @@
       <DependentUpon>WeiXinModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\WeiXinDB\Test.cs">
+      <DependentUpon>WeiXinModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WeiXinDB\User_Info.cs">
+      <DependentUpon>WeiXinModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WeiXinDB\Wb_Info.cs">
       <DependentUpon>WeiXinModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\WeiXinDB\WeiXinModels.Context.cs">

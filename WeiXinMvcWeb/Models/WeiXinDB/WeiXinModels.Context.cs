@@ -29,5 +29,7 @@ namespace WeiXinMvcWeb.Models.WeiXinDB
         public DbSet<Nav_Item> Nav_Item { get; set; }
         public DbSet<Nav_Items> Nav_Items { get; set; }
         public DbSet<Base_Resp> Base_Resp { get; set; }
+        public DbSet<User_Info> User_Info { get; set; }
+        public DbSet<Wb_Info> Wb_Info { get; set; }
     }
 }

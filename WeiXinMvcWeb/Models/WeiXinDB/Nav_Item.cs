@@ -9,10 +9,9 @@
 
 namespace WeiXinMvcWeb.Models.WeiXinDB
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-
+    
     public partial class Nav_Item
     {
         public int ID { get; set; }
@@ -21,7 +20,7 @@ namespace WeiXinMvcWeb.Models.WeiXinDB
         public int New_Flag { get; set; }
         public int New_Seq { get; set; }
         public int Nav_ItemsID { get; set; }
-        [JsonIgnore]
+    
         public virtual Nav_Items Nav_Items { get; set; }
     }
 }

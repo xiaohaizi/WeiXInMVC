@@ -49,11 +49,69 @@
           <Property Name="TestID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Title" Type="nvarchar(max)" />
         </EntityType>
+        <EntityType Name="User_Info">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nick_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Fake_ID" Type="int" Nullable="false" />
+          <Property Name="User_Role" Type="int" Nullable="false" />
+          <Property Name="Mass_Send_Left" Type="int" Nullable="false" />
+          <Property Name="Alias" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sys_Notify_Cnt" Type="int" Nullable="false" />
+          <Property Name="Service_Type" Type="int" Nullable="false" />
+          <Property Name="Notify_Msg" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="User_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Is_Wx_Verify" Type="int" Nullable="false" />
+          <Property Name="RealName_Status" Type="int" Nullable="false" />
+          <Property Name="RealName_Type" Type="int" Nullable="false" />
+          <Property Name="Is_Vip" Type="int" Nullable="false" />
+          <Property Name="Is_Dev_User" Type="int" Nullable="false" />
+          <Property Name="Have_Package" Type="int" Nullable="false" />
+          <Property Name="Is_Verify_On" Type="int" Nullable="false" />
+          <Property Name="Fake_Id_BBase64" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Is_Qverify" Type="int" Nullable="false" />
+          <Property Name="Account_Version" Type="int" Nullable="false" />
+          <Property Name="Bank_Verify_Status" Type="int" Nullable="false" />
+          <Property Name="Bank_Deadline" Type="int" Nullable="false" />
+          <Property Name="Remit_Code_Prefix" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Register_Type" Type="int" Nullable="false" />
+          <Property Name="Can_Modify_Nickname" Type="int" Nullable="false" />
+          <Property Name="Show_Verify_Warning" Type="int" Nullable="false" />
+          <Property Name="Verify_Deadline" Type="int" Nullable="false" />
+          <Property Name="Nickname_Invade" Type="int" Nullable="false" />
+          <Property Name="Force_Remit_Verify" Type="int" Nullable="false" />
+          <Property Name="Registered_Country" Type="int" Nullable="false" />
+          <Property Name="Is_Overseas" Type="int" Nullable="false" />
+          <Property Name="Nickname_Check_Status" Type="int" Nullable="false" />
+          <Property Name="Disable_Head_Box" Type="int" Nullable="false" />
+          <Property Name="Is_Remit_Reg" Type="int" Nullable="false" />
+          <Property Name="Remit_Reg_DeadLine" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Wb_Info">
+          <Key>
+            <PropertyRef Name="Wb_ID" />
+          </Key>
+          <Property Name="Wb_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Src" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Verify_Flag" Type="int" Nullable="false" />
+          <Property Name="Verify_Info" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nick_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Head_Img_Url" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Verify_Code" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Manual_Review" Type="int" Nullable="false" />
+          <Property Name="Can_Sync" Type="int" Nullable="false" />
+          <Property Name="Verify_Status" Type="int" Nullable="false" />
+          <Property Name="User_InfoUserID" Type="int" Nullable="false" />
+        </EntityType>
         <EntityContainer Name="WeiXinDBModelStoreContainer">
           <EntitySet Name="Base_Resp" EntityType="Self.Base_Resp" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Nav_Item" EntityType="Self.Nav_Item" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Nav_Items" EntityType="Self.Nav_Items" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Test" EntityType="Self.Test" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Info" EntityType="Self.User_Info" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Wb_Info" EntityType="Self.Wb_Info" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -78,6 +136,12 @@
           <AssociationSet Name="Base_RespNav_Items" Association="WeiXinDBModel.Base_RespNav_Items">
             <End Role="Base_Resp" EntitySet="Base_Resp" />
             <End Role="Nav_Items" EntitySet="Nav_Items" />
+          </AssociationSet>
+          <EntitySet Name="User_Info" EntityType="WeiXinDBModel.User_Info" />
+          <EntitySet Name="Wb_Info" EntityType="WeiXinDBModel.Wb_Info" />
+          <AssociationSet Name="User_InfoWb_Info" Association="WeiXinDBModel.User_InfoWb_Info">
+            <End Role="User_Info" EntitySet="User_Info" />
+            <End Role="Wb_Info" EntitySet="Wb_Info" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Nav_Item">
@@ -145,6 +209,76 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="User_Info">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nick_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fake_ID" Type="Int32" Nullable="false" />
+          <Property Name="User_Role" Type="Int32" Nullable="false" />
+          <Property Name="Mass_Send_Left" Type="Int32" Nullable="false" />
+          <Property Name="Alias" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Notify_Cnt" Type="Int32" Nullable="false" />
+          <Property Name="Service_Type" Type="Int32" Nullable="false" />
+          <Property Name="Notify_Msg" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="User_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Is_Wx_Verify" Type="Int32" Nullable="false" />
+          <Property Name="RealName_Status" Type="Int32" Nullable="false" />
+          <Property Name="RealName_Type" Type="Int32" Nullable="false" />
+          <Property Name="Is_Vip" Type="Int32" Nullable="false" />
+          <Property Name="Is_Dev_User" Type="Int32" Nullable="false" />
+          <Property Name="Have_Package" Type="Int32" Nullable="false" />
+          <Property Name="Is_Verify_On" Type="Int32" Nullable="false" />
+          <Property Name="Fake_Id_BBase64" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Is_Qverify" Type="Int32" Nullable="false" />
+          <Property Name="Account_Version" Type="Int32" Nullable="false" />
+          <Property Name="Bank_Verify_Status" Type="Int32" Nullable="false" />
+          <Property Name="Bank_Deadline" Type="Int32" Nullable="false" />
+          <Property Name="Remit_Code_Prefix" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Register_Type" Type="Int32" Nullable="false" />
+          <Property Name="Can_Modify_Nickname" Type="Int32" Nullable="false" />
+          <Property Name="Show_Verify_Warning" Type="Int32" Nullable="false" />
+          <Property Name="Verify_Deadline" Type="Int32" Nullable="false" />
+          <Property Name="Nickname_Invade" Type="Int32" Nullable="false" />
+          <Property Name="Force_Remit_Verify" Type="Int32" Nullable="false" />
+          <Property Name="Registered_Country" Type="Int32" Nullable="false" />
+          <Property Name="Is_Overseas" Type="Int32" Nullable="false" />
+          <Property Name="Nickname_Check_Status" Type="Int32" Nullable="false" />
+          <Property Name="Disable_Head_Box" Type="Int32" Nullable="false" />
+          <Property Name="Is_Remit_Reg" Type="Int32" Nullable="false" />
+          <Property Name="Remit_Reg_DeadLine" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Wb_Info" Relationship="WeiXinDBModel.User_InfoWb_Info" FromRole="User_Info" ToRole="Wb_Info" />
+        </EntityType>
+        <EntityType Name="Wb_Info">
+          <Key>
+            <PropertyRef Name="Wb_ID" />
+          </Key>
+          <Property Name="Wb_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Src" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Verify_Flag" Type="Int32" Nullable="false" />
+          <Property Name="Verify_Info" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Nick_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Head_Img_Url" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Verify_Code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Manual_Review" Type="Int32" Nullable="false" />
+          <Property Name="Can_Sync" Type="Int32" Nullable="false" />
+          <Property Name="Verify_Status" Type="Int32" Nullable="false" />
+          <Property Name="User_InfoUserID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User_Info" Relationship="WeiXinDBModel.User_InfoWb_Info" FromRole="Wb_Info" ToRole="User_Info" />
+        </EntityType>
+        <Association Name="User_InfoWb_Info">
+          <End Type="WeiXinDBModel.User_Info" Role="User_Info" Multiplicity="1" />
+          <End Type="WeiXinDBModel.Wb_Info" Role="Wb_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Info">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Wb_Info">
+              <PropertyRef Name="User_InfoUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -196,6 +330,64 @@
                 <ScalarProperty Name="Err_Msg" ColumnName="Err_Msg" />
                 <ScalarProperty Name="Ret" ColumnName="Ret" />
                 <ScalarProperty Name="Cgi_ID" ColumnName="Cgi_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Info">
+            <EntityTypeMapping TypeName="WeiXinDBModel.User_Info">
+              <MappingFragment StoreEntitySet="User_Info">
+                <ScalarProperty Name="Remit_Reg_DeadLine" ColumnName="Remit_Reg_DeadLine" />
+                <ScalarProperty Name="Is_Remit_Reg" ColumnName="Is_Remit_Reg" />
+                <ScalarProperty Name="Disable_Head_Box" ColumnName="Disable_Head_Box" />
+                <ScalarProperty Name="Nickname_Check_Status" ColumnName="Nickname_Check_Status" />
+                <ScalarProperty Name="Is_Overseas" ColumnName="Is_Overseas" />
+                <ScalarProperty Name="Registered_Country" ColumnName="Registered_Country" />
+                <ScalarProperty Name="Force_Remit_Verify" ColumnName="Force_Remit_Verify" />
+                <ScalarProperty Name="Nickname_Invade" ColumnName="Nickname_Invade" />
+                <ScalarProperty Name="Verify_Deadline" ColumnName="Verify_Deadline" />
+                <ScalarProperty Name="Show_Verify_Warning" ColumnName="Show_Verify_Warning" />
+                <ScalarProperty Name="Can_Modify_Nickname" ColumnName="Can_Modify_Nickname" />
+                <ScalarProperty Name="Register_Type" ColumnName="Register_Type" />
+                <ScalarProperty Name="Remit_Code_Prefix" ColumnName="Remit_Code_Prefix" />
+                <ScalarProperty Name="Bank_Deadline" ColumnName="Bank_Deadline" />
+                <ScalarProperty Name="Bank_Verify_Status" ColumnName="Bank_Verify_Status" />
+                <ScalarProperty Name="Account_Version" ColumnName="Account_Version" />
+                <ScalarProperty Name="Is_Qverify" ColumnName="Is_Qverify" />
+                <ScalarProperty Name="Fake_Id_BBase64" ColumnName="Fake_Id_BBase64" />
+                <ScalarProperty Name="Is_Verify_On" ColumnName="Is_Verify_On" />
+                <ScalarProperty Name="Have_Package" ColumnName="Have_Package" />
+                <ScalarProperty Name="Is_Dev_User" ColumnName="Is_Dev_User" />
+                <ScalarProperty Name="Is_Vip" ColumnName="Is_Vip" />
+                <ScalarProperty Name="RealName_Type" ColumnName="RealName_Type" />
+                <ScalarProperty Name="RealName_Status" ColumnName="RealName_Status" />
+                <ScalarProperty Name="Is_Wx_Verify" ColumnName="Is_Wx_Verify" />
+                <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+                <ScalarProperty Name="Notify_Msg" ColumnName="Notify_Msg" />
+                <ScalarProperty Name="Service_Type" ColumnName="Service_Type" />
+                <ScalarProperty Name="Sys_Notify_Cnt" ColumnName="Sys_Notify_Cnt" />
+                <ScalarProperty Name="Alias" ColumnName="Alias" />
+                <ScalarProperty Name="Mass_Send_Left" ColumnName="Mass_Send_Left" />
+                <ScalarProperty Name="User_Role" ColumnName="User_Role" />
+                <ScalarProperty Name="Fake_ID" ColumnName="Fake_ID" />
+                <ScalarProperty Name="Nick_Name" ColumnName="Nick_Name" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Wb_Info">
+            <EntityTypeMapping TypeName="WeiXinDBModel.Wb_Info">
+              <MappingFragment StoreEntitySet="Wb_Info">
+                <ScalarProperty Name="User_InfoUserID" ColumnName="User_InfoUserID" />
+                <ScalarProperty Name="Verify_Status" ColumnName="Verify_Status" />
+                <ScalarProperty Name="Can_Sync" ColumnName="Can_Sync" />
+                <ScalarProperty Name="Manual_Review" ColumnName="Manual_Review" />
+                <ScalarProperty Name="Verify_Code" ColumnName="Verify_Code" />
+                <ScalarProperty Name="Head_Img_Url" ColumnName="Head_Img_Url" />
+                <ScalarProperty Name="Nick_Name" ColumnName="Nick_Name" />
+                <ScalarProperty Name="Verify_Info" ColumnName="Verify_Info" />
+                <ScalarProperty Name="Verify_Flag" ColumnName="Verify_Flag" />
+                <ScalarProperty Name="Src" ColumnName="Src" />
+                <ScalarProperty Name="Wb_ID" ColumnName="Wb_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

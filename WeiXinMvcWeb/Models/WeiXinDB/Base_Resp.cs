@@ -9,10 +9,9 @@
 
 namespace WeiXinMvcWeb.Models.WeiXinDB
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-
+    
     public partial class Base_Resp
     {
         public Base_Resp()
@@ -29,8 +28,7 @@ namespace WeiXinMvcWeb.Models.WeiXinDB
         public string Master_Ticket { get; set; }
         public string Master_Ticket_ID { get; set; }
         public int Sp_Login { get; set; }
-
-      
+    
         public virtual ICollection<Nav_Items> Nav { get; set; }
     }
 }
