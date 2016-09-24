@@ -13,16 +13,11 @@ namespace WeiXinMvcWeb.Controllers
         public ActionResult Index()
         {
             string str = "";
-          //  Newtonsoft
-           
-            using (WeiXinEntities weixin = new WeiXinEntities()) {
-                var s = weixin.Base_Resp.Include("Nav").ToList();
-
-
-                str= JsonConvert.SerializeObject(s);
-
-            }
-            ViewBag.ss = str;
+            //  Newtonsoft
+            List<Base_Resp> Base_RespList = new List<Base_Resp>();
+            List<Nav_Items> navItemsList = new List<Nav_Items>();
+          
+                ViewBag.ss = str;
             return View();
         }
     }

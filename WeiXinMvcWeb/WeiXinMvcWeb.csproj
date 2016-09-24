@@ -43,8 +43,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -84,7 +88,6 @@
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -259,6 +262,7 @@
     <Content Include="Content\js\mpres\htmledition\sea27d2ff.js" />
     <Content Include="Content\js\mpres\htmledition\statistics\common2f2f7f.js" />
     <Content Include="Content\js\mpres\htmledition\statistics\tab-bar.html2a4e1d.js" />
+    <Content Include="Content\js\mpres\htmledition\statistics\user_stat\common.js" />
     <Content Include="Content\js\mpres\htmledition\tpl10\date-range22edfc1.js" />
     <Content Include="Content\js\mpres\htmledition\tpl10\empty-pie2bff4a.js" />
     <Content Include="Content\js\mpres\htmledition\tpl10\main2e1c42.js" />
@@ -420,16 +424,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\WeiXinDB\WeiXinModels.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>WeiXinModels.edmx</DependentUpon>
-      <LastGenOutput>WeiXinModels.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\WeiXinDB\WeiXinModels.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>WeiXinModels.edmx</DependentUpon>
-      <LastGenOutput>WeiXinModels.cs</LastGenOutput>
-    </Content>
+    <Content Include="index11.html" />
     <Content Include="scripts\ai.0.22.19-build00125.js" />
     <Content Include="scripts\ai.0.22.19-build00125.min.js" />
     <Content Include="scripts\bootstrap.js" />
@@ -448,43 +443,41 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609211606529_InitialCreate.cs" />
+    <Compile Include="Migrations\201609211606529_InitialCreate.Designer.cs">
+      <DependentUpon>201609211606529_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609221147105_AddUser.cs" />
+    <Compile Include="Migrations\201609221147105_AddUser.Designer.cs">
+      <DependentUpon>201609221147105_AddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AppmsganalysisReportRetrun.cs" />
+    <Compile Include="Models\AppmsganalysisRetrun.cs" />
+    <Compile Include="Models\BaseReturncs.cs" />
     <Compile Include="Models\Base_Acl.cs" />
+    <Compile Include="Models\CategoryList.cs" />
+    <Compile Include="Models\Class1.cs" />
+    <Compile Include="Models\FdevreportReturn.cs" />
+    <Compile Include="Models\Func_Ban_Info.cs" />
     <Compile Include="Models\Ivr_Acl.cs" />
+    <Compile Include="Models\Material_Acl.cs" />
     <Compile Include="Models\Merchant_Acl.cs" />
     <Compile Include="Models\Msg_Acl.cs" />
-    <Compile Include="Models\WeiXinDB\Base_Resp.cs">
-      <DependentUpon>WeiXinModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\WeiXinDB\Nav_Item.cs">
-      <DependentUpon>WeiXinModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\WeiXinDB\Nav_Items.cs">
-      <DependentUpon>WeiXinModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\WeiXinDB\Test.cs">
-      <DependentUpon>WeiXinModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\WeiXinDB\User_Info.cs">
-      <DependentUpon>WeiXinModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\WeiXinDB\Wb_Info.cs">
-      <DependentUpon>WeiXinModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\WeiXinDB\WeiXinModels.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WeiXinModels.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\WeiXinDB\WeiXinModels.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WeiXinModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\WeiXinDB\WeiXinModels.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WeiXinModels.edmx</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Region_Acl.cs" />
+    <Compile Include="Models\UserReturnModel.cs" />
+    <Compile Include="Models\Single_Msg_Acl.cs" />
+    <Compile Include="Models\UserAclList.cs" />
+    <Compile Include="Models\User_ScoureList.cs" />
+    <Compile Include="Models\WeiXinDB\AppmsgItem.cs" />
+    <Compile Include="Models\WeiXinDB\User_SourceItem.cs" />
+    <Compile Include="Models\WeiXinDB\Base_Resp.cs" />
+    <Compile Include="Models\WeiXinDB\Nav.cs" />
+    <Compile Include="Models\WeiXinDB\Nav_Item.cs" />
+    <Compile Include="Models\WeiXinDB\Nav_Items.cs" />
+    <Compile Include="Models\WeiXinDB\User_Info.cs" />
+    <Compile Include="Models\WeiXinDB\Wb_Info.cs" />
+    <Compile Include="Models\WeiXinDB\WeiXinModelDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -492,13 +485,6 @@
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <EntityDeploy Include="Models\WeiXinDB\WeiXinModels.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>WeiXinModels.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\WeiXinDB\WeiXinModels.edmx.diagram">
-      <DependentUpon>WeiXinModels.edmx</DependentUpon>
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -508,6 +494,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Misc\Useranalysis.cshtml" />
+    <Content Include="Views\Misc\Appmsganalysis.cshtml" />
+    <Content Include="Views\Misc\Appmsganalysis_Report.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -518,9 +506,18 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\images\pic\date_range\" />
+    <Folder Include="Views\Appmsganalysis\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201609211606529_InitialCreate.resx">
+      <DependentUpon>201609211606529_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609221147105_AddUser.resx">
+      <DependentUpon>201609221147105_AddUser.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
