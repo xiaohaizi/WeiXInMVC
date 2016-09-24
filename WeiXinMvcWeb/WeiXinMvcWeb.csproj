@@ -147,6 +147,7 @@
     <Content Include="Content\css\mpres\htmledition\stat_overview2f3a2e.css" />
     <Content Include="Content\images\bg_logo2491a6.png" />
     <Content Include="Content\images\calendar_all218877.png" />
+    <Content Include="Content\images\common\icon32_loading_dark218877.gif" />
     <Content Include="Content\images\date_range\calendar_all218877.png" />
     <Content Include="Content\images\getheadimg.png" />
     <Content Include="Content\images\layout_head_z26f6ea.png" />
@@ -507,6 +508,7 @@
     <Content Include="Views\Misc\Messageanalysis.cshtml" />
     <Content Include="Views\Misc\Interfaceanalysis.cshtml" />
     <Content Include="Views\Misc\Webpageanalysis.cshtml" />
+    <Content Include="Views\Misc\Useranalysis_Attr.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

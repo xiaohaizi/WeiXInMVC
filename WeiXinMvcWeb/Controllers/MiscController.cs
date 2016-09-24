@@ -28,15 +28,22 @@ namespace WeiXinMvcWeb.Controllers
 
         public ActionResult Useranalysis()
         {
+            ViewBag.Title = "用户分析";
             return View();
         }
 
+
+        public ActionResult Useranalysis_Attr()
+        {
+            ViewBag.Title = "用户分析";
+            return View();
+        }
 
 
         [HttpGet]
         public string UseranalysisAction(int ajax, DateTime begin_date, DateTime end_date, string f, string lang, string random, string source, string token)
         {
-
+            ViewBag.Title = "用户分析";
             string s = "";
             UserReturnModel returnModel = new UserReturnModel();
 
@@ -85,6 +92,7 @@ namespace WeiXinMvcWeb.Controllers
 
         public ActionResult Appmsganalysis()
         {
+            ViewBag.Title = "图文分析";
             return View();
         }
         //?action=all&begin_date=2016-09-18&end_date=2016-09-21&order_by=1&order_direction=2&token=798083537&lang=zh_CN&f=json&ajax=1&random=0.03687752467231431
@@ -105,6 +113,7 @@ namespace WeiXinMvcWeb.Controllers
 
         public ActionResult Appmsganalysis_Report()
         {
+            ViewBag.Title = "图文分析";
             return View();
         }
         public string AppmsganalysisAction_Report()
@@ -126,6 +135,7 @@ namespace WeiXinMvcWeb.Controllers
 
         public ActionResult Menuanalysis()
         {
+            ViewBag.Title = "菜单分析";
             return View();
         }
 
@@ -147,7 +157,7 @@ namespace WeiXinMvcWeb.Controllers
 
         public ActionResult Messageanalysis()
         {
-
+            ViewBag.Title = "消息分析";
             return View();
         }
         //type=daily&begin_date=2016-09-16&end_date=2016-09-20&token=444349084&lang=zh_CN&token=444349084&lang=zh_CN&f=json&ajax=1&random=0.7852470562930663          
@@ -164,7 +174,7 @@ namespace WeiXinMvcWeb.Controllers
 
         public ActionResult Interfaceanalysis()
         {
-
+            ViewBag.Title = "接口分析";
             return View();
         }
         //&begin_date=2016-09-11&end_date=2016-09-22&type=daily&token=444349084&lang=zh_CN&token=444349084&lang=zh_CN&token=444349084&lang=zh_CN&f=json&ajax=1&random=0.09787506112876643
@@ -182,12 +192,13 @@ namespace WeiXinMvcWeb.Controllers
 
         public ActionResult Webpageanalysis()
         {
+            ViewBag.Title = "网页分析";
             return View();
         }
 
         //action=listintfstat&begin_date=20160912&end_date=20160923&func_name=config&order_key=0&order_direction=2&begin=0&count=14&token=444349084&lang=zh_CN&f=json&ajax=1&random=0.472395747566426
         [HttpGet]
-        public string WebpageanalysisAction(string action,DateTime begin_date,DateTime end_date,string func_name,string order_key,string order_direction,int  begin,int count,string token,string lang,string f,int ajax,string random)
+        public string WebpageanalysisAction(string action,string  begin_date,string end_date,string func_name,string order_key,string order_direction,int  begin,int count,string token,string lang,string f,int ajax,string random)
         {
             string s = "";
             WebpageanalysisRetrun webModel = new WebpageanalysisRetrun();

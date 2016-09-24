@@ -8,7 +8,7 @@ url: "/misc/useranalysis-"
 id:"user_attr",
 name: "用户属性",
     
-url: "/misc/useranalysis-action=attr&begin_date=%s&end_date=%s".sprintf(n, n)
+url: "/misc/useranalysis_attr?action=attr&begin_date=%s&end_date=%s".sprintf(n, n)
 }];
 return new t("#js_topTab",a);
 });
