@@ -194,7 +194,8 @@ function w(){
 }
 t("statistics/interface/top.js");
 var v=t("statistics/components/tab-bar.js"),S=t("biz_web/ui/dropdown.js"),x=t("common/wx/Cgi.js"),C=t("statistics/components/date-range.js"),k=t("statistics/common.js"),E=null,L=null,T=null,A="YYYY-MM-DD",R=t("biz_common/moment.js"),F=R().add("d",-1).format(A),B=R().add("d",-30).format(A),I=R().add("d",-31).format(A),K=(R(F).add("d",-1).format(A),
-R(F).add("d",-7).format(A),k.loopDay),N=cgiData.list,Y=h(I,F,cgiData.list),z=jQuery,H=z("#js_actions"),M=t("statistics/interface/state.js"),O=t("statistics/interface/models.js"),P=t("statistics/interface/key-index.js"),G=t("statistics/interface/chart.js"),J=t("statistics/interface/detail.js"),V="/misc/interfaceanalysis?",q=k.makeUrl;
+R(F).add("d", -7).format(A), k.loopDay), N = cgiData.list, Y = h(I, F, cgiData.list), z = jQuery, H = z("#js_actions"), M = t("statistics/interface/state.js"), O = t("statistics/interface/models.js"), P = t("statistics/interface/key-index.js"), G = t("statistics/interface/chart.js"), J = t("statistics/interface/detail.js"),
+V = "/misc/interfaceanalysisaction?", q = k.makeUrl;
 $.extend(M,{
 type:"daily",
 key:"callback_count",

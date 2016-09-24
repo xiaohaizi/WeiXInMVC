@@ -460,16 +460,23 @@
     <Compile Include="Models\Class1.cs" />
     <Compile Include="Models\FdevreportReturn.cs" />
     <Compile Include="Models\Func_Ban_Info.cs" />
+    <Compile Include="Models\InterfaceanalysisReturn.cs" />
     <Compile Include="Models\Ivr_Acl.cs" />
     <Compile Include="Models\Material_Acl.cs" />
+    <Compile Include="Models\MenuanalysisReturn.cs" />
     <Compile Include="Models\Merchant_Acl.cs" />
+    <Compile Include="Models\MessageanalysisReturn.cs" />
     <Compile Include="Models\Msg_Acl.cs" />
     <Compile Include="Models\Region_Acl.cs" />
     <Compile Include="Models\UserReturnModel.cs" />
     <Compile Include="Models\Single_Msg_Acl.cs" />
     <Compile Include="Models\UserAclList.cs" />
     <Compile Include="Models\User_ScoureList.cs" />
+    <Compile Include="Models\WebpageanalysisRetrun.cs" />
     <Compile Include="Models\WeiXinDB\AppmsgItem.cs" />
+    <Compile Include="Models\WeiXinDB\Daily.cs" />
+    <Compile Include="Models\WeiXinDB\Intf_Stat.cs" />
+    <Compile Include="Models\WeiXinDB\Menu_Summary.cs" />
     <Compile Include="Models\WeiXinDB\User_SourceItem.cs" />
     <Compile Include="Models\WeiXinDB\Base_Resp.cs" />
     <Compile Include="Models\WeiXinDB\Nav.cs" />
@@ -496,6 +503,10 @@
     <Content Include="Views\Misc\Useranalysis.cshtml" />
     <Content Include="Views\Misc\Appmsganalysis.cshtml" />
     <Content Include="Views\Misc\Appmsganalysis_Report.cshtml" />
+    <Content Include="Views\Misc\Menuanalysis.cshtml" />
+    <Content Include="Views\Misc\Messageanalysis.cshtml" />
+    <Content Include="Views\Misc\Interfaceanalysis.cshtml" />
+    <Content Include="Views\Misc\Webpageanalysis.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

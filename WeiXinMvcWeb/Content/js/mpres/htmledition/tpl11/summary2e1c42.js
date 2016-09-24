@@ -164,7 +164,7 @@ K.needCompare?J.$el.hide():J.$el.show();
 }
 function w(){}
 function b(t,e){
-var a="/misc/menuanalysis?begin_date=%s&end_date=%s&f=json",n=a.sprintf(t,e);
+var a="/misc/menuanalysisaction?begin_date=%s&end_date=%s&f=json",n=a.sprintf(t,e);
 return n;
 }
 function g(t){

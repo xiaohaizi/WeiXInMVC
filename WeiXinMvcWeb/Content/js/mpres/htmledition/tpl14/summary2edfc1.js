@@ -83,7 +83,8 @@ t.find("i.arrow_up").show());
 function _(){
 var t="0";
 "date"===M.sortKey?t="0":"pv"===M.sortKey?t="2":"uv"===M.sortKey&&(t="3");
-var e=M.desc?"2":"1",a=(M.currentPage-1)*P,n=y(M.beginDate).format(Y),s=y(M.endDate).format(Y),o="/misc/webpageanalysis?action=listintfstat&begin_date=%s&end_date=%s&func_name=%s&order_key=%s&order_direction=%s&begin=%s&count=%s",i=o.sprintf(n,s,M.filterType,t,e,a,P);
+var e = M.desc ? "2" : "1", a = (M.currentPage - 1) * P, n = y(M.beginDate).format(Y), s = y(M.endDate).format(Y),
+    o = "/misc/webpageanalysisaction?action=listintfstat&begin_date=%s&end_date=%s&func_name=%s&order_key=%s&order_direction=%s&begin=%s&count=%s", i = o.sprintf(n, s, M.filterType, t, e, a, P);
 return i;
 }
 function p(){

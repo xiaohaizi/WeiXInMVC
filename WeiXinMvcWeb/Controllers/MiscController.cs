@@ -13,11 +13,11 @@ namespace WeiXinMvcWeb.Controllers
     {
         WeiXinModelDB weiXin = new WeiXinModelDB();
         IsoDateTimeConverter iso = new Newtonsoft.Json.Converters.IsoDateTimeConverter();
-        public  MiscController()
+        public MiscController()
         {
             iso.DateTimeFormat = "yyyy-MM-dd";
         }
-        
+
         // GET: Misc
         public ActionResult Index()
         {
@@ -89,7 +89,7 @@ namespace WeiXinMvcWeb.Controllers
         }
         //?action=all&begin_date=2016-09-18&end_date=2016-09-21&order_by=1&order_direction=2&token=798083537&lang=zh_CN&f=json&ajax=1&random=0.03687752467231431
         [HttpGet]
-        public string AppmsganalysisAction(string action, string begin_date, string end_date, string order_by, string order_direction, string token, string lang, string f, string ajax, string random)
+        public string AppmsganalysisAction(string action, DateTime begin_date, DateTime end_date, string order_by, string order_direction, string token, string lang, string f, string ajax, string random)
         {
             string s = "";
             AppmsganalysisRetrun appModel = new AppmsganalysisRetrun();
@@ -113,20 +113,92 @@ namespace WeiXinMvcWeb.Controllers
             var baseModel = weiXin.Base_Resps.FirstOrDefault();
             var userInfo = weiXin.User_Infos.Include("wb_info").FirstOrDefault();
 
-          
+
 
             AppmsganalysisReportRetrun appreportModdel = new AppmsganalysisReportRetrun();
             appreportModdel.base_resp = baseModel;
             appreportModdel.user_info = userInfo;
             appreportModdel.item = weiXin.AppmsgItems.ToList();
             //  appreportModdel.item
-            s = JsonConvert.SerializeObject(appreportModdel,iso);
+            s = JsonConvert.SerializeObject(appreportModdel, iso);
+            return s;
+        }
+
+        public ActionResult Menuanalysis()
+        {
+            return View();
+        }
+
+        //begin_date=2016-09-12&end_date=2016-09-16&f=json&token=444349084&lang=zh_CN&token=444349084&lang=zh_CN&f=json&ajax=1&random=0.8303892144346972
+        [HttpGet]
+        public string MenuanalysisAction(DateTime begin_date, DateTime end_date, string f, string token, string lang, string ajax, string random)
+        {
+            string s = "";
+            Menu_SummaryList menuList = new Menu_SummaryList();
+            MenuanalysisReturn menuReturn = new MenuanalysisReturn();
+            menuReturn.InitBaseInfo();
+
+            menuList.list = weiXin.Menu_Summares.ToList();
+            menuReturn.menu_summary = menuList;
+            s = JsonConvert.SerializeObject(menuReturn, iso);
             return s;
         }
 
 
+        public ActionResult Messageanalysis()
+        {
+
+            return View();
+        }
+        //type=daily&begin_date=2016-09-16&end_date=2016-09-20&token=444349084&lang=zh_CN&token=444349084&lang=zh_CN&f=json&ajax=1&random=0.7852470562930663          
+        [HttpGet]
+        public string MessageanalysisAction(string type, DateTime begin_date, DateTime end_date, string token, string lang, string f, string ajax, string random)
+        {
+            string s = "";
+            MessageanalysisReturn messageModel = new MessageanalysisReturn();
+            messageModel.InitBaseInfo();
+            s = JsonConvert.SerializeObject(messageModel);
+            return s;
+        }
 
 
+        public ActionResult Interfaceanalysis()
+        {
+
+            return View();
+        }
+        //&begin_date=2016-09-11&end_date=2016-09-22&type=daily&token=444349084&lang=zh_CN&token=444349084&lang=zh_CN&token=444349084&lang=zh_CN&f=json&ajax=1&random=0.09787506112876643
+        [HttpGet]
+        public string InterfaceanalysisAction(DateTime begin_date, DateTime end_date, string type, string token, string lang, string f, string random)
+        {
+            string s = "";
+            
+            InterfaceanalysisReturn interModel = new InterfaceanalysisReturn();
+            interModel.InitBaseInfo();
+            interModel.daily_list = weiXin.Dailes.ToList();
+            s = JsonConvert.SerializeObject(interModel, iso);
+            return s;
+        }
+
+        public ActionResult Webpageanalysis()
+        {
+            return View();
+        }
+
+        //action=listintfstat&begin_date=20160912&end_date=20160923&func_name=config&order_key=0&order_direction=2&begin=0&count=14&token=444349084&lang=zh_CN&f=json&ajax=1&random=0.472395747566426
+        [HttpGet]
+        public string WebpageanalysisAction(string action,DateTime begin_date,DateTime end_date,string func_name,string order_key,string order_direction,int  begin,int count,string token,string lang,string f,int ajax,string random)
+        {
+            string s = "";
+            WebpageanalysisRetrun webModel = new WebpageanalysisRetrun();
+            webModel.InitBaseInfo();
+
+            webModel.one_intf_stat_list= weiXin.Intf_Stats.Where(x => x.name == "config").ToList();
+            webModel.all_intf_stat_list= weiXin.Intf_Stats.Where(x => x.name == "getNetworkType").ToList();
+            webModel.total = webModel.one_intf_stat_list.Count;
+            s = JsonConvert.SerializeObject(webModel,iso);
+            return s;
+        }
 
 
     }

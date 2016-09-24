@@ -27,8 +27,16 @@
         public virtual DbSet<Wb_Info> Wb_Infos { get; set; }
         public virtual DbSet<User_SourceItem> User_SourceItems { get; set; }
         public virtual DbSet<AppmsgItem> AppmsgItems { get; set; }
+        public virtual DbSet<Menu_Summary> Menu_Summares { get; set; }
+        public virtual DbSet<Daily> Dailes { get; set; }
+        public virtual DbSet<Intf_Stat> Intf_Stats { get; set; }
 
         
+
+
+
+
+
 
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
     }

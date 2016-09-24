@@ -234,7 +234,7 @@ Z=!0,w();
 var t="";
 ("daily"!=J.type||V)&&(t="&begin_date=%s&end_date=%s".sprintf(J.begin_date,J.end_date)),
 A("load mssage data"),K.get({
-url:wx.url("/misc/messageanalysis?type=%s%s".sprintf(J.type,t)),
+url:wx.url("/misc/messageanalysisaction?type=%s%s".sprintf(J.type,t)),
 success:function(t){
 var a=z("load mssage data");
 E(S,a,G),V=!1,Z=!1,b(),0==t.base_resp.ret?(et=t.list,Q=t.dist_list,L=$.extend(!0,[],et),
@@ -266,7 +266,7 @@ Z=!0,w();
 var t="",a=!1,r=-1;
 L=W=null,t="&begin_date=%s&end_date=%s".sprintf(J.begin_date,J.end_date),A("load mssage data compare 1"),
 K.get({
-url:wx.url("/misc/messageanalysis?type=%s%s".sprintf(J.type,t)),
+url:wx.url("/misc/messageanalysisaction?type=%s%s".sprintf(J.type,t)),
 success:function(t){
 var r=z("load mssage data compare 1");
 E(S,r,G),0==t.base_resp.ret?(et=t.list,Q=t.dist_list,L=$.extend(!0,[],et),a&&(Y(),
