@@ -62,8 +62,8 @@ namespace WeiXinMvcWeb.Controllers
             CategoryList catlist1 = new CategoryList();
             catlist.list = new List<User_SourceItem>();
             // User_ScoureList userscoucreList = new User_ScoureList();
-            catlist.list = weiXin.User_SourceItems.ToList();
-            catlist1.list = weiXin.User_SourceItems.ToList();
+            catlist.list = weiXin.User_SourceItems.Where(x=>x.date>=begin_date&&x.date<=end_date).ToList();
+            catlist1.list = weiXin.User_SourceItems.Where(x => x.date >= begin_date && x.date <= end_date).ToList();
             // catlist.list.Add(userscoucreList);
             returnModel.category_list.Add(catlist);
             returnModel.category_list.Add(catlist1);
@@ -148,7 +148,7 @@ namespace WeiXinMvcWeb.Controllers
             MenuanalysisReturn menuReturn = new MenuanalysisReturn();
             menuReturn.InitBaseInfo();
 
-            menuList.list = weiXin.Menu_Summares.ToList();
+            menuList.list = weiXin.Menu_Summares.Where(x=>x.ref_date>=begin_date&&x.ref_date<=end_date).ToList();
             menuReturn.menu_summary = menuList;
             s = JsonConvert.SerializeObject(menuReturn, iso);
             return s;
@@ -185,7 +185,7 @@ namespace WeiXinMvcWeb.Controllers
             
             InterfaceanalysisReturn interModel = new InterfaceanalysisReturn();
             interModel.InitBaseInfo();
-            interModel.daily_list = weiXin.Dailes.ToList();
+            interModel.daily_list = weiXin.Dailes.Where(x=>x.date>=begin_date&&x.date<=end_date).ToList();
             s = JsonConvert.SerializeObject(interModel, iso);
             return s;
         }
@@ -201,6 +201,16 @@ namespace WeiXinMvcWeb.Controllers
         public string WebpageanalysisAction(string action,string  begin_date,string end_date,string func_name,string order_key,string order_direction,int  begin,int count,string token,string lang,string f,int ajax,string random)
         {
             string s = "";
+            //20160911
+            string by = begin_date.Substring(0, 4);
+            string bm = begin_date.Substring(4, 2);
+            string bd = begin_date.Substring(6,2);
+            string ey = end_date.Substring(0, 4);
+            string em = end_date.Substring(4, 2);
+            string ed = end_date.Substring(6, 2);
+            DateTime beginTime = Convert.ToDateTime(by+"-"+ bm+"-"+ bd);
+            DateTime endTime = Convert.ToDateTime(ey + "-" + em + "-" + ed);
+            
             WebpageanalysisRetrun webModel = new WebpageanalysisRetrun();
             webModel.InitBaseInfo();
 
