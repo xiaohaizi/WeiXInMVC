@@ -514,6 +514,7 @@
     <Content Include="Views\Misc\Interfaceanalysis.cshtml" />
     <Content Include="Views\Misc\Webpageanalysis.cshtml" />
     <Content Include="Views\Misc\Useranalysis_Attr.cshtml" />
+    <Content Include="Views\Home\View.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
