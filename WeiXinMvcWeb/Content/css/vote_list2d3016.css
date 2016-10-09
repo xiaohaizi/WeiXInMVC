@@ -1,0 +1,244 @@
+﻿
+.table_wrp {
+    margin-bottom: 20px;
+}
+
+    .table_wrp .dropdown_menu .dropdown_data_list {
+        *width: 100%;
+    }
+
+.tab_wrp_thead {
+    border-top: 1px solid #e7e7eb;
+    border-right: 1px solid #e7e7eb;
+    border-left: 1px solid #e7e7eb;
+    background-color: #f4f5f9;
+}
+
+    .tab_wrp_thead .title h4 {
+        font-weight: normal;
+        padding: 0 1em;
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .tab_wrp_thead .title a {
+        margin-left: 1em;
+    }
+
+    .tab_wrp_thead .title .tab_nav a {
+        margin-left: 0;
+    }
+
+    .tab_wrp_thead .dropdown_menu_td {
+        border-left: 1px solid #e7e7eb;
+    }
+
+        .tab_wrp_thead .dropdown_menu_td .dropdown_switch {
+            border: 0;
+            background: 0;
+            background-color: #f4f5f9;
+            height: 38px;
+            line-height: 38px;
+        }
+
+    .tab_wrp_thead .tab_top_oper {
+        height: 38px;
+        line-height: 38px;
+        padding: 0 1em;
+        border-left: 1px solid #e7e7eb;
+    }
+
+    .tab_wrp_thead .data {
+        border-left: 1px solid #e7e7eb;
+        line-height: 38px;
+    }
+
+        .tab_wrp_thead .data .ta_date {
+            border: 0;
+            background: 0;
+            line-height: 38px;
+        }
+
+        .tab_wrp_thead .data:hover {
+            background-color: #e7e7eb;
+        }
+
+    .tab_wrp_thead .ta_date .opt_sel {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .tab_wrp_thead .btn.dropdown_switch {
+        border: 0;
+        background: 0;
+    }
+
+    .tab_wrp_thead .time_periods {
+        border-left: 1px solid #e7e7eb;
+        line-height: 38px;
+    }
+
+        .tab_wrp_thead .time_periods:hover {
+            background-color: #e7e7eb;
+        }
+
+    .tab_wrp_thead.with_oper .td_panel {
+        padding: 0;
+    }
+
+.table {
+    border-left: 1px solid #e7e7eb;
+    border-right: 1px solid #e7e7eb;
+    margin-bottom: 20px;
+}
+
+    .table .btn {
+        border: 0;
+        background: 0;
+    }
+
+        .table .btn.dropdown_switch {
+            background: 0;
+        }
+
+    .table .frm_radio_label {
+        margin-right: 0;
+    }
+
+    .table .table_cell {
+        padding: 0;
+        text-align: left;
+        line-height: normal;
+    }
+
+        .table .table_cell.with_num {
+            text-align: right;
+        }
+
+.table_head {
+    padding: 6px 1em;
+    border: 1px solid #e7e7eb;
+    border-bottom: 0;
+    background-color: #f4f5f9;
+}
+
+.td_panel {
+    padding: 10px 1em;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.thead .table_cell {
+    line-height: normal;
+}
+
+.thead .td_panel {
+    padding: 10px 1em;
+}
+
+.thead .dropdown_switch label {
+    margin-left: 1em;
+}
+
+.tbody {
+    color: #8d8d8d;
+}
+
+    .tbody .table_cell.with_oper .td_panel {
+        padding-right: 2em;
+    }
+
+.table_cell.vote_title {
+    width: 44%;
+    color: #222;
+}
+
+.table_cell.vote_num {
+    width: 11%;
+    text-align: right;
+}
+
+.table_cell.vote_state {
+    width: 15%;
+    text-align: left;
+}
+
+    .table_cell.vote_state .td_panel {
+        padding-left: 7em;
+    }
+
+.table_cell.vote_opr {
+    width: 16%;
+    text-align: right;
+}
+
+    .table_cell.vote_opr a {
+        margin-left: .5em;
+    }
+
+.ic_empty_tips {
+    display: block;
+    margin: .5em auto 0;
+    
+    background: transparent url(../images/page_login_z260591.pngg) no-repeat 0 0;
+    width: 170px;
+    height: 170px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.vote_list .frm_radio_label {
+    padding: 0;
+}
+
+.main_hd h2.title_border {
+    border-bottom: 1px solid #e7e7eb;
+}
+
+.main_hd_bd h2 {
+    position: relative;
+    line-height: normal;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #e7e7eb;
+    padding-right: 10em;
+    margin-bottom: 26px;
+    margin-top: 20px;
+    padding-bottom: 17px;
+}
+
+.main_hd_bd .extra_info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 14px;
+}
+
+    .main_hd_bd .extra_info.align_title {
+        margin-top: 4px;
+        line-height: normal;
+    }
+
+.main_hd_bd h2 {
+    margin-bottom: 0;
+}
+
+.main_bd .page_msg.mini .inner {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.topbar {
+    margin-top: 26px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 20px;
+}
+
+    .topbar .btn {
+        float: right;
+    }
+
+.table_wrp, .pagination_wrp {
+    padding-left: 30px;
+    padding-right: 30px;
+}

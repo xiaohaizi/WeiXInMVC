@@ -137,6 +137,38 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\cgi-bin\cardticket\dialog_choose_card2d3016.css" />
+    <Content Include="Content\css\cgi-bin\cardticket\dialog_choose_sub_store2d3016.css" />
+    <Content Include="Content\css\cgi-bin\cardticket\dialog_img_pick2f7de7.css" />
+    <Content Include="Content\css\cgi-bin\cardticket\dialog_select_video2968da.css" />
+    <Content Include="Content\css\cgi-bin\cardticket\emoji218878.css" />
+    <Content Include="Content\css\cgi-bin\cardticket\emotion_editor23b187.css" />
+    <Content Include="Content\css\cgi-bin\cardticket\media2f624f.css" />
+    <Content Include="Content\css\cgi-bin\cardticket\media_dialog27dcd8.css" />
+    <Content Include="Content\css\cgi-bin\cardticket\msg_tab25df2d.css" />
+    <Content Include="Content\css\cgi-bin\cardticket\pagination218878.css" />
+    <Content Include="Content\css\cgi-bin\cardticket\plugin1267c1b.css" />
+    <Content Include="Content\css\cgi-bin\cardticket\plugin227d7ed.css" />
+    <Content Include="Content\css\cgi-bin\cardticket\plugin323b289.css" />
+    <Content Include="Content\css\cgi-bin\cardticket\processor_bar218878.css" />
+    <Content Include="Content\css\cgi-bin\cardticket\richvideo2b638f.css" />
+    <Content Include="Content\css\cgi-bin\cardticket\tooltip218878.css" />
+    <Content Include="Content\css\cgi-bin\cardticket\upload22a2de.css" />
+    <Content Include="Content\css\cgi-bin\mass_send29ab02.css" />
+    <Content Include="Content\css\cgi-bin\widget\dropdown2f12f7.css" />
+    <Content Include="Content\css\cgi-bin\widget\emoji218878.css" />
+    <Content Include="Content\css\cgi-bin\widget\img_preview29f4d5.css" />
+    <Content Include="Content\css\cgi-bin\widget\mass_list2f613f.css" />
+    <Content Include="Content\css\cgi-bin\widget\media2f624f.css" />
+    <Content Include="Content\css\cgi-bin\widget\msg_sender2968da.css" />
+    <Content Include="Content\css\cgi-bin\widget\pagination218878.css" />
+    <Content Include="Content\css\cgi-bin\widget\qrcode_scan262dd6.css" />
+    <Content Include="Content\css\cgi-bin\widget\rich_buddy2f2f7f.css" />
+    <Content Include="Content\css\cgi-bin\widget\upload22a2de.css" />
+    <Content Include="Content\css\cgi-bin\widget\verifycode244d4b.css" />
+    <Content Include="Content\css\index2b2fad.css" />
+    <Content Include="Content\css\mpres\htmledition\images\base_z2b638f.png" />
+    <Content Include="Content\css\mpres\htmledition\index.css" />
     <Content Include="Content\css\mpres\htmledition\base2fde18.css" />
     <Content Include="Content\css\mpres\htmledition\date_range218878.css" />
     <Content Include="Content\css\mpres\htmledition\dropdown2f12f7.css" />
@@ -147,8 +179,15 @@
     <Content Include="Content\css\mpres\htmledition\images\layout_head_z26f6ea.png" />
     <Content Include="Content\css\mpres\htmledition\layout_head2880f5.css" />
     <Content Include="Content\css\mpres\htmledition\lib2f613f.css" />
+    <Content Include="Content\css\mpres\htmledition\page_login26f6ea.css" />
     <Content Include="Content\css\mpres\htmledition\pagination218878.css" />
     <Content Include="Content\css\mpres\htmledition\stat_overview2f3a2e.css" />
+    <Content Include="Content\css\page\page_message2a0043.css" />
+    <Content Include="Content\css\pagination218878.css" />
+    <Content Include="Content\css\vote\vote_edit2f613f.css" />
+    <Content Include="Content\css\vote_list2d3016.css" />
+    <Content Include="Content\images\base_z2b638f.png" />
+    <Content Include="Content\images\bg_login_banner_v5218877.jpg" />
     <Content Include="Content\images\bg_logo2491a6.png" />
     <Content Include="Content\images\calendar_all218877.png" />
     <Content Include="Content\images\common\icon32_loading_dark218877.gif" />
@@ -156,6 +195,8 @@
     <Content Include="Content\images\getheadimg.png" />
     <Content Include="Content\images\layout_head_z26f6ea.png" />
     <Content Include="Content\images\menu\icon_menu_function.png" />
+    <Content Include="Content\images\page_login_z260591.png" />
+    <Content Include="Content\images\vote_empty236287.png" />
     <Content Include="Content\js\mpres\htmledition\add\member_info_flag25676c.js" />
     <Content Include="Content\js\mpres\htmledition\add\msg_operate_type_html2ebf96.js" />
     <Content Include="Content\js\mpres\htmledition\attr\attr-bars271dfd.js" />
@@ -165,7 +206,9 @@
     <Content Include="Content\js\mpres\htmledition\attr\attr-table27cccc.js" />
     <Content Include="Content\js\mpres\htmledition\attr\attr-types280571.js" />
     <Content Include="Content\js\mpres\htmledition\attr\attr27cccc.js" />
+    <Content Include="Content\js\mpres\htmledition\biz_common\jquery.validate26d05a.js" />
     <Content Include="Content\js\mpres\htmledition\biz_common\moment26d05a.js" />
+    <Content Include="Content\js\mpres\htmledition\biz_common\xss26d05a.js" />
     <Content Include="Content\js\mpres\htmledition\cardticket\card_preview.html22bfc4.js" />
     <Content Include="Content\js\mpres\htmledition\cardticket\card_quantity.html2ef103.js" />
     <Content Include="Content\js\mpres\htmledition\cardticket\card_quantity2ef103.js" />
@@ -195,6 +238,7 @@
     <Content Include="Content\js\mpres\htmledition\dialog\videomsg_layout.html27bb72.js" />
     <Content Include="Content\js\mpres\htmledition\jquery.plugin\tab25df2d.js" />
     <Content Include="Content\js\mpres\htmledition\jquery.ui\jquery.ui.draggable26d05a.js" />
+    <Content Include="Content\js\mpres\htmledition\jquery.ui\jquery.ui.sortable26d05a.js" />
     <Content Include="Content\js\mpres\htmledition\jserr2fa4d8.js" />
     <Content Include="Content\js\mpres\htmledition\lib\highcharts218878.js" />
     <Content Include="Content\js\mpres\htmledition\lib\json218878.js" />
@@ -203,6 +247,8 @@
     <Content Include="Content\js\mpres\htmledition\lib\spin218878.js" />
     <Content Include="Content\js\mpres\htmledition\lib\swfobject218878.js" />
     <Content Include="Content\js\mpres\htmledition\lib\video218878.js" />
+    <Content Include="Content\js\mpres\htmledition\login\jquery-1.9.126d05a.js" />
+    <Content Include="Content\js\mpres\htmledition\login\login_new309c59.js" />
     <Content Include="Content\js\mpres\htmledition\mass\list301ae4.js" />
     <Content Include="Content\js\mpres\htmledition\mass\original_popup2.html2d3a79.js" />
     <Content Include="Content\js\mpres\htmledition\mass\reprint_status2d6c77.js" />
@@ -238,7 +284,11 @@
     <Content Include="Content\js\mpres\htmledition\media\videomsg.html2c27dd.js" />
     <Content Include="Content\js\mpres\htmledition\media\word.html2dab5d.js" />
     <Content Include="Content\js\mpres\htmledition\media\wxvideo.html24329a.js" />
+    <Content Include="Content\js\mpres\htmledition\message\list2a4eeb.js" />
     <Content Include="Content\js\mpres\htmledition\message\message_cgi2e42db.js" />
+    <Content Include="Content\js\mpres\htmledition\message\message_cgi309c59.js" />
+    <Content Include="Content\js\mpres\htmledition\message\renderList308b2e.js" />
+    <Content Include="Content\js\mpres\htmledition\message\video_popup.html218877.js" />
     <Content Include="Content\js\mpres\htmledition\plprecorder\audiojs218877.swf" />
     <Content Include="Content\js\mpres\htmledition\plprecorder\cut-round218877.gif" />
     <Content Include="Content\js\mpres\htmledition\plprecorder\video-js218877.swf" />
@@ -260,6 +310,7 @@
     <Content Include="Content\js\mpres\htmledition\richEditor\emotionEditor.html26a916.js" />
     <Content Include="Content\js\mpres\htmledition\richEditor\emotionEditor29b5c0.js" />
     <Content Include="Content\js\mpres\htmledition\richEditor\msgSender2b2fad.js" />
+    <Content Include="Content\js\mpres\htmledition\richEditor\msgSender309c59.js" />
     <Content Include="Content\js\mpres\htmledition\richEditor\wysiwyg2bff4a.js" />
     <Content Include="Content\js\mpres\htmledition\safe\Mobile2cc465.js" />
     <Content Include="Content\js\mpres\htmledition\safe\safe_check2ea0fb.js" />
@@ -389,10 +440,16 @@
     <Content Include="Content\js\mpres\htmledition\tpl9\misc-date.html2bff4a.js" />
     <Content Include="Content\js\mpres\htmledition\tpl9\report_util2edfc1.js" />
     <Content Include="Content\js\mpres\htmledition\tpl\dialog.html253a4f.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl\msgListItem.html2e42db.js" />
     <Content Include="Content\js\mpres\htmledition\tpl\pagebar.html218877.js" />
     <Content Include="Content\js\mpres\htmledition\tpl\popover.html300498.js" />
     <Content Include="Content\js\mpres\htmledition\tpl\popup.html253a4f.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl\popup.html30bdda.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl\preview.html29f4d5.js" />
     <Content Include="Content\js\mpres\htmledition\tpl\safe_check.html2ea0fb.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl\searchClassifyInput.html280571.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl\searchInput.html26a308.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl\simplePopup.html2dfebd.js" />
     <Content Include="Content\js\mpres\htmledition\tpl\step.html218877.js" />
     <Content Include="Content\js\mpres\htmledition\tpl\tab.html2968da.js" />
     <Content Include="Content\js\mpres\htmledition\tpl\tooltip.html218877.js" />
@@ -411,21 +468,32 @@
     <Content Include="Content\js\mpres\htmledition\user_stat\top271dfd.js" />
     <Content Include="Content\js\mpres\htmledition\utils\norefererimg26d05a.js" />
     <Content Include="Content\js\mpres\htmledition\utils\upload2d61e9.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\ban3025fc.js" />
     <Content Include="Content\js\mpres\htmledition\wx\cgiReport218877.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\cgiReport30c893.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\inputCounter2a0043.js" />
     <Content Include="Content\js\mpres\htmledition\wx\overseasList2e2bf4.js" />
     <Content Include="Content\js\mpres\htmledition\wx\pagebar2bff4a.js" />
     <Content Include="Content\js\mpres\htmledition\wx\popover300498.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\preview2a26ac.js" />
     <Content Include="Content\js\mpres\htmledition\wx\region2c2080.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\remark264f38.js" />
     <Content Include="Content\js\mpres\htmledition\wx\report_util2edfc1.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\RichBuddy27b666.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\RichBuddy_tag2f2f7f.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\searchInput280571.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\simplePopup264f38.js" />
     <Content Include="Content\js\mpres\htmledition\wx\Step218877.js" />
     <Content Include="Content\js\mpres\htmledition\wx\time253a4f.js" />
     <Content Include="Content\js\mpres\htmledition\wx\tooltip218877.js" />
     <Content Include="Content\js\mpres\htmledition\wx\tooltips29f4d5.js" />
     <Content Include="Content\js\mpres\htmledition\wx\tooltipsManager218877.js" />
     <Content Include="Content\js\mpres\htmledition\wx\top300498.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\top30c3d6.js" />
     <Content Include="Content\js\mpres\htmledition\wx\upload2a1b00.js" />
     <Content Include="Content\js\mpres\htmledition\wx\verifycode293560.js" />
     <Content Include="Content\js\mpres\htmledition\wx\widgetBridge218877.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\wxt218877.js" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -444,6 +512,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdvancedController.cs" />
+    <Compile Include="Controllers\CgibinController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MiscController.cs" />
     <Compile Include="Global.asax.cs">
@@ -468,6 +538,7 @@
     <Compile Include="Models\Func_Ban_Info.cs" />
     <Compile Include="Models\InterfaceanalysisReturn.cs" />
     <Compile Include="Models\Ivr_Acl.cs" />
+    <Compile Include="Models\LoginReturn.cs" />
     <Compile Include="Models\Material_Acl.cs" />
     <Compile Include="Models\MenuanalysisReturn.cs" />
     <Compile Include="Models\Merchant_Acl.cs" />
@@ -515,6 +586,11 @@
     <Content Include="Views\Misc\Webpageanalysis.cshtml" />
     <Content Include="Views\Misc\Useranalysis_Attr.cshtml" />
     <Content Include="Views\Home\View.cshtml" />
+    <Content Include="Views\Cgibin\Masssendpage.cshtml" />
+    <Content Include="Views\Advanced\Autoreply.cshtml" />
+    <Content Include="Views\Advanced\Selfmenu.cshtml" />
+    <Content Include="Views\Cgibin\Newoperatevote.cshtml" />
+    <Content Include="Views\Cgibin\Message.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -525,6 +601,17 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\images\pic\date_range\" />
+    <Folder Include="Content\js\mpres\htmledition\advanced\" />
+    <Folder Include="Content\js\mpres\htmledition\ban\" />
+    <Folder Include="Content\js\mpres\htmledition\homepage\" />
+    <Folder Include="Content\js\mpres\htmledition\importAppmsgList\" />
+    <Folder Include="Content\js\mpres\htmledition\input\" />
+    <Folder Include="Content\js\mpres\htmledition\ivr\" />
+    <Folder Include="Content\js\mpres\htmledition\plugin2_edit\" />
+    <Folder Include="Content\js\mpres\htmledition\plugins\" />
+    <Folder Include="Content\js\mpres\htmledition\RichBuddy\" />
+    <Folder Include="Content\js\mpres\htmledition\user\" />
+    <Folder Include="Content\js\mpres\htmledition\vote\" />
     <Folder Include="Views\Appmsganalysis\" />
   </ItemGroup>
   <ItemGroup>

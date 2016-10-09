@@ -25,6 +25,8 @@ namespace WeiXinMvcWeb.Models.WeiXinDB
         public string notify_msg { get; set; }
         [StringLength(100)]
         public string user_name { get; set; }
+        [StringLength(100)]
+        public string pwd { get; set; }
         public int is_wx_verify { get; set; }
         public int realname_status { get; set; }
         public int realname_type { get; set; }

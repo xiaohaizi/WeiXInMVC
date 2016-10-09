@@ -3,7 +3,7 @@ define("statistics/user_stat/top.js",["common/wx/top.js","biz_common/moment.js"]
 var t=s("common/wx/top.js"),e=s("biz_common/moment.js"),n=e().add("d",-1).format("YYYY-MM-DD"),a=[{
 id:"user_stat",
 name:"用户增长",
-url: "/misc/useranalysis-"
+url: "/misc/useranalysis?"
 },{
 id:"user_attr",
 name: "用户属性",

@@ -1,0 +1,3 @@
+define("tpl/homepage/importAppmsgList/item.html.js",[],function(){
+return'{each appmsg_list as item idx}\n    <div class="article js_article" data-idx="{idx}" data-aid="{item.aid}">\n        <a class="opr js_del" href="javascript:;" data-idx="{idx}">删除</a>\n        <a class="opr icon14_common sort_gray js_sort_item" style="display:none;" href="javascript:;">排序</a>\n        <p class="title"><a href="{item.link}" target="_blank" data-msgid="{item.appmsgid}" data-idx="{item.itemidx-1}">{item.title}</a></p>\n    </div>\n{/each}\n';
+});
