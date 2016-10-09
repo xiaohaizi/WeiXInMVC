@@ -183,6 +183,7 @@
     <Content Include="Content\css\mpres\htmledition\pagination218878.css" />
     <Content Include="Content\css\mpres\htmledition\stat_overview2f3a2e.css" />
     <Content Include="Content\css\page\page_message2a0043.css" />
+    <Content Include="Content\css\page\page_user2f2f7f.css" />
     <Content Include="Content\css\pagination218878.css" />
     <Content Include="Content\css\vote\vote_edit2f613f.css" />
     <Content Include="Content\css\vote_list2d3016.css" />
@@ -464,10 +465,17 @@
     <Content Include="Content\js\mpres\htmledition\ui\dropdown.html218877.js" />
     <Content Include="Content\js\mpres\htmledition\ui\dropdown218878.js" />
     <Content Include="Content\js\mpres\htmledition\ui\map271dfd.js" />
+    <Content Include="Content\js\mpres\htmledition\user\grouplist_tag.html2e206b.js" />
+    <Content Include="Content\js\mpres\htmledition\user\group_cgi_tag308b2e.js" />
+    <Content Include="Content\js\mpres\htmledition\user\index_tag2f2f7f.js" />
+    <Content Include="Content\js\mpres\htmledition\user\userlist_tag.html2f2f7f.js" />
+    <Content Include="Content\js\mpres\htmledition\user\user_cgi308b2e.js" />
+    <Content Include="Content\js\mpres\htmledition\user\user_cgi_tag308b2e.js" />
     <Content Include="Content\js\mpres\htmledition\user_stat\common2a4e1d.js" />
     <Content Include="Content\js\mpres\htmledition\user_stat\top271dfd.js" />
     <Content Include="Content\js\mpres\htmledition\utils\norefererimg26d05a.js" />
     <Content Include="Content\js\mpres\htmledition\utils\upload2d61e9.js" />
+    <Content Include="Content\js\mpres\htmledition\vote\list3059cb.js" />
     <Content Include="Content\js\mpres\htmledition\wx\ban3025fc.js" />
     <Content Include="Content\js\mpres\htmledition\wx\cgiReport218877.js" />
     <Content Include="Content\js\mpres\htmledition\wx\cgiReport30c893.js" />
@@ -591,6 +599,8 @@
     <Content Include="Views\Advanced\Selfmenu.cshtml" />
     <Content Include="Views\Cgibin\Newoperatevote.cshtml" />
     <Content Include="Views\Cgibin\Message.cshtml" />
+    <Content Include="Views\Cgibin\Messages.cshtml" />
+    <Content Include="Views\Cgibin\User_Tag.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -610,8 +620,6 @@
     <Folder Include="Content\js\mpres\htmledition\plugin2_edit\" />
     <Folder Include="Content\js\mpres\htmledition\plugins\" />
     <Folder Include="Content\js\mpres\htmledition\RichBuddy\" />
-    <Folder Include="Content\js\mpres\htmledition\user\" />
-    <Folder Include="Content\js\mpres\htmledition\vote\" />
     <Folder Include="Views\Appmsganalysis\" />
   </ItemGroup>
   <ItemGroup>

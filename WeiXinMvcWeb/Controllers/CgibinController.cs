@@ -53,5 +53,15 @@ namespace WeiXinMvcWeb.Controllers
         {
             return View();
         }
+
+        public ActionResult Messages()
+        {
+            return View();
+        }
+
+        public ActionResult User_Tag()
+        {
+            return View();
+        }
     }
 }
