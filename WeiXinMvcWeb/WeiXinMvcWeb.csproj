@@ -182,11 +182,21 @@
     <Content Include="Content\css\mpres\htmledition\page_login26f6ea.css" />
     <Content Include="Content\css\mpres\htmledition\pagination218878.css" />
     <Content Include="Content\css\mpres\htmledition\stat_overview2f3a2e.css" />
+    <Content Include="Content\css\page\ad_persons218878.css" />
+    <Content Include="Content\css\page\media_list2f12f7.css" />
     <Content Include="Content\css\page\page_message2a0043.css" />
+    <Content Include="Content\css\page\page_service_package_intro21b651.css" />
     <Content Include="Content\css\page\page_user2f2f7f.css" />
     <Content Include="Content\css\pagination218878.css" />
+    <Content Include="Content\css\setting\jquery.Jcrop.min218877.css" />
+    <Content Include="Content\css\setting\setting_common25404f.css" />
+    <Content Include="Content\css\setting\setting_index306a17.css" />
+    <Content Include="Content\css\style-agency.ab3f3bad.css" />
+    <Content Include="Content\css\style-moment-edit-template.80ab8f92.css" />
     <Content Include="Content\css\vote\vote_edit2f613f.css" />
     <Content Include="Content\css\vote_list2d3016.css" />
+    <Content Include="Content\css\wxverify\detail2968da.css" />
+    <Content Include="Content\css\wxverify\enterprise_intro2c75dd.css" />
     <Content Include="Content\images\base_z2b638f.png" />
     <Content Include="Content\images\bg_login_banner_v5218877.jpg" />
     <Content Include="Content\images\bg_logo2491a6.png" />
@@ -197,9 +207,14 @@
     <Content Include="Content\images\layout_head_z26f6ea.png" />
     <Content Include="Content\images\menu\icon_menu_function.png" />
     <Content Include="Content\images\page_login_z260591.png" />
+    <Content Include="Content\images\page_service_package_intro_z21b651.png" />
     <Content Include="Content\images\vote_empty236287.png" />
+    <Content Include="Content\js\app-2cd8742134.js" />
+    <Content Include="Content\js\lib-4cfcf54380.js" />
     <Content Include="Content\js\mpres\htmledition\add\member_info_flag25676c.js" />
     <Content Include="Content\js\mpres\htmledition\add\msg_operate_type_html2ebf96.js" />
+    <Content Include="Content\js\mpres\htmledition\ad_system\helper.html222ca2.js" />
+    <Content Include="Content\js\mpres\htmledition\ad_system\helper222ca2.js" />
     <Content Include="Content\js\mpres\htmledition\attr\attr-bars271dfd.js" />
     <Content Include="Content\js\mpres\htmledition\attr\attr-cities27cccc.js" />
     <Content Include="Content\js\mpres\htmledition\attr\attr-provinces27cccc.js" />
@@ -207,6 +222,7 @@
     <Content Include="Content\js\mpres\htmledition\attr\attr-table27cccc.js" />
     <Content Include="Content\js\mpres\htmledition\attr\attr-types280571.js" />
     <Content Include="Content\js\mpres\htmledition\attr\attr27cccc.js" />
+    <Content Include="Content\js\mpres\htmledition\biz_common\cookie26d05a.js" />
     <Content Include="Content\js\mpres\htmledition\biz_common\jquery.validate26d05a.js" />
     <Content Include="Content\js\mpres\htmledition\biz_common\moment26d05a.js" />
     <Content Include="Content\js\mpres\htmledition\biz_common\xss26d05a.js" />
@@ -242,6 +258,7 @@
     <Content Include="Content\js\mpres\htmledition\jquery.ui\jquery.ui.sortable26d05a.js" />
     <Content Include="Content\js\mpres\htmledition\jserr2fa4d8.js" />
     <Content Include="Content\js\mpres\htmledition\lib\highcharts218878.js" />
+    <Content Include="Content\js\mpres\htmledition\lib\jquery.Jcrop218877.js" />
     <Content Include="Content\js\mpres\htmledition\lib\json218878.js" />
     <Content Include="Content\js\mpres\htmledition\lib\MockJax218877.js" />
     <Content Include="Content\js\mpres\htmledition\lib\soundmanager226f6ea.js" />
@@ -257,6 +274,7 @@
     <Content Include="Content\js\mpres\htmledition\mass\sendqueue_popup.html29ab02.js" />
     <Content Include="Content\js\mpres\htmledition\media\appmsg.html2ff3d7.js" />
     <Content Include="Content\js\mpres\htmledition\media\appmsg301ae4.js" />
+    <Content Include="Content\js\mpres\htmledition\media\appmsg_list_v22ecf93.js" />
     <Content Include="Content\js\mpres\htmledition\media\appmsg_temp_url2ebf96.js" />
     <Content Include="Content\js\mpres\htmledition\media\audio.html2880f5.js" />
     <Content Include="Content\js\mpres\htmledition\media\audio26f6ea.js" />
@@ -269,10 +287,13 @@
     <Content Include="Content\js\mpres\htmledition\media\imageDialog2f7de7.js" />
     <Content Include="Content\js\mpres\htmledition\media\img.html2f613f.js" />
     <Content Include="Content\js\mpres\htmledition\media\img29ab02.js" />
+    <Content Include="Content\js\mpres\htmledition\media\img_list2f613f.js" />
+    <Content Include="Content\js\mpres\htmledition\media\list26f6ea.js" />
     <Content Include="Content\js\mpres\htmledition\media\media_cgi2f6327.js" />
     <Content Include="Content\js\mpres\htmledition\media\media_dialog304d55.js" />
     <Content Include="Content\js\mpres\htmledition\media\multipleAppmsg262dd6.js" />
     <Content Include="Content\js\mpres\htmledition\media\multiple_appmsg.html301ae4.js" />
+    <Content Include="Content\js\mpres\htmledition\media\picture_preview218877.js" />
     <Content Include="Content\js\mpres\htmledition\media\qqmusicaudio.html25df2d.js" />
     <Content Include="Content\js\mpres\htmledition\media\simpleAppmsg2ebf96.js" />
     <Content Include="Content\js\mpres\htmledition\media\simple_appmsg.html301ae4.js" />
@@ -302,6 +323,7 @@
     <Content Include="Content\js\mpres\htmledition\qq\emoji2b5ae0.js" />
     <Content Include="Content\js\mpres\htmledition\qq\events2a4e1d.js" />
     <Content Include="Content\js\mpres\htmledition\qq\mask218877.js" />
+    <Content Include="Content\js\mpres\htmledition\qq\queryString218877.js" />
     <Content Include="Content\js\mpres\htmledition\raphael2.0-min271dfd.js" />
     <Content Include="Content\js\mpres\htmledition\resp_types\base_resp.rt2c4ded.js" />
     <Content Include="Content\js\mpres\htmledition\resp_types\file_cnt.rt2c4ded.js" />
@@ -313,6 +335,7 @@
     <Content Include="Content\js\mpres\htmledition\richEditor\msgSender2b2fad.js" />
     <Content Include="Content\js\mpres\htmledition\richEditor\msgSender309c59.js" />
     <Content Include="Content\js\mpres\htmledition\richEditor\wysiwyg2bff4a.js" />
+    <Content Include="Content\js\mpres\htmledition\safe\index305364.js" />
     <Content Include="Content\js\mpres\htmledition\safe\Mobile2cc465.js" />
     <Content Include="Content\js\mpres\htmledition\safe\safe_check2ea0fb.js" />
     <Content Include="Content\js\mpres\htmledition\safe\Scan305364.js" />
@@ -441,12 +464,15 @@
     <Content Include="Content\js\mpres\htmledition\tpl9\misc-date.html2bff4a.js" />
     <Content Include="Content\js\mpres\htmledition\tpl9\report_util2edfc1.js" />
     <Content Include="Content\js\mpres\htmledition\tpl\dialog.html253a4f.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl\Idcheck.html218877.js" />
     <Content Include="Content\js\mpres\htmledition\tpl\msgListItem.html2e42db.js" />
     <Content Include="Content\js\mpres\htmledition\tpl\pagebar.html218877.js" />
     <Content Include="Content\js\mpres\htmledition\tpl\popover.html300498.js" />
     <Content Include="Content\js\mpres\htmledition\tpl\popup.html253a4f.js" />
     <Content Include="Content\js\mpres\htmledition\tpl\popup.html30bdda.js" />
     <Content Include="Content\js\mpres\htmledition\tpl\preview.html29f4d5.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl\progress.html2a4e1d.js" />
+    <Content Include="Content\js\mpres\htmledition\tpl\qrcheck.html302b6e.js" />
     <Content Include="Content\js\mpres\htmledition\tpl\safe_check.html2ea0fb.js" />
     <Content Include="Content\js\mpres\htmledition\tpl\searchClassifyInput.html280571.js" />
     <Content Include="Content\js\mpres\htmledition\tpl\searchInput.html26a308.js" />
@@ -479,11 +505,15 @@
     <Content Include="Content\js\mpres\htmledition\wx\ban3025fc.js" />
     <Content Include="Content\js\mpres\htmledition\wx\cgiReport218877.js" />
     <Content Include="Content\js\mpres\htmledition\wx\cgiReport30c893.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\Idcheck29f8fd.js" />
     <Content Include="Content\js\mpres\htmledition\wx\inputCounter2a0043.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\liveTooltip29d335.js" />
     <Content Include="Content\js\mpres\htmledition\wx\overseasList2e2bf4.js" />
     <Content Include="Content\js\mpres\htmledition\wx\pagebar2bff4a.js" />
     <Content Include="Content\js\mpres\htmledition\wx\popover300498.js" />
     <Content Include="Content\js\mpres\htmledition\wx\preview2a26ac.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\progress2a4e1d.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\qrcheck2940d6.js" />
     <Content Include="Content\js\mpres\htmledition\wx\region2c2080.js" />
     <Content Include="Content\js\mpres\htmledition\wx\remark264f38.js" />
     <Content Include="Content\js\mpres\htmledition\wx\report_util2edfc1.js" />
@@ -502,6 +532,7 @@
     <Content Include="Content\js\mpres\htmledition\wx\verifycode293560.js" />
     <Content Include="Content\js\mpres\htmledition\wx\widgetBridge218877.js" />
     <Content Include="Content\js\mpres\htmledition\wx\wxt218877.js" />
+    <Content Include="Content\js\_areas_level.js" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -523,7 +554,9 @@
     <Compile Include="Controllers\AdvancedController.cs" />
     <Compile Include="Controllers\CgibinController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MerchantController.cs" />
     <Compile Include="Controllers\MiscController.cs" />
+    <Compile Include="Controllers\PromotionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -571,6 +604,7 @@
     <Compile Include="Models\WeiXinDB\Wb_Info.cs" />
     <Compile Include="Models\WeiXinDB\WeiXinModelDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controllers\PartController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -601,6 +635,17 @@
     <Content Include="Views\Cgibin\Message.cshtml" />
     <Content Include="Views\Cgibin\Messages.cshtml" />
     <Content Include="Views\Cgibin\User_Tag.cshtml" />
+    <Content Include="Views\Shared\Menu.cshtml" />
+    <Content Include="Views\Cgibin\Appmsg.cshtml" />
+    <Content Include="Views\Cgibin\Filepage.cshtml" />
+    <Content Include="Views\Cgibin\Filepage3.cshtml" />
+    <Content Include="Views\Cgibin\Frame.cshtml" />
+    <Content Include="Views\Promotion\Readtemplate.cshtml" />
+    <Content Include="Views\Merchant\Ad_Host_Index.cshtml" />
+    <Content Include="Views\Cgibin\Settingpage.cshtml" />
+    <Content Include="Views\Merchant\Store.cshtml" />
+    <Content Include="Views\Cgibin\Safecenterstatus.cshtml" />
+    <Content Include="Views\Cgibin\Illegalrecord.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -620,7 +665,11 @@
     <Folder Include="Content\js\mpres\htmledition\plugin2_edit\" />
     <Folder Include="Content\js\mpres\htmledition\plugins\" />
     <Folder Include="Content\js\mpres\htmledition\RichBuddy\" />
+    <Folder Include="Content\js\mpres\htmledition\setting\" />
+    <Folder Include="Content\js\mpres\htmledition\violation\" />
+    <Folder Include="Content\js\mpres\htmledition\wxverify\" />
     <Folder Include="Views\Appmsganalysis\" />
+    <Folder Include="Views\Part\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

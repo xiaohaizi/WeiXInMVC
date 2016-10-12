@@ -63,5 +63,41 @@ namespace WeiXinMvcWeb.Controllers
         {
             return View();
         }
+
+
+        public ActionResult Appmsg()
+        {
+            return View();
+        }
+
+        public ActionResult Filepage()
+        {
+            return View();
+        }
+
+        public ActionResult Filepage3()
+        {
+            return View();
+        }
+
+        public ActionResult Frame()
+        {
+            return View();
+        }
+
+        public ActionResult Settingpage()
+        {
+            return View();
+        }
+
+        public ActionResult Safecenterstatus()
+        {
+            return View();
+        }
+
+        public ActionResult Illegalrecord()
+        {
+            return View();
+        }
     }
 }
