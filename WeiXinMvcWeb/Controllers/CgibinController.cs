@@ -16,6 +16,11 @@ namespace WeiXinMvcWeb.Controllers
             return View();
         }
 
+        public ActionResult Home()
+        {
+            return View();
+        }
+
         [HttpPost]
         public string Login(string username,string pwd,string f)
         {
@@ -28,7 +33,7 @@ namespace WeiXinMvcWeb.Controllers
             {
               var user=  weixin.User_Infos.Where(x => x.user_name == username && x.pwd == pwd).FirstOrDefault();
                   base_resp.ret  = 0;
-                base_resp.redirect_url = "/misc/useranalysis?token=1493886297&lang=zh_CN";
+                base_resp.redirect_url = "/cgibin/home?t=home/index&lang=zh_CN&token=1941453980";
                 // redirect_url
             }
            

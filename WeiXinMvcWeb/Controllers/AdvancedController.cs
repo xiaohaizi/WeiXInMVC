@@ -16,6 +16,8 @@ namespace WeiXinMvcWeb.Controllers
 
         public ActionResult Autoreply()
         {
+           
+            ViewBag.MenuItem = "autoreply";
             return View();
         }
 

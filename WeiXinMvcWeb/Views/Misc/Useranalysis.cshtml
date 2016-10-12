@@ -2,54 +2,7 @@
 <div id="body" class="body page_stat page_user">
     <div id="js_container_box" class="container_box cell_layout side_l">
         <div class="col_side">
-            <div class="menu_box" id="menuBar">
-                <dl class="menu no_extra">
-                    <dt class="menu_title"><i class="icon_menu" style="background: url(        https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_function.png        ) no-repeat;"></i>功能                </dt>
-                    <dd class="menu_item "><a data-id="10005" href="/cgi-bin/masssendpage-t=mass/send&token=1988941199&lang=zh_CN">群发功能        </a></dd>
-                    <dd class="menu_item "><a data-id="10006" href="#">自动回复        </a></dd>
-                    <dd class="menu_item "><a data-id="10007" href="#">自定义菜单        </a></dd>
-                    <dd class="menu_item "><a data-id="10038" href="#">投票管理<i class="icon_common new"></i>        </a></dd>
-                    <dd class='menu_plugins'><a class='btn_plugins_add' data-id='10025' href="#">添加功能插件</a></dd>
-                </dl>
-                <dl class="menu ">
-                    <dt class="menu_title clickable"><a href="#"><i class="icon_menu" style="background: url(        https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_wxpay_v2.png        ) no-repeat;"></i>微信支付            </a></dt>
-                </dl>
-                <dl class="menu ">
-                    <dt class="menu_title"><i class="icon_menu" style="background: url(        https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_management.png        ) no-repeat;"></i>管理                </dt>
-                    <dd class="menu_item "><a data-id="10012" href="#">消息管理        </a></dd>
-                    <dd class="menu_item "><a data-id="10013" href="#">用户管理        </a></dd>
-                    <dd class="menu_item "><a data-id="10014" href="#">素材管理        </a></dd>
-                </dl>
-                <dl class="menu ">
-                    <dt class="menu_title"><i class="icon_menu" style="background: url(        https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_ad.png        ) no-repeat;"></i>推广                </dt>
-                    <dd class="menu_item "><a data-id="10026" href="#">广告主        </a></dd>
-                    <dd class="menu_item "><a data-id="10027" href="#">流量主        </a></dd>
-                </dl>
-                <dl class="menu ">
-
-                    <dt class="menu_title"><i class="icon_menu" style="background: url(        https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_statistics.png        ) no-repeat;"></i>统计                </dt>
-                    <dd class="menu_item selected"><a data-id="10015" href="/misc/useranalysis?token=1493886297&lang=zh_CN">用户分析        </a></dd>
-                    <dd class="menu_item "><a data-id="10016" href="/misc/appmsganalysis?action=all&order_direction=2&token=1493886297&lang=zh_CN">图文分析        </a></dd>
-                    <dd class="menu_item "><a data-id="10047" href="/misc/menuanalysis?token=1493886297&lang=zh_CN">菜单分析        </a></dd>
-                    <dd class="menu_item "><a data-id="10017" href="/misc/messageanalysis?type=daily&t=statistics/msg&token=1493886297&lang=zh_CN">消息分析        </a></dd>
-                    <dd class="menu_item "><a data-id="10018" href="/misc/interfaceanalysis?type=daily&token=1493886297&lang=zh_CN">接口分析        </a></dd>
-                    <dd class="menu_item "><a data-id="10054" href="/misc/webpageanalysis?action=listintfstat&token=1493886297&lang=zh_CN">网页分析<i class="icon_common new"></i>        </a></dd>
-                </dl>
-                <dl class="menu ">
-                    <dt class="menu_title"><i class="icon_menu" style="background: url(        https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_setup.png        ) no-repeat;"></i>设置                </dt>
-                    <dd class="menu_item "><a data-id="10019" href="#">公众号设置        </a></dd>
-                    <dd class="menu_item "><a data-id="10020" href="#">微信认证        </a></dd>
-                    <dd class="menu_item "><a data-id="10022" href="#">安全中心        </a></dd>
-                    <dd class="menu_item "><a data-id="10045" href="#">违规记录        </a></dd>
-                </dl>
-                <dl class="menu ">
-                    <dt class="menu_title"><i class="icon_menu" style="background: url(        https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_developer.png        ) no-repeat;"></i>开发                </dt>
-                    <dd class="menu_item "><a data-id="10048" href="#">基本配置        </a></dd>
-                    <dd class="menu_item "><a data-id="10049" href="#">开发者工具        </a></dd>
-                    <dd class="menu_item "><a data-id="10050" href="#">运维中心        </a></dd>
-                    <dd class="menu_item "><a data-id="10051" href="#">接口权限        </a></dd>
-                </dl>
-            </div>
+            @Html.Partial("Menu");
             <script type="text/javascript">
                     var _new_comment_num = "" || 0;
             </script>

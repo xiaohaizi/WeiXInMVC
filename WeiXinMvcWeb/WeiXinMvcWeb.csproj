@@ -184,6 +184,7 @@
     <Content Include="Content\css\mpres\htmledition\stat_overview2f3a2e.css" />
     <Content Include="Content\css\page\ad_persons218878.css" />
     <Content Include="Content\css\page\media_list2f12f7.css" />
+    <Content Include="Content\css\page\page_index306a17.css" />
     <Content Include="Content\css\page\page_message2a0043.css" />
     <Content Include="Content\css\page\page_service_package_intro21b651.css" />
     <Content Include="Content\css\page\page_user2f2f7f.css" />
@@ -206,6 +207,7 @@
     <Content Include="Content\images\getheadimg.png" />
     <Content Include="Content\images\layout_head_z26f6ea.png" />
     <Content Include="Content\images\menu\icon_menu_function.png" />
+    <Content Include="Content\images\page_index_z25b76d.png" />
     <Content Include="Content\images\page_login_z260591.png" />
     <Content Include="Content\images\page_service_package_intro_z21b651.png" />
     <Content Include="Content\images\vote_empty236287.png" />
@@ -646,6 +648,7 @@
     <Content Include="Views\Merchant\Store.cshtml" />
     <Content Include="Views\Cgibin\Safecenterstatus.cshtml" />
     <Content Include="Views\Cgibin\Illegalrecord.cshtml" />
+    <Content Include="Views\Cgibin\Home.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -659,6 +662,7 @@
     <Folder Include="Content\js\mpres\htmledition\advanced\" />
     <Folder Include="Content\js\mpres\htmledition\ban\" />
     <Folder Include="Content\js\mpres\htmledition\homepage\" />
+    <Folder Include="Content\js\mpres\htmledition\home\" />
     <Folder Include="Content\js\mpres\htmledition\importAppmsgList\" />
     <Folder Include="Content\js\mpres\htmledition\input\" />
     <Folder Include="Content\js\mpres\htmledition\ivr\" />
