@@ -36,6 +36,76 @@ namespace WeiXinMvcWeb.Controllers
         public ActionResult Useranalysis_Attr()
         {
             ViewBag.Title = "用户分析";
+            string begin_date = Request.Params["begin_date"];
+            string end_date = Request.Params["end_date"];
+            DateTime bdate = Convert.ToDateTime(begin_date);
+            DateTime edate = Convert.ToDateTime(end_date);
+            var DeviceList = weiXin.Devices.Where(x => x.DTime >= bdate && x.DTime <= edate).ToList();
+            var GendersList = weiXin.Genders.Where(x => x.DTime >= bdate && x.DTime <= edate).ToList();
+            var LangList = weiXin.Langs.Where(x => x.DTime >= bdate && x.DTime <= edate).ToList();
+            var PlatformList = weiXin.Platforms.Where(x => x.DTime >= bdate && x.DTime <= edate).ToList();
+            var RegionList = weiXin.Regions.Where(x => x.DTime >= bdate && x.DTime <= edate).ToList();
+            string temp = " name: \"{0}\",value: \"{1}\", count: +(\"{2}\") || 0";
+            string temp1 = " name: \"{0}\"||\"未知\",value: \"{1}\", count: +(\"{2}\") || 0";
+            string temp2 = "region: $1 parent_region_id: \"{0}\", region_id: \"{1}\", region_name: \"{2}\"   $2,count: +(\"{3}\") || 0"; 
+            string date = "[   { date: \"" + begin_date + "\",";
+            if (DeviceList.Count <= 0 && PlatformList.Count <= 0 && RegionList.Count <= 0)
+            {
+                date = "[]";
+            }
+            else
+            {
+               
+                date = date + "devices:[";
+
+                foreach (var dItem in DeviceList)
+                {
+
+                    date += "{value:\"" + dItem.DeviceValue + "\",count:+(\"" + dItem.DeviceCount + "\")||0},";
+                }
+                date = date.TrimEnd(',');
+                date = date + "],  genders: [";
+
+                foreach (var rItem in GendersList)
+                {
+                    string rt = "{" + string.Format(temp, rItem.GenderName, rItem.GenderValue, rItem.GenderCount) + "}";
+                    date = date + rt + ",";
+
+
+                }
+                date = date.TrimEnd(',');
+                date = date + "],    langs: [";
+
+                foreach (var lItem in LangList)
+                {
+                    string rt = "{" + string.Format(temp, lItem.LangName, lItem.LangValue, lItem.LangCount) + "}";
+                    date = date + rt + ",";
+
+
+                }
+                date = date.TrimEnd(',');
+                date = date + "],    platforms: [";
+
+                foreach (var lItem in PlatformList)
+                {
+                    string rt = "{" + string.Format(temp1, lItem.PlatformName, lItem.PlatformValue, lItem.PlatformCount) + "}";
+                    date = date + rt + ",";
+                }
+
+                date = date.TrimEnd(',');
+                date = date + "],    regions: [";
+                foreach (var lItem in RegionList)
+                {
+                    string s1 = string.Format(temp2, lItem.Parent_Region_Id, lItem.Region_Id, lItem.Region_Name, lItem.RegionCount);
+                    string rt = "{" + s1.Replace("$1", "{").Replace("$2", "}") + "}";
+                    date = date + rt + ",";
+                }
+                date = date + "{region: {  parent_region_id: \"-1\", region_id: \"all\", region_name: \"全国\"}, count: +(\"0\") || 0 }" + ",";
+                //end
+                date = date.TrimEnd(',');
+                date = date + "]          }                 ]";
+            }
+            ViewBag.cgiData = date;
             return View();
         }
 
@@ -62,7 +132,7 @@ namespace WeiXinMvcWeb.Controllers
             CategoryList catlist1 = new CategoryList();
             catlist.list = new List<User_SourceItem>();
             // User_ScoureList userscoucreList = new User_ScoureList();
-            catlist.list = weiXin.User_SourceItems.Where(x=>x.date>=begin_date&&x.date<=end_date).ToList();
+            catlist.list = weiXin.User_SourceItems.Where(x => x.date >= begin_date && x.date <= end_date).ToList();
             catlist1.list = weiXin.User_SourceItems.Where(x => x.date >= begin_date && x.date <= end_date).ToList();
             // catlist.list.Add(userscoucreList);
             returnModel.category_list.Add(catlist);
@@ -148,7 +218,7 @@ namespace WeiXinMvcWeb.Controllers
             MenuanalysisReturn menuReturn = new MenuanalysisReturn();
             menuReturn.InitBaseInfo();
 
-            menuList.list = weiXin.Menu_Summares.Where(x=>x.ref_date>=begin_date&&x.ref_date<=end_date).ToList();
+            menuList.list = weiXin.Menu_Summares.Where(x => x.ref_date >= begin_date && x.ref_date <= end_date).ToList();
             menuReturn.menu_summary = menuList;
             s = JsonConvert.SerializeObject(menuReturn, iso);
             return s;
@@ -182,10 +252,10 @@ namespace WeiXinMvcWeb.Controllers
         public string InterfaceanalysisAction(DateTime begin_date, DateTime end_date, string type, string token, string lang, string f, string random)
         {
             string s = "";
-            
+
             InterfaceanalysisReturn interModel = new InterfaceanalysisReturn();
             interModel.InitBaseInfo();
-            interModel.daily_list = weiXin.Dailes.Where(x=>x.date>=begin_date&&x.date<=end_date).ToList();
+            interModel.daily_list = weiXin.Dailes.Where(x => x.date >= begin_date && x.date <= end_date).ToList();
             s = JsonConvert.SerializeObject(interModel, iso);
             return s;
         }
@@ -198,26 +268,26 @@ namespace WeiXinMvcWeb.Controllers
 
         //action=listintfstat&begin_date=20160912&end_date=20160923&func_name=config&order_key=0&order_direction=2&begin=0&count=14&token=444349084&lang=zh_CN&f=json&ajax=1&random=0.472395747566426
         [HttpGet]
-        public string WebpageanalysisAction(string action,string  begin_date,string end_date,string func_name,string order_key,string order_direction,int  begin,int count,string token,string lang,string f,int ajax,string random)
+        public string WebpageanalysisAction(string action, string begin_date, string end_date, string func_name, string order_key, string order_direction, int begin, int count, string token, string lang, string f, int ajax, string random)
         {
             string s = "";
             //20160911
             string by = begin_date.Substring(0, 4);
             string bm = begin_date.Substring(4, 2);
-            string bd = begin_date.Substring(6,2);
+            string bd = begin_date.Substring(6, 2);
             string ey = end_date.Substring(0, 4);
             string em = end_date.Substring(4, 2);
             string ed = end_date.Substring(6, 2);
-            DateTime beginTime = Convert.ToDateTime(by+"-"+ bm+"-"+ bd);
+            DateTime beginTime = Convert.ToDateTime(by + "-" + bm + "-" + bd);
             DateTime endTime = Convert.ToDateTime(ey + "-" + em + "-" + ed);
-            
+
             WebpageanalysisRetrun webModel = new WebpageanalysisRetrun();
             webModel.InitBaseInfo();
 
-            webModel.one_intf_stat_list= weiXin.Intf_Stats.Where(x => x.name == "config").ToList();
-            webModel.all_intf_stat_list= weiXin.Intf_Stats.Where(x => x.name == "getNetworkType").ToList();
+            webModel.one_intf_stat_list = weiXin.Intf_Stats.Where(x => x.name == "config").ToList();
+            webModel.all_intf_stat_list = weiXin.Intf_Stats.Where(x => x.name == "getNetworkType").ToList();
             webModel.total = webModel.one_intf_stat_list.Count;
-            s = JsonConvert.SerializeObject(webModel,iso);
+            s = JsonConvert.SerializeObject(webModel, iso);
             return s;
         }
 

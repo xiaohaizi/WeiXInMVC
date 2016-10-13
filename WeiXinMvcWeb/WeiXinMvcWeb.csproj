@@ -570,6 +570,14 @@
     <Compile Include="Migrations\201609221147105_AddUser.Designer.cs">
       <DependentUpon>201609221147105_AddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610131212429_InitialCreate1.cs" />
+    <Compile Include="Migrations\201610131212429_InitialCreate1.Designer.cs">
+      <DependentUpon>201610131212429_InitialCreate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610131256143_InitialCreate2.cs" />
+    <Compile Include="Migrations\201610131256143_InitialCreate2.Designer.cs">
+      <DependentUpon>201610131256143_InitialCreate2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppmsganalysisReportRetrun.cs" />
     <Compile Include="Models\AppmsganalysisRetrun.cs" />
@@ -577,6 +585,7 @@
     <Compile Include="Models\Base_Acl.cs" />
     <Compile Include="Models\CategoryList.cs" />
     <Compile Include="Models\Class1.cs" />
+    <Compile Include="Models\WeiXinDB\Device.cs" />
     <Compile Include="Models\FdevreportReturn.cs" />
     <Compile Include="Models\Func_Ban_Info.cs" />
     <Compile Include="Models\InterfaceanalysisReturn.cs" />
@@ -595,8 +604,12 @@
     <Compile Include="Models\WebpageanalysisRetrun.cs" />
     <Compile Include="Models\WeiXinDB\AppmsgItem.cs" />
     <Compile Include="Models\WeiXinDB\Daily.cs" />
+    <Compile Include="Models\WeiXinDB\Gender.cs" />
     <Compile Include="Models\WeiXinDB\Intf_Stat.cs" />
+    <Compile Include="Models\WeiXinDB\Lang.cs" />
     <Compile Include="Models\WeiXinDB\Menu_Summary.cs" />
+    <Compile Include="Models\WeiXinDB\Platform.cs" />
+    <Compile Include="Models\WeiXinDB\Region.cs" />
     <Compile Include="Models\WeiXinDB\User_SourceItem.cs" />
     <Compile Include="Models\WeiXinDB\Base_Resp.cs" />
     <Compile Include="Models\WeiXinDB\Nav.cs" />
@@ -684,6 +697,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609221147105_AddUser.resx">
       <DependentUpon>201609221147105_AddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610131212429_InitialCreate1.resx">
+      <DependentUpon>201610131212429_InitialCreate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610131256143_InitialCreate2.resx">
+      <DependentUpon>201610131256143_InitialCreate2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

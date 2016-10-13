@@ -30,8 +30,14 @@
         public virtual DbSet<Menu_Summary> Menu_Summares { get; set; }
         public virtual DbSet<Daily> Dailes { get; set; }
         public virtual DbSet<Intf_Stat> Intf_Stats { get; set; }
+        public virtual DbSet<Device> Devices { get; set; }
+        public virtual DbSet<Region> Regions { get; set; }
+        public virtual DbSet<Platform> Platforms { get; set; }
+        public virtual DbSet<Lang> Langs { get; set; }
+        public virtual DbSet<Gender> Genders { get; set; }
 
-        
+
+
 
 
 
