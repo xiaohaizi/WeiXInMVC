@@ -188,7 +188,7 @@ compareChartData:rt[nt.source]
 tableData:it[tt],
 compareTableData:ct[tt]
 },nt),U.initDownload({
-baseCgi:"/misc/appmsganalysis?action=report&"
+    baseCgi: "/misc/appmsganalysis_report?action=report&"
 },nt),$("#js_share_table").hide();
 }
 function w(){

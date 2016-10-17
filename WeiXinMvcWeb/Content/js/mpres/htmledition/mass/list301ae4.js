@@ -250,7 +250,7 @@ click:function(){
 a.suc("正在补发"),u.masssend({
 msgid:t
 },function(){
-location.href=wx.url("/cgi-bin/masssendpage?t=mass/list&action=history&begin=0&count=10");
+location.href=wx.url("/cgibin/masssendpage?t=mass/list&action=history&begin=0&count=10");
 }),this.remove();
 },
 type:"primary"
@@ -313,7 +313,7 @@ initShowPage:n,
 totalItemsNum:e,
 callback:function(e){
 var s=e.currentPage;
-if(s!=n)return s--,location.href=wx.url("/cgi-bin/masssendpage?t=mass/list&action=history&begin=%s&count=%s".sprintf(t*s,t)),
+if(s!=n)return s--,location.href=wx.url("/cgibin/masssendpage?t=mass/list&action=history&begin=%s&count=%s".sprintf(t*s,t)),
 !1;
 }
 });

@@ -17,5 +17,7 @@ namespace WeiXinMvcWeb.Models
         public int DeviceCount { get; set; }
         public DateTime DTime { get; set; }
         public int UserID { get; set; }
+        [MaxLength(100)]
+        public string msgid { get; set; }
     }
 }

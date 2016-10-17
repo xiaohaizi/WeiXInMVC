@@ -104,5 +104,10 @@ namespace WeiXinMvcWeb.Controllers
         {
             return View();
         }
+
+       public ActionResult Masssendpage_t()
+        {
+            return View();
+        }
     }
 }

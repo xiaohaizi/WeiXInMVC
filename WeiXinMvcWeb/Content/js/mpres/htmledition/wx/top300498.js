@@ -42,7 +42,7 @@ url:"/cgi-bin/copyrightlib?action=reprint_article&begin=0&count=10&auth_status=0
 },{
 id:"list",
 name:"已发送",
-url:"/cgi-bin/masssendpage-t=mass/list&action=history&begin=0&count=10"
+url:"/cgibin/masssendpage_t?t=mass/list&action=history&begin=0&count=10"
 }],
 message:[{
 id:"total",

@@ -5,7 +5,7 @@
       {
         "name": "功能",
         "logo_url": "https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_function
-        .png","new_flag":0,"nav_item":[{"id":10005,"name":"群发功能","url":"/cgi-bin/masssendpage?t=mass/send",
+        .png","new_flag":0,"nav_item":[{"id":10005,"name":"群发功能","url":"/cgibin/masssendpage?t=mass/send",
         "new_flag": 0,
         "new_seq": 0
       },

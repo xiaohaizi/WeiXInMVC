@@ -21,5 +21,7 @@ namespace WeiXinMvcWeb.Models.WeiXinDB
         public DateTime DTime { get; set; }
         public int UserID { get; set; }
         public int RegionCount { get; set; }
+        [MaxLength(100)]
+        public string msgid { get; set; }
     }
 }

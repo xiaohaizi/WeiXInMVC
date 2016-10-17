@@ -8,7 +8,7 @@
      <dt class="menu_title">       
          <i class="icon_menu" style="background:url(        https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_function.png        ) no-repeat;">    </i>
         功能          
-            </dt> <dd class="menu_item @(controllerName == "masssendpage"?ViewBag.Select :"")">
+            </dt> <dd class="menu_item @(controllerName == "masssendpage"?ViewBag.Select :"") @(controllerName == "masssendpage_t"?ViewBag.Select :"")">
         <a data-id="10005" href="/cgibin/masssendpage?t=mass/send&token=1941453980&lang=zh_CN">
         群发功能        </a></dd>
     <dd class="menu_item @(controllerName == "autoreply"?ViewBag.Select :"")">
@@ -56,10 +56,10 @@
 
         <dt class="menu_title"><i class="icon_menu" style="background: url(        https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_statistics.png        ) no-repeat;"></i>
          统计                </dt>
-        <dd class="menu_item @(controllerName == "useranalysis"?ViewBag.Select :"") @(controllerName == "useranalysis_atrr"?ViewBag.Select :"")">
+        <dd class="menu_item @(controllerName == "useranalysis"?ViewBag.Select :"") @(controllerName == "useranalysis_attr"?ViewBag.Select :"")">
          <a data-id="10015" href="/misc/useranalysis?token=1493886297&lang=zh_CN">
             用户分析        </a></dd>
-        <dd class="menu_item @(controllerName == "appmsganalysis"?ViewBag.Select :"")">
+        <dd class="menu_item @(controllerName == "appmsganalysis"?ViewBag.Select :"") @(controllerName == "appmsganalysis_report"?ViewBag.Select :"")">
             <a data-id="10016" href="/misc/appmsganalysis?action=all&order_direction=2&token=1493886297&lang=zh_CN">
             图文分析        </a>
         </dd>

@@ -436,7 +436,7 @@ V.btn(!0);
 },
 send:function(t){
 $(".js_warn").hide(),c.masssend(W.postData,function(){
-I.html("").hide(),E=null,t||(location.href=wx.url("/cgi-bin/masssendpage?t=mass/list&action=history&begin=0&count=10"));
+I.html("").hide(),E=null,t||(location.href=wx.url("/cgibin/masssendpage?t=mass/list&action=history&begin=0&count=10"));
 },function(t){
 if(V.btn(!0),t&&t.base_resp){
 var e=t.base_resp.ret;

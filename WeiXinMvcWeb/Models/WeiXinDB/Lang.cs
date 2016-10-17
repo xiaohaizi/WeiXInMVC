@@ -19,5 +19,7 @@ namespace WeiXinMvcWeb.Models.WeiXinDB
         public int LangCount { get; set; }
         public DateTime DTime { get; set; }
         public int UserID { get; set; }
+        [MaxLength(100)]
+        public string msgid { get; set; }
     }
 }
