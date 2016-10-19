@@ -1,4 +1,7 @@
-﻿<link href="~/Content/css/page/mass_list2f613f.css" rel="stylesheet" />
+﻿@{ 
+    
+}
+<link href="~/Content/css/page/mass_list2f613f.css" rel="stylesheet" />
 <link href="~/Content/css/cgi-bin/cardticket/richvideo2b638f.css" rel="stylesheet" />
 <link href="~/Content/css/cgi-bin/cardticket/media2f624f.css" rel="stylesheet" />
 <link href="~/Content/css/cgi-bin/cardticket/pagination218878.css" rel="stylesheet" />
@@ -22,422 +25,69 @@
                                 <td class="table_cell tl">发送状态</td>
                                 <td class="table_cell mass_info last_child">发送设置</td>
                             </tr>
+                            @{
+                                foreach (var  item in ( ViewBag.MsgList as List<WeiXinMvcWeb.Models.WeiXinDB.MsgData>))
+                                {
+                                   // item.
+                                    <tr class="mass_item" id="massItem400826785">
+                                        <td class="table_cell tl mass_content">
 
-                            <tr class="mass_item" id="massItem400826785">
-                                <td class="table_cell tl mass_content">
+                                            <div id="file400826785" data-id="400826785" class="mass_wrp  ">
+                                                <div class="multiple_appmsg_wrp">
 
-                                    <div id="file400826785" data-id="400826785" class="mass_wrp  ">
-                                        <div class="multiple_appmsg_wrp">
+                                                    <div class="appmsgSendedItem multiple_appmsg">
 
-                                            <div class="appmsgSendedItem multiple_appmsg">
+                                                        <a class="title_wrp" href="http://mp.weixin.qq.com/s?__biz=MzA4MzA1NTk4NQ==&amp;mid=400826780&amp;idx=1&amp;sn=cc7b531b0dfb1d050227e25712c64344#rd" target="_blank">
 
-                                                <a class="title_wrp" href="http://mp.weixin.qq.com/s?__biz=MzA4MzA1NTk4NQ==&amp;mid=400826780&amp;idx=1&amp;sn=cc7b531b0dfb1d050227e25712c64344#rd" target="_blank">
-                                                   
-                                                    <span class="icon icon_lh cover" style="background-image:url(/Content/images/0.jpg);"></span>
-                                                    <span class="title">[图文1]没领到碟片的请注意，请注意！</span>
-                                                </a>
+                                                            <span class="icon icon_lh cover" style="background-image:url(@item.imgurl);"></span>
+                                                            <span class="title">
+                                                                @item.title
 
-                                                <div class="desc">
-                                                    <div>
-                                                        <span>阅读 410</span>
-                                                        <span>点赞 7</span>
+                                                            </span>
+                                                        </a>
+
+                                                        <div class="desc">
+                                                            <div>
+                                                                <span>阅读 410</span>
+                                                                <span>点赞 7</span>
+                                                            </div>
+                                                            <div>
+
+
+                                                            </div>
+                                                            <div>
+
+
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div>
 
-
-                                                    </div>
-                                                    <div>
-
-
-                                                    </div>
                                                 </div>
                                             </div>
+                                        </td>
+                                        <td class="table_cell tl mass_opr" data-status="2" data-type="9">
+                                            <span class="js_status mass_opr_meta status js_result " data-id="400826785">发送完毕<i class="icon_arrow_down"></i></span>
+                                            <span class="js_desc mass_opr_meta desc"></span>
 
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="table_cell tl mass_opr" data-status="2" data-type="9">
-                                    <span class="js_status mass_opr_meta status js_result " data-id="400826785">发送完毕<i class="icon_arrow_down"></i></span>
-                                    <span class="js_desc mass_opr_meta desc"></span>
 
+                                            <p class="mass_opr_del"><a class="js_del" data-id="400826785" data-index="0" data-type="9" href="javascript:void(0);">删除</a></p>
 
-                                    <p class="mass_opr_del"><a class="js_del" data-id="400826785" data-index="0" data-type="9" href="javascript:void(0);">删除</a></p>
 
+                                        </td>
+                                        <td class="table_cell mass_info last_child">
+                                            <p class="mass_time">2015年11月20日</p>
 
-                                </td>
-                                <td class="table_cell mass_info last_child">
-                                    <p class="mass_time">2015年11月20日</p>
 
+                                            <p>全部用户</p>
 
-                                    <p>全部用户</p>
 
+                                        </td>
+                                    </tr>
 
-                                </td>
-                            </tr>
-
-                            <tr class="mass_item" id="massItem400478610">
-                                <td class="table_cell tl mass_content">
-
-                                    <div id="file400478610" data-id="400478610" class="mass_wrp  ">
-                                        <div class="multiple_appmsg_wrp">
-
-                                            <div class="appmsgSendedItem multiple_appmsg">
-
-                                                <a class="title_wrp" href="http://mp.weixin.qq.com/s?__biz=MzA4MzA1NTk4NQ==&amp;mid=400478606&amp;idx=1&amp;sn=e2806a2f6986ff8519efc63be0121409#rd" target="_blank">
-
-                                                    <span class="icon icon_lh cover" style="background-image:url(/Content/images/0.jpg);"></span>
-                                                    <span class="title">[图文1]电话确认开始，请注意接听电话</span>
-                                                </a>
-
-                                                <div class="desc">
-                                                    <div>
-                                                        <span>阅读 437</span>
-                                                        <span>点赞 8</span>
-                                                    </div>
-                                                    <div>
-
-
-                                                    </div>
-                                                    <div>
-
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="table_cell tl mass_opr" data-status="2" data-type="9">
-                                    <span class="js_status mass_opr_meta status js_result " data-id="400478610">发送完毕<i class="icon_arrow_down"></i></span>
-                                    <span class="js_desc mass_opr_meta desc"></span>
-
-
-                                    <p class="mass_opr_del"><a class="js_del" data-id="400478610" data-index="1" data-type="9" href="javascript:void(0);">删除</a></p>
-
-
-                                </td>
-                                <td class="table_cell mass_info last_child">
-                                    <p class="mass_time">2015年11月07日</p>
-
-
-                                    <p>全部用户</p>
-
-
-                                </td>
-                            </tr>
-
-                            <tr class="mass_item" id="massItem400342769">
-                                <td class="table_cell tl mass_content">
-
-                                    <div id="file400342769" data-id="400342769" class="mass_wrp  ">
-                                        <div class="multiple_appmsg_wrp">
-
-                                            <div class="appmsgSendedItem multiple_appmsg">
-
-                                                <a class="title_wrp" href="http://mp.weixin.qq.com/s?__biz=MzA4MzA1NTk4NQ==&amp;mid=400342765&amp;idx=1&amp;sn=445ac29ec3bc9ad08e5a0562734254e5#wechat_redirect" target="_blank">
-                                                   
-                                                    <span class="icon icon_lh cover" style="background-image:url(/Content/images/0.jpg);"></span>
-                                                    <span class="title">[图文1]活动通知：领取资格审核中，请耐心等待。</span>
-                                                </a>
-
-                                                <div class="desc">
-                                                    <div>
-                                                        <span>阅读 375</span>
-                                                        <span>点赞 13</span>
-                                                    </div>
-                                                    <div>
-
-
-                                                    </div>
-                                                    <div>
-
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="table_cell tl mass_opr" data-status="2" data-type="9">
-                                    <span class="js_status mass_opr_meta status js_result " data-id="400342769">发送完毕<i class="icon_arrow_down"></i></span>
-                                    <span class="js_desc mass_opr_meta desc"></span>
-
-
-                                    <p class="mass_opr_del"><a class="js_del" data-id="400342769" data-index="2" data-type="9" href="javascript:void(0);">删除</a></p>
-
-
-                                </td>
-                                <td class="table_cell mass_info last_child">
-                                    <p class="mass_time">2015年11月02日</p>
-
-
-                                    <p>全部用户</p>
-
-
-                                </td>
-                            </tr>
-
-                            <tr class="mass_item" id="massItem400299597">
-                                <td class="table_cell tl mass_content">
-
-                                    <div id="file400299597" data-id="400299597" class="mass_wrp  ">
-                                        <div class="multiple_appmsg_wrp">
-
-                                            <div class="appmsgSendedItem multiple_appmsg">
-
-                                                <a class="title_wrp" href="http://mp.weixin.qq.com/s?__biz=MzA4MzA1NTk4NQ==&amp;mid=400299593&amp;idx=1&amp;sn=096d94930f703ba36888273d3ba83afc#wechat_redirect" target="_blank">
-
-                                                    <span class="icon icon_lh cover" style="background-image:url(/Content/images/0.jpg);"></span>
-                                                    <span class="title">[图文1]｛免费｝狼友福音！庆祝网站上线一周年，粉丝可免费领5张发烧碟。声色俱全，你懂的！</span>
-                                                </a>
-
-                                                <div class="desc">
-                                                    <div>
-                                                        <span>阅读 617</span>
-                                                        <span>点赞 12</span>
-                                                    </div>
-                                                    <div>
-
-
-                                                    </div>
-                                                    <div>
-
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="table_cell tl mass_opr" data-status="2" data-type="9">
-                                    <span class="js_status mass_opr_meta status js_result " data-id="400299597">发送完毕<i class="icon_arrow_down"></i></span>
-                                    <span class="js_desc mass_opr_meta desc"></span>
-
-
-                                    <p class="mass_opr_del"><a class="js_del" data-id="400299597" data-index="3" data-type="9" href="javascript:void(0);">删除</a></p>
-
-
-                                </td>
-                                <td class="table_cell mass_info last_child">
-                                    <p class="mass_time">2015年10月30日</p>
-
-
-                                    <p>全部用户</p>
-
-
-                                </td>
-                            </tr>
-
-                            <tr class="mass_item" id="massItem400299534">
-                                <td class="table_cell tl mass_content">
-
-                                    <div id="file400299534" data-id="400299534" class="mass_wrp  ">
-                                        <div class="multiple_appmsg_wrp">
-
-                                            <div class="appmsgSendedItem multiple_appmsg">
-
-                                                <a class="title_wrp" href="http://mp.weixin.qq.com/s?__biz=MzA4MzA1NTk4NQ==&amp;mid=400299531&amp;idx=1&amp;sn=bab825040e94f2cd1c7084221139d49e#wechat_redirect" target="_blank">
-
-                                                    <span class="icon icon_lh cover" style="background-image:url(/Content/images/0.jpg);"></span>
-                                                    <span class="title">[图文1]｛免费｝狼友福音！庆祝网站上线一周年，粉丝可免费领5张发烧碟。声色俱全，你懂的！</span>
-                                                </a>
-
-                                                <div class="desc">
-                                                    <div>
-                                                        <span>阅读 121</span>
-                                                        <span>点赞 1</span>
-                                                    </div>
-                                                    <div>
-
-
-                                                    </div>
-                                                    <div>
-
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="table_cell tl mass_opr" data-status="2" data-type="9">
-                                    <span class="js_status mass_opr_meta status js_result " data-id="400299534">发送完毕<i class="icon_arrow_down"></i></span>
-                                    <span class="js_desc mass_opr_meta desc"></span>
-
-
-                                    <p class="mass_opr_del"><a class="js_del" data-id="400299534" data-index="4" data-type="9" href="javascript:void(0);">删除</a></p>
-
-
-                                </td>
-                                <td class="table_cell mass_info last_child">
-                                    <p class="mass_time">2015年10月30日</p>
-
-
-                                    <p>全部用户</p>
-
-
-                                </td>
-                            </tr>
-
-                            <tr class="mass_item" id="massItem208845784">
-                                <td class="table_cell tl mass_content">
-
-                                    <div id="file208845784" data-id="208845784" class="mass_wrp  ">
-                                        <div class="multiple_appmsg_wrp">
-
-                                            <div class="appmsgSendedItem multiple_appmsg">
-
-                                                <a class="title_wrp" href="http://mp.weixin.qq.com/s?__biz=MzA4MzA1NTk4NQ==&amp;mid=208845781&amp;idx=1&amp;sn=86dfdb257c576e2392c387fe7b197b8c#rd" target="_blank">
-
-                                                    <span class="icon icon_lh cover" style="background-image:url(/Content/images/0.jpg);"></span>
-                                                    <span class="title">[图文1]好消息！各位狼友有福了，网站已逐渐恢复！</span>
-                                                </a>
-
-                                                <div class="desc">
-                                                    <div>
-                                                        <span>阅读 418</span>
-                                                        <span>点赞 15</span>
-                                                    </div>
-                                                    <div>
-
-
-                                                    </div>
-                                                    <div>
-
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="table_cell tl mass_opr" data-status="2" data-type="9">
-                                    <span class="js_status mass_opr_meta status js_result " data-id="208845784">发送完毕<i class="icon_arrow_down"></i></span>
-                                    <span class="js_desc mass_opr_meta desc"></span>
-
-
-                                    <p class="mass_opr_del"><a class="js_del" data-id="208845784" data-index="5" data-type="9" href="javascript:void(0);">删除</a></p>
-
-
-                                </td>
-                                <td class="table_cell mass_info last_child">
-                                    <p class="mass_time">2015年10月13日</p>
-
-
-                                    <p>全部用户</p>
-
-
-                                </td>
-                            </tr>
-
-                            <tr class="mass_item" id="massItem204659270">
-                                <td class="table_cell tl mass_content">
-
-                                    <div id="file204659270" data-id="204659270" class="mass_wrp  ">
-                                        <div class="multiple_appmsg_wrp">
-
-                                            <div class="appmsgSendedItem multiple_appmsg">
-
-                                                <a class="title_wrp" href="http://mp.weixin.qq.com/s?__biz=MzA4MzA1NTk4NQ==&amp;mid=204659269&amp;idx=1&amp;sn=e0b68aecf2ef55a6dd927bdc758a2ac8#rd" target="_blank">
-
-                                                    <span class="icon icon_lh cover" style="background-image:url(/Content/images/0.jpg);"></span>
-                                                    <span class="title">[图文1]丝袜性感美女-慢摇小串烧</span>
-                                                </a>
-
-                                                <div class="desc">
-                                                    <div>
-                                                        <span>阅读 990</span>
-                                                        <span>点赞 10</span>
-                                                    </div>
-                                                    <div>
-
-
-                                                    </div>
-                                                    <div>
-
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="table_cell tl mass_opr" data-status="2" data-type="9">
-                                    <span class="js_status mass_opr_meta status js_result " data-id="204659270">发送完毕<i class="icon_arrow_down"></i></span>
-                                    <span class="js_desc mass_opr_meta desc"></span>
-
-
-                                    <p class="mass_opr_del"><a class="js_del" data-id="204659270" data-index="6" data-type="9" href="javascript:void(0);">删除</a></p>
-
-
-                                </td>
-                                <td class="table_cell mass_info last_child">
-                                    <p class="mass_time">2015年04月25日</p>
-
-
-                                    <p>全部用户</p>
-
-
-                                </td>
-                            </tr>
-
-                            <tr class="mass_item" id="massItem203270710">
-                                <td class="table_cell tl mass_content">
-
-                                    <div id="file203270710" data-id="203270710" class="mass_wrp  ">
-                                        <div class="multiple_appmsg_wrp">
-
-                                            <div class="appmsgSendedItem multiple_appmsg">
-
-                                                <a class="title_wrp" href="http://mp.weixin.qq.com/s?__biz=MzA4MzA1NTk4NQ==&amp;mid=203270709&amp;idx=1&amp;sn=b7f34dbbd1076d19695f971b86dd1c9d#rd" target="_blank">
-
-                                                    <span class="icon icon_lh cover" style="background-image:url(/Content/images/0.jpg);"></span>
-                                                    <span class="title">[图文1]新年好</span>
-                                                </a>
-
-                                                <div class="desc">
-                                                    <div>
-                                                        <span>阅读 354</span>
-                                                        <span>点赞 18</span>
-                                                    </div>
-                                                    <div>
-
-
-                                                    </div>
-                                                    <div>
-
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="table_cell tl mass_opr" data-status="2" data-type="9">
-                                    <span class="js_status mass_opr_meta status js_result " data-id="203270710">发送完毕<i class="icon_arrow_down"></i></span>
-                                    <span class="js_desc mass_opr_meta desc"></span>
-
-
-                                    <p class="mass_opr_del"><a class="js_del" data-id="203270710" data-index="7" data-type="9" href="javascript:void(0);">删除</a></p>
-
-
-                                </td>
-                                <td class="table_cell mass_info last_child">
-                                    <p class="mass_time">2015年02月28日</p>
-
-
-                                    <p>全部用户</p>
-
-
-                                </td>
-                            </tr>
+                                }
+                            }
+                       
+                           
                         </tbody>
                     </table>
 

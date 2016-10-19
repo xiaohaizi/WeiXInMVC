@@ -105,9 +105,15 @@ namespace WeiXinMvcWeb.Controllers
             return View();
         }
 
-       public ActionResult Masssendpage_t()
+        public ActionResult Masssendpage_t()
         {
-            return View();
+            List<MsgData> msgList = new List<MsgData>();
+            using (WeiXinModelDB weixin = new WeiXinModelDB())
+            {
+                msgList = weixin.MsgDatas.Take(8).ToList();
+            }
+            ViewBag.MsgList = msgList;
+                return View();
         }
     }
 }

@@ -46,6 +46,9 @@ namespace WeiXinMvcWeb.Models.WeiXinDB
         public int feed_share_from_feed_cnt { get; set; }
         public int feed_share_from_other_user { get; set; }
         public int feed_share_from_other_cnt { get; set; }
-        //public object[] media_data_list { get; set; }
+          [MaxLength(500)]
+        public string imgurl { get; set; }
+        [NotMapped]
+        public string[] media_data_list = { };
     }
 }
