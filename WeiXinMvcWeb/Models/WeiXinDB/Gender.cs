@@ -21,5 +21,6 @@ namespace WeiXinMvcWeb.Models.WeiXinDB
         public int UserID { get; set; }
         [MaxLength(100)]
         public string msgid { get; set; }
+        public int attr_type { get; set; }
     }
 }

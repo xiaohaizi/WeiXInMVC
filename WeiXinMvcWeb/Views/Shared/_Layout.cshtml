@@ -133,6 +133,7 @@
                     type: "GET",
                     url: getFAQUrl
                 }).success(function (data) {
+                    data=  $.parseJSON(data);
                     if (data.base_resp.ret !== 0) return;
                     wx.faq_list = data.base_resp.assistant.problem;
                     if (!wx.faq_list.question) return;

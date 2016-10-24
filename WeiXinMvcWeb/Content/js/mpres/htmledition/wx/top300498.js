@@ -33,7 +33,7 @@ url:"/cgi-bin/settingpage?t=setting/function&action=function"
 mass:[{
 id:"send",
 name:"新建群发消息",
-url:"/cgi-bin/masssendpage-t=mass/send"
+url:"/cgibin/masssendpage_t=mass/send"
 },{
 id:"jurisdiction",
 name:"授权申请",

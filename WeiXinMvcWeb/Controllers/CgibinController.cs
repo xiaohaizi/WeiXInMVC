@@ -107,10 +107,10 @@ namespace WeiXinMvcWeb.Controllers
 
         public ActionResult Masssendpage_t()
         {
-            List<MsgData> msgList = new List<MsgData>();
+            List<SendMsg> msgList = new List<SendMsg>();
             using (WeiXinModelDB weixin = new WeiXinModelDB())
             {
-                msgList = weixin.MsgDatas.Take(8).ToList();
+                msgList = weixin.SendMsgs.Take(8).ToList();
             }
             ViewBag.MsgList = msgList;
                 return View();

@@ -26,7 +26,7 @@
                                 <td class="table_cell mass_info last_child">发送设置</td>
                             </tr>
                             @{
-                                foreach (var  item in ( ViewBag.MsgList as List<WeiXinMvcWeb.Models.WeiXinDB.MsgData>))
+                                foreach (var  item in ( ViewBag.MsgList as List<WeiXinMvcWeb.Models.WeiXinDB.SendMsg>))
                                 {
                                    // item.
                                     <tr class="mass_item" id="massItem400826785">
@@ -39,17 +39,17 @@
 
                                                         <a class="title_wrp" href="http://mp.weixin.qq.com/s?__biz=MzA4MzA1NTk4NQ==&amp;mid=400826780&amp;idx=1&amp;sn=cc7b531b0dfb1d050227e25712c64344#rd" target="_blank">
 
-                                                            <span class="icon icon_lh cover" style="background-image:url(@item.imgurl);"></span>
+                                                            <span class="icon icon_lh cover" style="background-image:url(@item.ImgUrl);"></span>
                                                             <span class="title">
-                                                                @item.title
+                                                                @item.Title
 
                                                             </span>
                                                         </a>
 
                                                         <div class="desc">
                                                             <div>
-                                                                <span>阅读 410</span>
-                                                                <span>点赞 7</span>
+                                                                <span>阅读 @item.ReadCount</span>
+                                                                <span>点赞 @item.GoodCount</span>
                                                             </div>
                                                             <div>
 
@@ -75,7 +75,7 @@
 
                                         </td>
                                         <td class="table_cell mass_info last_child">
-                                            <p class="mass_time">2015年11月20日</p>
+                                            <p class="mass_time">@(item.Dtime.ToString("yyyy-MM-dd"))</p>
 
 
                                             <p>全部用户</p>

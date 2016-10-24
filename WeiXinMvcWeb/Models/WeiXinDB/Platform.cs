@@ -19,5 +19,8 @@ namespace WeiXinMvcWeb.Models.WeiXinDB
         public int PlatformCount { get; set; }
         public DateTime DTime { get; set; }
         public int UserID { get; set; }
+        [MaxLength(50)]
+        public string msgid { get; set; }
+        public int attr_type { get; set; }
     }
 }

@@ -36,8 +36,10 @@
         public virtual DbSet<Lang> Langs { get; set; }
         public virtual DbSet<Gender> Genders { get; set; }
         public virtual DbSet<MsgData> MsgDatas { get; set; }
-
+        public virtual DbSet<SendMsg> SendMsgs { get; set; }
         
+
+
 
 
 

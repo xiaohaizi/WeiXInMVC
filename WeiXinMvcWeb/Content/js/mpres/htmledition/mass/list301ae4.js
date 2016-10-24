@@ -68,7 +68,7 @@ reposition:!0,
 type:"hover"
 }),(1==s.msg_status||s.msg_status>=100&&s.msg_status<=106)&&setTimeout(function(){
 f.get({
-url:"/cgi-bin/masssendpage?action=status",
+url:"/cgibin/masssendpage?action=status",
 data:{
 msgid:s.id
 }

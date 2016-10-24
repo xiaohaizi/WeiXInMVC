@@ -68,7 +68,7 @@ reposition:!0,
 type:"hover"
 }),(1==s.msg_status||s.msg_status>=100&&s.msg_status<=106)&&setTimeout(function(){
 h.get({
-url:"/cgi-bin/masssendpage?action=status",
+url:"/cgibin/masssendpage?action=status",
 data:{
 msgid:s.id
 }
@@ -78,7 +78,7 @@ $("#massItem"+s.id).find(".js_status").html(i(s)+'<i class="icon_arrow_down"></i
 n.call(e),2==s.msg_status&&1==s.multi_item.length&&$("#massItem"+s.id).find(".mass_opr").html(wx.T('<a class="js_del" data-id="{id}" data-type="{type}" href="javascript:void(0);">删除</a>',s))):h.handleRet(t,{
 id:64462,
 key:19,
-url:"/cgi-bin/masssendpage?action=status",
+url:"/cgibin/masssendpage?action=status",
 showMsg:!1
 });
 });

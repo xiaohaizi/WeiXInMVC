@@ -671,6 +671,7 @@
     <Compile Include="Models\Base_Acl.cs" />
     <Compile Include="Models\CategoryList.cs" />
     <Compile Include="Models\Class1.cs" />
+    <Compile Include="Models\MsgDataRetrun.cs" />
     <Compile Include="Models\MsgDetail.cs" />
     <Compile Include="Models\WeiXinDB\Device.cs" />
     <Compile Include="Models\FdevreportReturn.cs" />
@@ -698,6 +699,7 @@
     <Compile Include="Models\WeiXinDB\MsgData.cs" />
     <Compile Include="Models\WeiXinDB\Platform.cs" />
     <Compile Include="Models\WeiXinDB\Region.cs" />
+    <Compile Include="Models\WeiXinDB\SendMsg.cs" />
     <Compile Include="Models\WeiXinDB\User_SourceItem.cs" />
     <Compile Include="Models\WeiXinDB\Base_Resp.cs" />
     <Compile Include="Models\WeiXinDB\Nav.cs" />

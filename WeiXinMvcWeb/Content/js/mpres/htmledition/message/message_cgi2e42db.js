@@ -2,7 +2,7 @@ define("message/message_cgi.js",["common/wx/Tips.js","common/wx/Cgi.js","common/
 "use strict";
 var t={
 masssend:"/cgi-bin/masssend?t=ajax-response",
-massdel:"/cgi-bin/masssendpage?action=delete",
+massdel:"/cgibin/masssendpage?action=delete",
 star:"/cgi-bin/setstarmessage?t=ajax-setstarmessage&only_cdn=0",
 save:"/cgi-bin/savemsgtofile?t=ajax-response&only_cdn=0",
 sendMsg:"/cgi-bin/singlesend?t=ajax-response&f=json",

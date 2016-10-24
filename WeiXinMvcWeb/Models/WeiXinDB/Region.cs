@@ -23,5 +23,6 @@ namespace WeiXinMvcWeb.Models.WeiXinDB
         public int RegionCount { get; set; }
         [MaxLength(100)]
         public string msgid { get; set; }
+        public int attr_type { get; set; }
     }
 }

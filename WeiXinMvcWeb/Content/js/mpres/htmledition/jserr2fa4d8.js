@@ -12,7 +12,7 @@ e.cgi=e.href.indexOf("?")>-1?e.href.match(/.*?\?/g)[0].slice(0,-1):e.href;
 var i=(e.href+"&").match(/action\=(.*?)&/);
 i&&i[1]&&(e.action=i[1]);
 var n=S.IDS.DEFAULT,r=S.KEY;
-return"cgi-bin/masssendpage"==e.cgi?(n=S.IDS.MASS,r=66):"advanced/autoreply"==e.cgi?(n=S.IDS.AUTO_REPLY,
+return"cgibin/masssendpage"==e.cgi?(n=S.IDS.MASS,r=66):"advanced/autoreply"==e.cgi?(n=S.IDS.AUTO_REPLY,
 r=70):"advanced/selfmenu"==e.cgi?(n=S.IDS.SELF_MENU,r=68):"misc/appmsgcomment"==e.cgi?(n=S.IDS.COMMENT,
 r=71):"cgi-bin/newoperatevote"==e.cgi?(n=S.IDS.VOTE,r=72):"misc/kf"==e.cgi?(n=S.IDS.KF,
 r=73):"merchant/rewardstat"==e.cgi||"merchant/reward"==e.cgi?(n=S.IDS.REWARD,r=74):"cgi-bin/appmsgcopyright"==e.cgi||"cgi-bin/imgcopyright"==e.cgi||"cgi-bin/ori_video"==e.cgi?(n=S.IDS.COPYRIGHT,
