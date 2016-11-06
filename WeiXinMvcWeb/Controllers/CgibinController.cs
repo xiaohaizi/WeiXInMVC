@@ -24,7 +24,7 @@ namespace WeiXinMvcWeb.Controllers
         [HttpPost]
         public string Login(string username,string pwd,string f)
         {
-            string s = "";
+            string s = "";  
             Dictionary<string, LoginReturn> dic = new Dictionary<string, LoginReturn>();
             LoginReturn base_resp = new LoginReturn();
             base_resp.err_msg = "acct/password error";
