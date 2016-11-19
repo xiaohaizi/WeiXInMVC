@@ -38,7 +38,11 @@
         public virtual DbSet<MsgData> MsgDatas { get; set; }
         public virtual DbSet<SendMsg> SendMsgs { get; set; }
         public virtual DbSet<AppmsgItemHour> AppmsgItemHours { get; set; }
-        
+        public virtual DbSet<NewsNotice> NewsNotices { get; set; }
+        public virtual DbSet<BaseInfo> BaseInfos { get; set; }
+
+
+
 
 
 

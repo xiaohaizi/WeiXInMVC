@@ -677,6 +677,7 @@
     <Compile Include="Models\MsgDataRetrun.cs" />
     <Compile Include="Models\MsgDetail.cs" />
     <Compile Include="Models\WeiXinDB\AppmsgItemHour.cs" />
+    <Compile Include="Models\WeiXinDB\BaseInfo.cs" />
     <Compile Include="Models\WeiXinDB\Device.cs" />
     <Compile Include="Models\FdevreportReturn.cs" />
     <Compile Include="Models\Func_Ban_Info.cs" />
@@ -701,6 +702,7 @@
     <Compile Include="Models\WeiXinDB\Lang.cs" />
     <Compile Include="Models\WeiXinDB\Menu_Summary.cs" />
     <Compile Include="Models\WeiXinDB\MsgData.cs" />
+    <Compile Include="Models\WeiXinDB\NewsNotice.cs" />
     <Compile Include="Models\WeiXinDB\Platform.cs" />
     <Compile Include="Models\WeiXinDB\Region.cs" />
     <Compile Include="Models\WeiXinDB\SendMsg.cs" />

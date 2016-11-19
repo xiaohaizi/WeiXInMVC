@@ -18,7 +18,12 @@ namespace WeiXinMvcWeb.Controllers
 
         public ActionResult Home()
         {
-            return View();
+            using (WeiXinModelDB wxDb=new WeiXinModelDB()) {
+               var newsList= wxDb.NewsNotices.OrderByDescending(x => x.ID).Take(27).ToList();
+                ViewBag.NewsList = newsList;
+                ViewBag.BaseInfo=  wxDb.BaseInfos.FirstOrDefault();
+            }
+                return View();
         }
 
         [HttpPost]

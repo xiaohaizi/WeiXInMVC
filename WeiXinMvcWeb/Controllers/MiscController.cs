@@ -256,7 +256,7 @@ namespace WeiXinMvcWeb.Controllers
             DateTime eTime = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"));
             var baseModel = weiXin.Base_Resps.FirstOrDefault();
             var userInfo = weiXin.User_Infos.Include("wb_info").FirstOrDefault();
-            DateTime curTime= Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"));
+            DateTime curTime= Convert.ToDateTime(DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd"));
             var curModel = new AppmsgItem();
 
             curModel =   weiXin.AppmsgItems.Where(x => x.ref_date == curTime).FirstOrDefault();
