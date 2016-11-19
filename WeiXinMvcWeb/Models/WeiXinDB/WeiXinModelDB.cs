@@ -37,7 +37,9 @@
         public virtual DbSet<Gender> Genders { get; set; }
         public virtual DbSet<MsgData> MsgDatas { get; set; }
         public virtual DbSet<SendMsg> SendMsgs { get; set; }
+        public virtual DbSet<AppmsgItemHour> AppmsgItemHours { get; set; }
         
+
 
 
 

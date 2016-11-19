@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using WeiXinMvcWeb.Models;
 using WeiXinMvcWeb.Models.WeiXinDB;
+using System.Text;
 namespace WeiXinMvcWeb.Controllers
 {
     public class MiscController : Controller
@@ -255,31 +256,112 @@ namespace WeiXinMvcWeb.Controllers
             DateTime eTime = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"));
             var baseModel = weiXin.Base_Resps.FirstOrDefault();
             var userInfo = weiXin.User_Infos.Include("wb_info").FirstOrDefault();
+            DateTime curTime= Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"));
+            var curModel = new AppmsgItem();
 
+            curModel =   weiXin.AppmsgItems.Where(x => x.ref_date == curTime).FirstOrDefault();
+            if (curModel == null)
+            {
+                curModel = new AppmsgItem();
+            }
 
-
-       var item = weiXin.AppmsgItems.Where(x=>x.ref_date>=bTime&&x.ref_date<=eTime).Take(20).ToList();
+                   var item = weiXin.AppmsgItems.Where(x=>x.ref_date>=bTime&&x.ref_date<=eTime).ToList();
             //  appreportModdel.item
-        string    s = JsonConvert.SerializeObject(item, iso);
-            s = s;
-            ViewBag.Str = s;
+            StringBuilder sbstr = new StringBuilder();
 
+            //{
+            //    "ref_date": "2016-10-15",
+            //                        "user_source": "5",
+            //                        "int_page_read_user": "1" * 1 || 0,
+            //                        "int_page_read_count": "2" * 1 || 0,
+            //                        "ori_page_read_user": "0" * 1 || 0,
+            //                        "ori_page_read_count": "0" * 1 || 0,
+            //                        "share_user": "0" * 1 || 0,
+            //                        "share_count": "0" * 1 || 0,
+            //                        "add_to_fav_user": "0" * 1 || 0,
+            //                        "add_to_fav_count": "0" * 1 || 0,
+            //                        "total_online_time": "0" * 1 || 0
+            //                    }
+            foreach (var sitem in item)
+            {
+                sbstr.Append("{");
+                sbstr.Append("\"ref_date\":\""+ sitem.ref_date.ToString("yyyy-MM-dd")+"\",");
+                sbstr.Append("\"user_source\":\"" + sitem.user_source+ "\",");
+                sbstr.Append("\"int_page_read_user\":\"" + sitem.int_page_read_user+ "\"*1||0,");
+                sbstr.Append("\"int_page_read_count\":\"" + sitem.int_page_read_count + "\"*1||0,");
+                sbstr.Append("\"ori_page_read_user\":\"" + sitem.ori_page_read_user + "\"*1||0,");
+                sbstr.Append("\"ori_page_read_count\":\"" + sitem.ori_page_read_count + "\"*1||0,");
+                sbstr.Append("\"share_user\":\"" + sitem.share_user + "\"*1||0,");
+                sbstr.Append("\"share_count\":\"" + sitem.share_count + "\"*1||0,");
+                sbstr.Append("\"add_to_fav_user\":\"" + sitem.add_to_fav_user + "\"*1||0,");
+                sbstr.Append("\"add_to_fav_count\":\"" + sitem.add_to_fav_count + "\"*1||0,");
+
+                sbstr.Append("\"total_online_time\":\"" + sitem.total_online_time + "\"*1||0");
+                
+                sbstr.Append("}"); sbstr.Append(",");
+            }
+            //string    s = JsonConvert.SerializeObject(item, iso);
+           string s ="["+ sbstr.ToString().TrimEnd(',')+"]";
+            ViewBag.Str = s;
+            ViewBag.AppmsgItemList = item;
+            ViewBag.curModel = curModel;
             return View();
         }
+
+
+        public string AppmsganalysisJson()
+        {
+            string s = "";
+            DateTime bTime = Convert.ToDateTime(DateTime.Now.AddDays(-60).ToString("yyyy-MM-dd"));
+            DateTime eTime = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"));
+
+            var item = weiXin.AppmsgItems.Where(x => x.ref_date >= bTime && x.ref_date <= eTime).ToList();
+            s = JsonConvert.SerializeObject(item, iso);
+            return s;
+        }
+
+
         public string AppmsganalysisAction_Report()
         {
             string s = "";
+          //  if(Request.QueryString["type"]!=null&& Request.QueryString["type"]=="")
             var baseModel = weiXin.Base_Resps.FirstOrDefault();
             var userInfo = weiXin.User_Infos.Include("wb_info").FirstOrDefault();
+            string bTimeStr = Request.Params["begin_date"].ToString();
+            string eTimeStr = Request.Params["end_date"];
 
+            DateTime bTime = Convert.ToDateTime(bTimeStr);
+            DateTime eTime = Convert.ToDateTime(eTimeStr);
+            if (Request.QueryString["type"] == null)
 
+            {
+                AppmsganalysisReportRetrun appreportModdel = new AppmsganalysisReportRetrun();
+                appreportModdel.base_resp = baseModel;
+                appreportModdel.user_info = userInfo;
 
-            AppmsganalysisReportRetrun appreportModdel = new AppmsganalysisReportRetrun();
-            appreportModdel.base_resp = baseModel;
-            appreportModdel.user_info = userInfo;
-            appreportModdel.item = weiXin.AppmsgItems.ToList();
-            //  appreportModdel.item
-            s = JsonConvert.SerializeObject(appreportModdel, iso);
+                appreportModdel.item = weiXin.AppmsgItems.Where(x => x.ref_date >= bTime && x.ref_date <= eTime).ToList();
+                //  appreportModdel.item
+                s = JsonConvert.SerializeObject(appreportModdel, iso);
+            }
+            else if (Request.QueryString["type"] == "hourly")
+            {
+                AppmsganalysisHourRetrun appreportModdelh = new AppmsganalysisHourRetrun();
+                appreportModdelh.base_resp = baseModel;
+                appreportModdelh.user_info = userInfo;
+                appreportModdelh.item = weiXin.AppmsgItemHours.Where(x => x.ref_date >= bTime && x.ref_date <= eTime).ToList();
+                s = JsonConvert.SerializeObject(appreportModdelh, iso);
+            }
+            else
+            {
+                AppmsganalysisReportRetrun appreportModdel = new AppmsganalysisReportRetrun();
+                appreportModdel.base_resp = baseModel;
+                appreportModdel.user_info = userInfo;
+
+                appreportModdel.item = weiXin.AppmsgItems.Where(x => x.ref_date >= bTime && x.ref_date <= eTime).ToList();
+                //  appreportModdel.item
+                s = JsonConvert.SerializeObject(appreportModdel, iso);
+            }
+            
             return s;
         }
 

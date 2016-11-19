@@ -19,5 +19,6 @@ namespace WeiXinMvcWeb.Models.WeiXinDB
         public int GoodCount { get; set; }
         [MaxLength(600)]
         public string ImgUrl { get; set; }
+        public int MsgStatus { get; set; }
     }
 }

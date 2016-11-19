@@ -39,7 +39,8 @@ return"date"===v.sortType?(a=g(t.date).format("X"),n=g(e.date).format("X")):(a=t
 n=e[v.sortType]),v.isDesc?n-a:a-n;
 });
 }
-function o(t){
+function o(t) {
+   
 var e=template("js_detail_table_tpl",{
 type:m.type,
 data:c()
@@ -76,6 +77,7 @@ var t=template("js_compare_detail_table_tpl",{
 type:m.type,
 data:c()
 });
+
 jQuery("#js_detail_table").html(t),p(m.key);
 }
 function p(t){

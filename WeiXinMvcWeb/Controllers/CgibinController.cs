@@ -115,5 +115,30 @@ namespace WeiXinMvcWeb.Controllers
             ViewBag.MsgList = msgList;
                 return View();
         }
+
+        public string masssendpage_del()
+        {
+            string s = "";
+            int n = 0;
+            string id = Request.QueryString["id"];
+            using (WeiXinModelDB weixin = new WeiXinModelDB())
+            {
+               var msgModel= weixin.SendMsgs.Find(int.Parse(id));
+                msgModel.MsgStatus = 1;
+               n= weixin.SaveChanges();
+
+            }
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+            if (n > 0)
+            {
+                dic.Add("status", "200");
+            }
+            else
+            {
+                dic.Add("status", "300");
+            }
+           s= JsonConvert.SerializeObject(dic);
+                return s;
+        }
     }
 }
