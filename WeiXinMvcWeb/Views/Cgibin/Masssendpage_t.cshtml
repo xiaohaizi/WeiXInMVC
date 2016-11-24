@@ -1,33 +1,36 @@
-﻿@{ 
-    
+﻿@{
+
 }
 <link href="~/Content/css/page/mass_list2f613f.css" rel="stylesheet" />
 <link href="~/Content/css/cgi-bin/cardticket/richvideo2b638f.css" rel="stylesheet" />
 <link href="~/Content/css/cgi-bin/cardticket/media2f624f.css" rel="stylesheet" />
 <link href="~/Content/css/cgi-bin/cardticket/pagination218878.css" rel="stylesheet" />
 <link href="~/Content/css/cgi-bin/cardticket/emoji218878.css" rel="stylesheet" />
-<link href="~/Content/css/base318f29.css" rel="stylesheet" /> 
+<link href="~/Content/css/base318f29.css" rel="stylesheet" />
 <div id="body" class="body page_mass_list">
     <div id="js_container_box" class="container_box cell_layout side_l">
         <div class="col_side">
             @Html.Partial("Menu");
 
             <script type="text/javascript">
-                    var _new_comment_num = "" || 0;
+                var _new_comment_num = "" || 0;
             </script>
-        </div>      
-    
-       
-                                   
-               <div class="col_main">
-            <div class="main_hd">        <h2>群发功能</h2>    
-                       <div class="title_tab" id="topTab">&nbsp;</div>    
-                               <div class="extra_info mini_tips icon_after">
+        </div>
+
+
+
+        <div class="col_main">
+            <div class="main_hd">
+                <h2>群发功能</h2>
+                <div class="title_tab" id="topTab">&nbsp;</div>
+                <div class="extra_info mini_tips icon_after">
 
 
 
 
-                            <a href="http://kf.qq.com/faq/120911VrYVrA131025QniAfu.html" target="_blank">群发消息规则说明<i class="icon_mini_tips document_link"></i></a>        </div>        </div><div class="main_bd">
+                    <a href="http://kf.qq.com/faq/120911VrYVrA131025QniAfu.html" target="_blank">群发消息规则说明<i class="icon_mini_tips document_link"></i></a>
+                </div>
+            </div><div class="main_bd">
                 <div class="table_wrp mass_history">
 
 
@@ -39,12 +42,13 @@
                             <!--%0001%-->
 
                             <div class="popover_bar">
-                            <a href="javascript:;"
-                                class="btn btn_primary jsPopoverBt"
-                                id="msg_btn_ok" onclick="delMsgOk()">确定</a>
-                            &nbsp;
-                            <a href="javascript:;" class="btn btn_default jsPopoverBt"
-                                onclick="delCancel()"> 取消</a></div>
+                                <a href="javascript:;"
+                                   class="btn btn_primary jsPopoverBt"
+                                   id="msg_btn_ok" onclick="delMsgOk()">确定</a>
+                                &nbsp;
+                                <a href="javascript:;" class="btn btn_default jsPopoverBt"
+                                   onclick="delCancel()">取消</a>
+                            </div>
                         </div>
                         <i class="popover_arrow popover_arrow_out"></i>
                         <i class="popover_arrow popover_arrow_in"></i>
@@ -61,7 +65,7 @@
                             </tr>
                             @{
                                 int n = 0;
-                                foreach (var  item in ( ViewBag.MsgList as List<WeiXinMvcWeb.Models.WeiXinDB.SendMsg>))
+                                foreach (var item in (ViewBag.MsgList as List<WeiXinMvcWeb.Models.WeiXinDB.SendMsg>))
                                 {
                                     n = n + 1;
                                     // item.
@@ -73,7 +77,7 @@
 
                                                     <div class="appmsgSendedItem multiple_appmsg">
                                                         <div class="icon_has_del" id="icon_has_del@(item.ID)" style="display:@(item.MsgStatus<=0?"none":"block")">
-                                                        <span class="icon_has_del_bg">
+                                                            <span class="icon_has_del_bg">
                                                             </span><em>已删除</em>
                                                         </div>
                                                         <a class="title_wrp" href="http://mp.weixin.qq.com/s?__biz=MzA4MzA1NTk4NQ==&amp;mid=400826780&amp;idx=1&amp;sn=cc7b531b0dfb1d050227e25712c64344#rd" target="_blank">
@@ -107,18 +111,19 @@
                                             </div>
                                         </td>
                                         <td class="table_cell tl mass_opr" data-status="2" data-type="9">
-                                            <span class="js_status mass_opr_meta status js_result " 
-                                                  data-id="400826785">发送完毕<i class="icon_arrow_down"></i>
+                                            <span class="js_status mass_opr_meta status js_result "
+                                                  data-id="400826785">
+                                                发送完毕<i class="icon_arrow_down"></i>
                                             </span>
                                             <span class="js_desc mass_opr_meta desc"></span>
 
 
                                             <p class="mass_opr_del">
-                                            <a class="js_del"
-                                                data-id="400826785" id="del_btn_msg@(item.ID)"
-                                                                        data-index="0" data-type="9" 
-                                               href="javascript:void(0);" style="display:@(item.MsgStatus>0?"none":"block")"  
-                                                                       onclick="delmsg(this,@n,@item.ID)">删除</a>
+                                                <a class="js_del"
+                                                   data-id="400826785" id="del_btn_msg@(item.ID)"
+                                                   data-index="0" data-type="9"
+                                                   href="javascript:void(0);" style="display:@(item.MsgStatus>0?"none":"block")"
+                                                   onclick="delmsg(this,@n,@item.ID)">删除</a>
                                                 <span class="js_d" id="deled_item@(item.ID)" style="display:@(item.MsgStatus<=0?"none":"block")">
                                                     已删除<span>
                                                     </span>
@@ -139,23 +144,59 @@
 
                                 }
                             }
-                       
-                           
+
+
                         </tbody>
                     </table>
 
 
-                </div>        <div class="tool_area">            <div class="pagination_wrp pageNavigator"></div>        </div>
+                </div>        <div class="tool_area">          
+              <div class="pagination_wrp pageNavigator">
+                  <div class="pagination" id="wxPagebar_1479827248800">
+                      <span class="page_nav_area">
+                          <a href="/cgibin/masssendpage_t?t=mass/list&action=history&begin=@(ViewBag.begin-2)&count=10&token=1979958474&lang=zh_CN" 
+                             class="btn page_prev" 
+                          style="@(ViewBag.begin==1?"display:none":"")"  >            
+                                      <i class="arrow"></i></a>
+
+                          <span class="page_num">
+                              <label>@ViewBag.begin</label>
+                              <span class="num_gap">/</span>
+                              <label>@ViewBag.pages</label>
+                          </span>
+
+                          <a href="/cgibin/masssendpage_t?t=mass/list&action=history&begin=@(ViewBag.begin)&count=10&token=1979958474&lang=zh_CN" 
+                              class="btn page_next" style="@(ViewBag.begin==4?"display:none":"")" >
+                          
+                          
+                          <i class="arrow"></i></a>
+                        
+                      </span>
+
+                      <span class="goto_area">
+                          <input type="text" id="goto_page">
+                          <a href="javascript:void(0);"
+                              class="btn page_go" onclick="gotoPage()">跳转</a>
+                      </span>
+
+                  </div>
+
+              </div>   
+                 </div>
             </div>
         </div>
-    </div>                                                <div class="faq">                <ul class="links">                                        <li class="links_item"><a href="http://kf.qq.com/faq/120911VrYVrA1509086vyumm.html" target="_blank">客服中心</a></li>                    <li class="links_item"><a href="/acct/infringement?action=getmanual&t=infringement/manual&type=1&lang=zh_CN&token=494012354" target="_blank">侵权投诉</a></li>                </ul>                <p class="tail">反馈官号weixingongzhong</p>            </div>
-</div> 
+    </div>                                        
+    
+            <div class="faq">      
+              <ul class="links">                                       
+     <li class="links_item"><a href="http://kf.qq.com/faq/120911VrYVrA1509086vyumm.html" target="_blank">客服中心</a></li>                    <li class="links_item"><a href="/acct/infringement?action=getmanual&t=infringement/manual&type=1&lang=zh_CN&token=494012354" target="_blank">侵权投诉</a></li>                </ul>                <p class="tail">反馈官号weixingongzhong</p>            </div>
+</div>
 
 
 
 
 
-       <div class="foot" id="footer"><ul class="links ft"><li class="links_item no_extra"><a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">关于腾讯</a></li><li class="links_item"><a href="/cgi-bin/readtemplate?t=home/agreement_tmpl&type=info&lang=zh_CN&token=494012354" target="_blank">服务协议</a></li><li class="links_item"><a href="/cgi-bin/readtemplate?t=business/faq_operation_tmpl&type=info&lang=zh_CN&token=494012354" target="_blank">运营规范</a></li><li class="links_item"><a href="/cgi-bin/opshowpage?action=dispelinfo&lang=zh_CN&begin=1&count=9" target="_blank">辟谣中心</a></li><li class="links_item"><a href="http://kf.qq.com/faq/120911VrYVrA1509086vyumm.html" target="_blank">客服中心</a></li>                        <li class="links_item"><a href="mailto:weixinmp@qq.com" target="_blank">联系邮箱</a></li>                            <li class="links_item"><p class="copyright">Copyright &copy; 2012-2016 Tencent. All Rights Reserved.</p> </li>                </ul>    </div>
+<div class="foot" id="footer"><ul class="links ft"><li class="links_item no_extra"><a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">关于腾讯</a></li><li class="links_item"><a href="/cgi-bin/readtemplate?t=home/agreement_tmpl&type=info&lang=zh_CN&token=494012354" target="_blank">服务协议</a></li><li class="links_item"><a href="/cgi-bin/readtemplate?t=business/faq_operation_tmpl&type=info&lang=zh_CN&token=494012354" target="_blank">运营规范</a></li><li class="links_item"><a href="/cgi-bin/opshowpage?action=dispelinfo&lang=zh_CN&begin=1&count=9" target="_blank">辟谣中心</a></li><li class="links_item"><a href="http://kf.qq.com/faq/120911VrYVrA1509086vyumm.html" target="_blank">客服中心</a></li>                        <li class="links_item"><a href="mailto:weixinmp@qq.com" target="_blank">联系邮箱</a></li>                            <li class="links_item"><p class="copyright">Copyright &copy; 2012-2016 Tencent. All Rights Reserved.</p> </li>                </ul>    </div>
 <script type="text/javascript">
 
     window._points && (window._points[2] = +new Date());
@@ -239,6 +280,15 @@
         }, 50);
         throw error;
     }
+
+    function gotoPage()
+    {
+        var p=  document.getElementById("goto_page").value ;
+        if(p&&p>0){
+            var url="/cgibin/masssendpage_t?t=mass/list&action=history&begin="+(p-1)+"&count=10&token=1979958474&lang=zh_CN";
+            location.href=url;
+        }
+     }
 </script>
 <script src="/Content/js/mpres/htmledition/sea27d2ff.js"></script>
 <script src="/Content/js/mpres/htmledition/common/lib27616c.js"></script>
@@ -315,8 +365,10 @@
         {each multi_item as item i}
         <div class="appmsgSendedItem multiple_appmsg">
             {if item.is_deleted == 1}
-            <div class="icon_has_del"><span class="icon_has_del_bg">
-                </span><em>已删除</em></div>
+            <div class="icon_has_del">
+                <span class="icon_has_del_bg">
+                </span><em>已删除</em>
+            </div>
             {/if}
             <a class="title_wrp" href="{item.content_url}" target="_blank">
 
@@ -455,32 +507,32 @@
         $("#msg_btn_ok").attr("ref", _id);
         $("#mass_del_popover").show();
 
-       // console.log(n);
+        // console.log(n);
     }
 
     function delCancel()
-    { 
-        
+    {
+
         $("#mass_del_popover").hide();
     }
     function delMsgOk()
     {
         var ids = $("#msg_btn_ok").attr("ref");
         $.get("/cgibin/masssendpage_del?id=" + ids, function (result) {
-           
-          
+
+
             if(result.status==200)
             {
                 $("#icon_has_del" + ids).show();
-           
+
                 $("#deled_item" + ids).show();
                 $("#del_btn_msg" + ids).hide();
-                
+
                 $("#mass_del_popover").hide();
             }
         }, "json");
-       
-       
+
+
     }
 
 </script>

@@ -18,12 +18,22 @@ namespace WeiXinMvcWeb.Controllers
 
         public ActionResult Home()
         {
+            int start = 1;
+            if (Request.QueryString["start"] != null)
+            {
+                start = int.Parse(Request.QueryString["start"]);
+            }
+            int count = 0;
             using (WeiXinModelDB wxDb=new WeiXinModelDB()) {
-               var newsList= wxDb.NewsNotices.OrderByDescending(x => x.ID).Take(27).ToList();
+                count= wxDb.NewsNotices.Count();
+              var newsList= wxDb.NewsNotices.OrderByDescending(x => x.ID).Skip((start-1)*27).Take(27).ToList();
                 ViewBag.NewsList = newsList;
                 ViewBag.BaseInfo=  wxDb.BaseInfos.FirstOrDefault();
             }
-                return View();
+            int pages =(int)Math.Ceiling(Convert.ToDecimal(count)/Convert.ToDecimal("27"));
+            ViewBag.PageCount = pages;
+            ViewBag.Page = start;
+            return View();
         }
 
         [HttpPost]
@@ -113,10 +123,17 @@ namespace WeiXinMvcWeb.Controllers
         public ActionResult Masssendpage_t()
         {
             List<SendMsg> msgList = new List<SendMsg>();
+            int Count = 0;
+           int p= int.Parse(Request.QueryString["begin"]);
             using (WeiXinModelDB weixin = new WeiXinModelDB())
             {
-                msgList = weixin.SendMsgs.Take(8).ToList();
+                Count = weixin.SendMsgs.Count();
+                msgList = weixin.SendMsgs.OrderByDescending(x=>x.ID).Skip(p*10).Take(10).ToList();
             }
+            ViewBag.Count = Count;
+            ViewBag.begin = p+1;
+         
+            ViewBag.pages = (int)Math.Ceiling(Convert.ToDecimal(Count) / 10);
             ViewBag.MsgList = msgList;
                 return View();
         }

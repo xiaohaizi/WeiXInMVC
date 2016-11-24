@@ -214,7 +214,7 @@ initShowPage:n,
 totalItemsNum:e,
 callback:function(e){
 var t=e.currentPage;
-if(t!=n)return t--,location.href=wx.url("/cgi-bin/home?t=home/index&start="+(t+1)),
+if (t != n) return t--, location.href = wx.url("/cgibin/home?t=home/index&start=" + (t + 1)),
 !1;
 }
 });
