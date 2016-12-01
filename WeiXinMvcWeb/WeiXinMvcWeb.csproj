@@ -164,6 +164,7 @@
     <Content Include="Content\css\cgi-bin\widget\media2f624f.css" />
     <Content Include="Content\css\cgi-bin\widget\msg_sender2968da.css" />
     <Content Include="Content\css\cgi-bin\widget\pagination218878.css" />
+    <Content Include="Content\css\cgi-bin\widget\processor_bar218878.css" />
     <Content Include="Content\css\cgi-bin\widget\qrcode_scan262dd6.css" />
     <Content Include="Content\css\cgi-bin\widget\rich_buddy2f2f7f.css" />
     <Content Include="Content\css\cgi-bin\widget\upload22a2de.css" />
@@ -184,12 +185,16 @@
     <Content Include="Content\css\mpres\htmledition\page_login26f6ea.css" />
     <Content Include="Content\css\mpres\htmledition\pagination218878.css" />
     <Content Include="Content\css\mpres\htmledition\stat_overview2f3a2e.css" />
+    <Content Include="Content\css\page\advanced\advanced_common218878.css" />
+    <Content Include="Content\css\page\advanced\advanced_dev_index2cf656.css" />
+    <Content Include="Content\css\page\advanced\dev_tools2dd33a.css" />
     <Content Include="Content\css\page\ad_persons218878.css" />
     <Content Include="Content\css\page\mass_list2f613f.css" />
     <Content Include="Content\css\page\media_list2f12f7.css" />
     <Content Include="Content\css\page\page_index306a17.css" />
     <Content Include="Content\css\page\page_message2a0043.css" />
     <Content Include="Content\css\page\page_service_package_intro21b651.css" />
+    <Content Include="Content\css\page\page_service_profile2968da.css" />
     <Content Include="Content\css\page\page_user2f2f7f.css" />
     <Content Include="Content\css\pagination218878.css" />
     <Content Include="Content\css\setting\jquery.Jcrop.min218877.css" />
@@ -224,6 +229,8 @@
     <Content Include="Content\js\mpres\htmledition\advanced\menuSetting2f613f.js" />
     <Content Include="Content\js\mpres\htmledition\advanced\menu_link_dialog.html2e2640.js" />
     <Content Include="Content\js\mpres\htmledition\advanced\menu_link_dialog2ebf96.js" />
+    <Content Include="Content\js\mpres\htmledition\advanced\monitor_before2aa841.js" />
+    <Content Include="Content\js\mpres\htmledition\advanced\privilege311d80.js" />
     <Content Include="Content\js\mpres\htmledition\ad_system\helper.html222ca2.js" />
     <Content Include="Content\js\mpres\htmledition\ad_system\helper222ca2.js" />
     <Content Include="Content\js\mpres\htmledition\article\top2bff4a.js" />
@@ -384,6 +391,9 @@
     <Content Include="Content\js\mpres\htmledition\plugin\audio.html2767e5.js" />
     <Content Include="Content\js\mpres\htmledition\plugin\audio304d55.js" />
     <Content Include="Content\js\mpres\htmledition\plugin\audioItem.html26f6ea.js" />
+    <Content Include="Content\js\mpres\htmledition\promotion\app-4526bf0599.js" />
+    <Content Include="Content\js\mpres\htmledition\promotion\lib-4cfcf54380.js" />
+    <Content Include="Content\js\mpres\htmledition\promotion\_areas_level.js" />
     <Content Include="Content\js\mpres\htmledition\qq\emoji2b5ae0.js" />
     <Content Include="Content\js\mpres\htmledition\qq\events2a4e1d.js" />
     <Content Include="Content\js\mpres\htmledition\qq\mask218877.js" />
@@ -609,6 +619,7 @@
     <Content Include="Content\js\mpres\htmledition\wx\RichBuddy_tag2f2f7f.js" />
     <Content Include="Content\js\mpres\htmledition\wx\searchInput280571.js" />
     <Content Include="Content\js\mpres\htmledition\wx\simplePopup264f38.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\simplePopup311369.js" />
     <Content Include="Content\js\mpres\htmledition\wx\Step218877.js" />
     <Content Include="Content\js\mpres\htmledition\wx\time253a4f.js" />
     <Content Include="Content\js\mpres\htmledition\wx\tooltip218877.js" />
@@ -757,6 +768,10 @@
     <Content Include="Views\Cgibin\Home.cshtml" />
     <Content Include="Views\Cgibin\Masssendpage_t.cshtml" />
     <Content Include="Views\Misc\Appmsganalysisd.cshtml" />
+    <Content Include="Views\Advanced\advanced.cshtml" />
+    <Content Include="Views\Cgibin\Frame1.cshtml" />
+    <Content Include="Views\Advanced\diagram.cshtml" />
+    <Content Include="Views\Advanced\advanced1.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

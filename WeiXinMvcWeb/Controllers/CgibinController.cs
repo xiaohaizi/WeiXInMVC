@@ -104,6 +104,10 @@ namespace WeiXinMvcWeb.Controllers
         {
             return View();
         }
+        public ActionResult Frame1()
+        {
+            return View();
+        }
 
         public ActionResult Settingpage()
         {

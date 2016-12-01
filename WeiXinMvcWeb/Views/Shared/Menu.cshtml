@@ -2,76 +2,117 @@
     ViewBag.Select = "selected";
     var controllerName = ViewContext.RouteData.Values["action"] == null ? "" : ViewContext.RouteData.Values["action"].ToString().ToLower();
 
-    }
+}
+<link href="~/Content/css/page/advanced/dev_tools2dd33a.css" rel="stylesheet" />
 <div class="menu_box" id="menuBar">
-    <dl class="menu no_extra">   
-     <dt class="menu_title">       
-         <i class="icon_menu" style="background:url(        https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_function.png        ) no-repeat;">    </i>
-        功能          
-            </dt> <dd class="menu_item @(controllerName == "masssendpage"?ViewBag.Select :"") @(controllerName == "masssendpage_t"?ViewBag.Select :"")">
-        <a data-id="10005" href="/cgibin/masssendpage?t=mass/send&token=1941453980&lang=zh_CN">
-        群发功能        </a></dd>
-    <dd class="menu_item @(controllerName == "autoreply"?ViewBag.Select :"")">
-        <a data-id="10006" href="/advanced/autoreply?t=ivr/reply&action=beadded&token=1802258335&lang=zh_CN">
-        自动回复        </a></dd>
-    <dd class="menu_item @(controllerName == "selfmenu"?ViewBag.Select :"")">
-        <a data-id="10007" href="/advanced/selfmenu?action=index&t=advanced/menu-setting&token=1802258335&lang=zh_CN">
-        自定义菜单        </a></dd>
-    <dd class="menu_item @(controllerName == "newoperatevote"?ViewBag.Select :"")">
-        <a data-id="10038" href="/cgibin/newoperatevote?action=list&token=1802258335&lang=zh_CN">
-        投票管理        </a></dd> 
-       <dd class='menu_plugins'><a class='btn_plugins_add' data-id='10025' href="/cgibin/plugincenter?t=service/plugins&act=all&token=1802258335&lang=zh_CN">
-           添加功能插件</a></dd></dl>
-    <dl class="menu ">    
-    <dt class="menu_title clickable @(controllerName == "frame"?ViewBag.Select :"")">     
-           <a href="/cgibin/frame?nav=10010&t=business/index_frame&iframe=%2Fpay%2Fapply_progress%2Fhome%3Faction%3Dindex&token=1802258335&lang=zh_CN">    
-            <i class="icon_menu" style="background:url(        https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_wxpay_v2.png        ) no-repeat;">   
-                </i>微信支付            </a>     
-           </dt> </dl>
-    <dl class="menu ">    
-    <dt class="menu_title">     
-           <i class="icon_menu" style="background:url(        https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_management.png        ) no-repeat;">  
-          </i>管理                </dt>
-     <dd class="menu_item @(controllerName == "message"?ViewBag.Select :"")">
-        <a data-id="10012" href="/cgibin/message?t=message/list&count=20&day=7&token=1802258335&lang=zh_CN">
-         消息管理        </a></dd>
-    <dd class="menu_item @(controllerName == "contactmanage"?ViewBag.Select :"")">
-        <a data-id="10013" href="/cgibin/contactmanage?t=user/index&pageidx=0&type=0&token=1802258335&lang=zh_CN">
-        用户管理        </a></dd>
-    <dd class="menu_item @(controllerName == "appmsg"?ViewBag.Select :"")">
-        <a data-id="10014" href="/cgibin/appmsg?begin=0&count=10&t=media/appmsg_list&type=11&action=list&token=1802258335&lang=zh_CN">
-        素材管理        </a></dd></dl>
-    <dl class="menu ">   
+    <dl class="menu no_extra">
+        <dt class="menu_title">
+            <i class="icon_menu" style="background:url(        https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_function.png        ) no-repeat;">    </i>
+            功能
+        </dt>
+        <dd class="menu_item @(controllerName == "masssendpage"?ViewBag.Select :"") @(controllerName == "masssendpage_t"?ViewBag.Select :"")">
+            <a data-id="10005" href="/cgibin/masssendpage?t=mass/send&token=1941453980&lang=zh_CN">
+                群发功能
+            </a>
+        </dd>
+        <dd class="menu_item @(controllerName == "autoreply"?ViewBag.Select :"")">
+            <a data-id="10006" href="/advanced/autoreply?t=ivr/reply&action=beadded&token=1802258335&lang=zh_CN">
+                自动回复
+            </a>
+        </dd>
+        <dd class="menu_item @(controllerName == "selfmenu"?ViewBag.Select :"")">
+            <a data-id="10007" href="/advanced/selfmenu?action=index&t=advanced/menu-setting&token=1802258335&lang=zh_CN">
+                自定义菜单
+            </a>
+        </dd>
+        <dd class="menu_item @(controllerName == "newoperatevote"?ViewBag.Select :"")">
+            <a data-id="10038" href="/cgibin/newoperatevote?action=list&token=1802258335&lang=zh_CN">
+                投票管理
+            </a>
+        </dd>
+        <dd class='menu_plugins'>
+            <a class='btn_plugins_add' data-id='10025' href="/cgibin/plugincenter?t=service/plugins&act=all&token=1802258335&lang=zh_CN">
+                添加功能插件
+            </a>
+        </dd>
+    </dl>
+    <dl class="menu ">
+        <dt class="menu_title clickable @(controllerName == "frame"?ViewBag.Select :"")">
+            <a href="/cgibin/frame?nav=10010&t=business/index_frame&iframe=%2Fpay%2Fapply_progress%2Fhome%3Faction%3Dindex&token=1802258335&lang=zh_CN">
+                <i class="icon_menu" style="background:url(        https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_wxpay_v2.png        ) no-repeat;">
+                </i>微信支付
+            </a>
+        </dt>
+    </dl>
+    <dl class="menu ">
+        <dt class="menu_title">
+            <i class="icon_menu" style="background:url(        https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_management.png        ) no-repeat;">
+            </i>管理
+        </dt>
+        <dd class="menu_item @(controllerName == "message"?ViewBag.Select :"")">
+            <a data-id="10012" href="/cgibin/message?t=message/list&count=20&day=7&token=1802258335&lang=zh_CN">
+                消息管理
+            </a>
+        </dd>
+        <dd class="menu_item @(controllerName == "user_tag"?ViewBag.Select :"")">
+            <a data-id="10013" href="/cgibin/user_tag?action=get_all_data&lang=zh_CN&token=620941923">
+                用户管理
+            </a>
+        </dd>
+        <dd class="menu_item @(controllerName == "appmsg"?ViewBag.Select :"")">
+            <a data-id="10014" href="/cgibin/appmsg?begin=0&count=10&t=media/appmsg_list&type=11&action=list&token=1802258335&lang=zh_CN">
+                素材管理
+            </a>
+        </dd>
+    </dl>
+    <dl class="menu ">
 
-     <dt class="menu_title">      
-          <i class="icon_menu" style="background:url(        https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_ad.png        ) no-repeat;">    </i>
-        推广                </dt>
-     <dd class="menu_item @(controllerName == "advertiser_index"?ViewBag.Select :"")">
-        <a data-id="10026" href="/promotion/advertiser_index?&token=1802258335&lang=zh_CN">
-         广告主        </a></dd>
-    <dd class="menu_item @(controllerName == "ad_host_index"?ViewBag.Select :"")">
-        <a data-id="10027" href="/merchant/ad_host_index?t=ad_system/host_index&token=1802258335&lang=zh_CN">
-        流量主        </a></dd></dl> 
-     <dl class="menu ">
+        <dt class="menu_title">
+            <i class="icon_menu" style="background:url(        https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_ad.png        ) no-repeat;">    </i>
+            推广
+        </dt>
+        <dd class="menu_item @(controllerName == "frame"?ViewBag.Select :"")">
+            <a data-id="10026" href="/cgibin/frame?t=ad_system/common_frame&t1=apply/index&lang=zh_CN&token=620941923">
+                广告主
+            </a>
+        </dd>
+        <dd class="menu_item @(controllerName == "ad_host_index"?ViewBag.Select :"")">
+            <a data-id="10027" href="/merchant/ad_host_index?t=ad_system/host_index&token=1802258335&lang=zh_CN">
+                流量主
+            </a>
+        </dd>
+    </dl>
+    <dl class="menu ">
 
-        <dt class="menu_title"><i class="icon_menu" style="background: url(        https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_statistics.png        ) no-repeat;"></i>
-         统计                </dt>
+        <dt class="menu_title">
+            <i class="icon_menu" style="background: url(        https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_statistics.png        ) no-repeat;"></i>
+            统计
+        </dt>
         <dd class="menu_item @(controllerName == "useranalysis"?ViewBag.Select :"") @(controllerName == "useranalysis_attr"?ViewBag.Select :"")">
-         <a data-id="10015" href="/misc/useranalysis?token=1493886297&lang=zh_CN">
-            用户分析        </a></dd>
+            <a data-id="10015" href="/misc/useranalysis?token=1493886297&lang=zh_CN">
+                用户分析
+            </a>
+        </dd>
         <dd class="menu_item @(controllerName == "appmsganalysis"?ViewBag.Select :"") @(controllerName == "appmsganalysis_report"?ViewBag.Select :"")">
             <a data-id="10016" href="/misc/appmsganalysis?action=all&order_direction=2&token=1493886297&lang=zh_CN">
-            图文分析        </a>
+                图文分析
+            </a>
         </dd>
         <dd class="menu_item @(controllerName == "menuanalysis"?ViewBag.Select :"")">
-         <a data-id="10047" href="/misc/menuanalysis?token=1493886297&lang=zh_CN">
-            菜单分析        </a></dd>
+            <a data-id="10047" href="/misc/menuanalysis?token=1493886297&lang=zh_CN">
+                菜单分析
+            </a>
+        </dd>
         <dd class="menu_item @(controllerName == "messageanalysis"?ViewBag.Select :"")">
-         <a data-id="10017" href="/misc/messageanalysis?type=daily&t=statistics/msg&token=1493886297&lang=zh_CN">
-            消息分析        </a></dd>
+            <a data-id="10017" href="/misc/messageanalysis?type=daily&t=statistics/msg&token=1493886297&lang=zh_CN">
+                消息分析
+            </a>
+        </dd>
         <dd class="menu_item @(controllerName == "interfaceanalysis"?ViewBag.Select :"")">
-         <a data-id="10018" href="/misc/interfaceanalysis?type=daily&token=1493886297&lang=zh_CN">
-            接口分析        </a></dd>
+            <a data-id="10018" href="/misc/interfaceanalysis?type=daily&token=1493886297&lang=zh_CN">
+                接口分析
+            </a>
+        </dd>
         <dd class="menu_item @(controllerName == "webpageanalysis"?ViewBag.Select :"")">
             <a data-id="10054" href="/misc/webpageanalysis?action=listintfstat&token=1493886297&lang=zh_CN">
                 网页分析<i class="icon_common new"></i>
@@ -83,33 +124,51 @@
             设置
         </dt>
         <dd class="menu_item @(controllerName == "settingpage"?ViewBag.Select :"")">
-    <a data-id="10019" href="/cgibin/settingpage?t=setting/index&action=index&token=1802258335&lang=zh_CN">
-            公众号设置        </a></dd>
+            <a data-id="10019" href="/cgibin/settingpage?t=setting/index&action=index&token=1802258335&lang=zh_CN">
+                公众号设置
+            </a>
+        </dd>
         <dd class="menu_item @(controllerName == "store"?ViewBag.Select :"")">
-    <a data-id="10020" href="/merchant/store?action=detail&t=wxverify/detail&info=verify&token=1802258335&lang=zh_CN">
-            微信认证        </a></dd>
+            <a data-id="10020" href="/merchant/store?action=detail&t=wxverify/detail&info=verify&token=1802258335&lang=zh_CN">
+                微信认证
+            </a>
+        </dd>
         <dd class="menu_item @(controllerName == "safecenterstatus"?ViewBag.Select :"")">
-    <a data-id="10022" href="/cgibin/safecenterstatus?action=view&t=setting/safe-index&token=1802258335&lang=zh_CN">
-            安全中心        </a></dd>
+            <a data-id="10022" href="/cgibin/safecenterstatus?action=view&t=setting/safe-index&token=1802258335&lang=zh_CN">
+                安全中心
+            </a>
+        </dd>
         <dd class="menu_item @(controllerName == "illegalrecord"?ViewBag.Select :"")">
-    <a data-id="10045" href="/cgibin/illegalrecord?count=10&token=1802258335&lang=zh_CN">
-            违规记录        </a></dd>
+            <a data-id="10045" href="/cgibin/illegalrecord?count=10&token=1802258335&lang=zh_CN">
+                违规记录
+            </a>
+        </dd>
     </dl>
-    <dl class="menu ">    
-    <dt class="menu_title">       
-     <i class="icon_menu" style="background:url(        https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_developer.png        ) no-repeat;">    </i>
-        开发                </dt> 
-    <dd class="menu_item ">
-        <a data-id="10048" href="/advanced/advanced?action=dev&t=advanced/dev&token=1802258335&lang=zh_CN">
-        基本配置        </a></dd>
-    <dd class="menu_item ">
-        <a data-id="10049" href="/cgibin/frame?t=advanced/dev_tools_frame&nav=10049&token=1802258335&lang=zh_CN">
-        开发者工具        </a></dd>
-    <dd class="menu_item ">
-        <a data-id="10050" href="/advanced/diagram?action=index&token=1802258335&lang=zh_CN">
-        运维中心        </a></dd>
-    <dd class="menu_item ">
-    <a data-id="10051" href="/advanced/advanced?action=table&token=1802258335&lang=zh_CN">
-        接口权限        </a></dd></dl>
+    <dl class="menu ">
+        <dt class="menu_title   ">
+            <i class="icon_menu" style="background:url(        https://res.wx.qq.com/mpres/htmledition/images/icon/menu/icon_menu_developer.png        ) no-repeat;">    </i>
+            开发
+        </dt>
+        <dd class="menu_item @(controllerName == "advanced"?ViewBag.Select :"")">
+            <a data-id="10048" href="/advanced/advanced?action=dev&t=advanced/dev&token=1802258335&lang=zh_CN">
+                基本配置
+            </a>
+        </dd>
+        <dd class="menu_item @(controllerName == "frame1"?ViewBag.Select :"")">
+            <a data-id="10049" href="/cgibin/frame1?t=advanced/dev_tools_frame&nav=10049&token=1802258335&lang=zh_CN">
+                开发者工具
+            </a>
+        </dd>
+        <dd class="menu_item @(controllerName == "diagram"?ViewBag.Select :"")">
+            <a data-id="10050" href="/advanced/diagram?action=index&token=1802258335&lang=zh_CN">
+                运维中心
+            </a>
+        </dd>
+        <dd class="menu_item  @(controllerName == "advanced1"?ViewBag.Select :"")">
+            <a data-id="10051" href="/advanced/advanced1?action=table&token=1802258335&lang=zh_CN">
+                接口权限
+            </a>
+        </dd>
+    </dl>
 
 </div>

@@ -25,6 +25,20 @@ namespace WeiXinMvcWeb.Controllers
         {
             return View();
         }
+        public ActionResult diagram()
+        {
+            return View();
+        }
+        public ActionResult advanced()
+        {
+            return View();
+        }
+
+
+        public ActionResult advanced1()
+        {
+            return View();
+        }
 
     }
 }
