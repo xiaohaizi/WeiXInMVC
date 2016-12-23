@@ -127,6 +127,7 @@ namespace WeiXinMvcWeb.Controllers
         public ActionResult Masssendpage_t()
         {
             List<SendMsg> msgList = new List<SendMsg>();
+            List<List<SendMsg>> list1 = new List<List<SendMsg>>();
             int Count = 0;
            int p= int.Parse(Request.QueryString["begin"]);
             using (WeiXinModelDB weixin = new WeiXinModelDB())
@@ -136,9 +137,15 @@ namespace WeiXinMvcWeb.Controllers
             }
             ViewBag.Count = Count;
             ViewBag.begin = p+1;
-         
+           var s=   msgList.GroupBy(x=>x.Dtime).ToList();
+            foreach (var Item in s)
+            {
+                DateTime dt = Item.Key;
+              var listttmp=  msgList.Where(x => x.Dtime == dt).ToList();
+                list1.Add(listttmp);
+            }
             ViewBag.pages = (int)Math.Ceiling(Convert.ToDecimal(Count) / 10);
-            ViewBag.MsgList = msgList;
+            ViewBag.MsgList = list1;
                 return View();
         }
 

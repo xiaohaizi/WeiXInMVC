@@ -144,6 +144,7 @@
     <Content Include="Content\css\cgi-bin\cardticket\dialog_select_video2968da.css" />
     <Content Include="Content\css\cgi-bin\cardticket\emoji218878.css" />
     <Content Include="Content\css\cgi-bin\cardticket\emotion_editor23b187.css" />
+    <Content Include="Content\css\cgi-bin\cardticket\mass_list31aed1.css" />
     <Content Include="Content\css\cgi-bin\cardticket\media2f624f.css" />
     <Content Include="Content\css\cgi-bin\cardticket\media_dialog27dcd8.css" />
     <Content Include="Content\css\cgi-bin\cardticket\msg_tab25df2d.css" />

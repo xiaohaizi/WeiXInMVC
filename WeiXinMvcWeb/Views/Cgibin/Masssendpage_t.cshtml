@@ -1,5 +1,6 @@
-﻿@{
-
+﻿@using WeiXinMvcWeb.Models.WeiXinDB;
+@{
+    int n = 0;
 }
 <link href="~/Content/css/page/mass_list2f613f.css" rel="stylesheet" />
 <link href="~/Content/css/cgi-bin/cardticket/richvideo2b638f.css" rel="stylesheet" />
@@ -7,6 +8,7 @@
 <link href="~/Content/css/cgi-bin/cardticket/pagination218878.css" rel="stylesheet" />
 <link href="~/Content/css/cgi-bin/cardticket/emoji218878.css" rel="stylesheet" />
 <link href="~/Content/css/base318f29.css" rel="stylesheet" />
+<link href="~/Content/css/cgi-bin/cardticket/mass_list31aed1.css" rel="stylesheet" />
 <div id="body" class="body page_mass_list">
     <div id="js_container_box" class="container_box cell_layout side_l">
         <div class="col_side">
@@ -35,7 +37,7 @@
 
 
 
-                    <div class="popover mass_del_popover pos_right" style="top: 310px; left: 691px; display: none;" id="mass_del_popover">
+                    <div class="popover mass_del_popover pos_right" style="top: 310px; left: 640px; display: none;" id="mass_del_popover">
                         <div class="popover_inner">
                             <div class="popover_content jsPopOverContent">确定删除？</div>
                             <!--#0001#-->
@@ -64,48 +66,56 @@
                                 <td class="table_cell mass_info last_child">发送设置</td>
                             </tr>
                             @{
-                                int n = 0;
-                                foreach (var item in (ViewBag.MsgList as List<WeiXinMvcWeb.Models.WeiXinDB.SendMsg>))
+                                int n1 = 0;
+                                foreach (var item in (ViewBag.MsgList as List<List<SendMsg>>))
                                 {
-                                    n = n + 1;
+                                    n1 = n1 + 1;
                                     // item.
                                     <tr class="mass_item" id="massItem400826785">
                                         <td class="table_cell tl mass_content">
 
                                             <div id="file400826785" data-id="400826785" class="mass_wrp  ">
                                                 <div class="multiple_appmsg_wrp">
+                                                  
+                                                       @{
+                                                          
+                                                           foreach (var tmp_item in item)
+                                                           {
+                                                            <div class="appmsgSendedItem multiple_appmsg">
+                                                                <div class="icon_has_del" id="icon_has_del@(tmp_item.ID)" style="display:@(tmp_item.MsgStatus<=0?"none":"block")">
+                                                                    <span class="icon_has_del_bg">
+                                                                    </span><em>已删除</em>
+                                                                </div>
+                                                                <a class="title_wrp" href="http://mp.weixin.qq.com/s?__biz=MzA4MzA1NTk4NQ==&amp;mid=400826780&amp;idx=1&amp;sn=cc7b531b0dfb1d050227e25712c64344#rd" target="_blank">
 
-                                                    <div class="appmsgSendedItem multiple_appmsg">
-                                                        <div class="icon_has_del" id="icon_has_del@(item.ID)" style="display:@(item.MsgStatus<=0?"none":"block")">
-                                                            <span class="icon_has_del_bg">
-                                                            </span><em>已删除</em>
-                                                        </div>
-                                                        <a class="title_wrp" href="http://mp.weixin.qq.com/s?__biz=MzA4MzA1NTk4NQ==&amp;mid=400826780&amp;idx=1&amp;sn=cc7b531b0dfb1d050227e25712c64344#rd" target="_blank">
+                                                                    <span class="icon icon_lh cover" style="background-image:url(@tmp_item.ImgUrl);">
 
-                                                            <span class="icon icon_lh cover" style="background-image:url(@item.ImgUrl);">
+                                                                    </span>
+                                                                    <span class="title">
+                                                                        @tmp_item.Title
 
-                                                            </span>
-                                                            <span class="title">
-                                                                @item.Title
+                                                                    </span>
+                                                                </a>
 
-                                                            </span>
-                                                        </a>
+                                                                <div class="desc">
+                                                                    <div>
+                                                                        <span>阅读 @tmp_item.ReadCount</span>
+                                                                        <span>点赞 @tmp_item.GoodCount</span>
+                                                                    </div>
+                                                                    <div>
 
-                                                        <div class="desc">
-                                                            <div>
-                                                                <span>阅读 @item.ReadCount</span>
-                                                                <span>点赞 @item.GoodCount</span>
+
+                                                                    </div>
+                                                                    <div>
+
+
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                            <div>
+                                                           }
+                                }
 
-
-                                                            </div>
-                                                            <div>
-
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
+      
 
                                                 </div>
                                             </div>
@@ -117,23 +127,33 @@
                                             </span>
                                             <span class="js_desc mass_opr_meta desc"></span>
 
+                                            @{
 
-                                            <p class="mass_opr_del">
-                                                <a class="js_del"
-                                                   data-id="400826785" id="del_btn_msg@(item.ID)"
-                                                   data-index="0" data-type="9"
-                                                   href="javascript:void(0);" style="display:@(item.MsgStatus>0?"none":"block")"
-                                                   onclick="delmsg(this,@n,@item.ID)">删除</a>
-                                                <span class="js_d" id="deled_item@(item.ID)" style="display:@(item.MsgStatus<=0?"none":"block")">
-                                                    已删除<span>
-                                                    </span>
-                                                </span>
-                                            </p>
+                                                int a = 1;
+                                                foreach (var tmp_item in item)
+                                                {
+                                                    n = n + 1;
+
+                                                    <p class="mass_opr_del @(a>1?"extra":"") ">
+                                                        <a class="js_del"
+                                                           data-id="400826785" id="del_btn_msg@(tmp_item.ID)"
+                                                           data-index="0" data-type="9"
+                                                           href="javascript:void(0);" style="display:@(tmp_item.MsgStatus>0?"none":"block")"
+                                                           onclick="delmsg(this,@n,@tmp_item.ID,@n1)">删除</a>
+                                                        <span class="js_d" id="deled_item@(tmp_item.ID)" style="display:@(tmp_item.MsgStatus<=0?"none":"block")">
+                                                            已删除<span>
+                                                            </span>
+                                                        </span>
+                                                    </p>
+                                                    a = a + 1;
+                                                }
+                                            }
+                                        
 
 
                                         </td>
                                         <td class="table_cell mass_info last_child">
-                                            <p class="mass_time">@(item.Dtime.ToString("yyyy-MM-dd"))</p>
+                                            <p class="mass_time">@(item[0].Dtime.ToString("yyyy-MM-dd"))</p>
 
 
                                             <p>全部用户</p>
@@ -499,10 +519,11 @@
     };
     seajs.use('mass/list', wx_main);
 
-    function delmsg(obj,n,_id)
+    function delmsg(obj,n,_id,_n1)
     {
-        var top=310;
-        var newTop=top+125*(n-1);
+        var top=260+(_n1-1)*25;
+       
+        var newTop=top+118*(n);
         $("#mass_del_popover").css("top",newTop);
         $("#msg_btn_ok").attr("ref", _id);
         $("#mass_del_popover").show();
