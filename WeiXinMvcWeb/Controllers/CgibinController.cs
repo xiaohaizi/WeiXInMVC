@@ -130,12 +130,25 @@ namespace WeiXinMvcWeb.Controllers
             List<List<SendMsg>> list1 = new List<List<SendMsg>>();
             int Count = 0;
            int p= int.Parse(Request.QueryString["begin"]);
+            DateTime nTime =Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"));
+            DateTime n1Time = nTime.AddDays(0 - p * 10);
+            DateTime n2Time = nTime.AddDays(0 - (p + 1) * 10);
+
+            DateTime minTime = DateTime.Now.AddDays(-100);
             using (WeiXinModelDB weixin = new WeiXinModelDB())
             {
+               
                 Count = weixin.SendMsgs.Count();
-                msgList = weixin.SendMsgs.OrderByDescending(x=>x.ID).Skip(p*10).Take(10).ToList();
+                nTime = weixin.SendMsgs.Max(xx => xx.Dtime);
+                 n1Time = nTime.AddDays(0 - p * 10);
+                 n2Time = nTime.AddDays(0 - (p + 1) * 10);
+                minTime = weixin.SendMsgs.Min(xx => xx.Dtime);
+                msgList = weixin.SendMsgs.Where(x=>x.Dtime>= n2Time&&x.Dtime<=n1Time).OrderByDescending(x=>x.Dtime).ToList();
             }
-            ViewBag.Count = Count;
+
+            TimeSpan sp = nTime.Subtract(minTime);
+            int days = sp.Days;
+            ViewBag.Count = days;
             ViewBag.begin = p+1;
            var s=   msgList.GroupBy(x=>x.Dtime).ToList();
             foreach (var Item in s)
@@ -144,7 +157,7 @@ namespace WeiXinMvcWeb.Controllers
               var listttmp=  msgList.Where(x => x.Dtime == dt).ToList();
                 list1.Add(listttmp);
             }
-            ViewBag.pages = (int)Math.Ceiling(Convert.ToDecimal(Count) / 10);
+            ViewBag.pages = (int)Math.Ceiling(Convert.ToDecimal(days) / 10);
             ViewBag.MsgList = list1;
                 return View();
         }
