@@ -682,6 +682,7 @@
     <Compile Include="Models\AppmsganalysisHourRetrun.cs" />
     <Compile Include="Models\AppmsganalysisReportRetrun.cs" />
     <Compile Include="Models\AppmsganalysisRetrun.cs" />
+    <Compile Include="Models\AppmsganalysisRetrunAjax.cs" />
     <Compile Include="Models\BaseReturncs.cs" />
     <Compile Include="Models\Base_Acl.cs" />
     <Compile Include="Models\CategoryList.cs" />

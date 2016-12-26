@@ -63,7 +63,7 @@
       {
         "id": 10016,
         "name": "图文分析",
-        "url": "/misc/appmsganalysis?action=all&order_direction=2",
+        "url": "/misc/appmsganalysisd?action=all&order_direction=2",
         "new_flag": 0,
         "new_seq": 0
       },

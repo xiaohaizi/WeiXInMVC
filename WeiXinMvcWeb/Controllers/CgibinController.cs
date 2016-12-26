@@ -26,7 +26,7 @@ namespace WeiXinMvcWeb.Controllers
             int count = 0;
             using (WeiXinModelDB wxDb=new WeiXinModelDB()) {
                 count= wxDb.NewsNotices.Count();
-              var newsList= wxDb.NewsNotices.OrderByDescending(x => x.ID).Skip((start-1)*27).Take(27).ToList();
+              var newsList= wxDb.NewsNotices.OrderByDescending(x => x.ref_date).Skip((start-1)*27).Take(27).ToList();
                 ViewBag.NewsList = newsList;
                 ViewBag.BaseInfo=  wxDb.BaseInfos.FirstOrDefault();
             }

@@ -32,12 +32,12 @@ namespace WeiXinMvcWeb.Controllers
         {
             ViewBag.Title = "用户分析";
             string btime = DateTime.Now.AddDays(-30).ToString("yyyy-MM-dd");
-            string etime= DateTime.Now.ToString("yyyy-MM-dd");
+            string etime = DateTime.Now.ToString("yyyy-MM-dd");
             DateTime begin_date = Convert.ToDateTime(btime);
             DateTime end_date = Convert.ToDateTime(etime);
-            List<User_SourceItem>  list = weiXin.User_SourceItems.Where(x => x.date >= begin_date && x.date <= end_date).ToList();
-          string str= JsonConvert.SerializeObject(list, iso).Replace("\"","").ToLower().Replace(" ","");
-            str= Regex.Replace(str, @"([0-9]{4,4}-[0-9]{0,2}-[0-9]{0,2})", "\"$1\"");
+            List<User_SourceItem> list = weiXin.User_SourceItems.Where(x => x.date >= begin_date && x.date <= end_date).ToList();
+            string str = JsonConvert.SerializeObject(list, iso).Replace("\"", "").ToLower().Replace(" ", "");
+            str = Regex.Replace(str, @"([0-9]{4,4}-[0-9]{0,2}-[0-9]{0,2})", "\"$1\"");
             ViewBag.DataList = str;
             return View();
         }
@@ -57,7 +57,7 @@ namespace WeiXinMvcWeb.Controllers
             var RegionList = weiXin.Regions.Where(x => x.DTime >= bdate && x.DTime <= edate).ToList();
             string temp = " name: \"{0}\",value: \"{1}\", count: +(\"{2}\") || 0";
             string temp1 = " name: \"{0}\"||\"未知\",value: \"{1}\", count: +(\"{2}\") || 0";
-            string temp2 = "region: $1 parent_region_id: \"{0}\", region_id: \"{1}\", region_name: \"{2}\"   $2,count: +(\"{3}\") || 0"; 
+            string temp2 = "region: $1 parent_region_id: \"{0}\", region_id: \"{1}\", region_name: \"{2}\"   $2,count: +(\"{3}\") || 0";
             string date = "[   { date: \"" + begin_date + "\",";
             if (DeviceList.Count <= 0 && PlatformList.Count <= 0 && RegionList.Count <= 0)
             {
@@ -65,7 +65,7 @@ namespace WeiXinMvcWeb.Controllers
             }
             else
             {
-               
+
                 date = date + "devices:[";
 
                 foreach (var dItem in DeviceList)
@@ -179,11 +179,11 @@ namespace WeiXinMvcWeb.Controllers
             DateTime begin_time = Convert.ToDateTime(bTime);
             DateTime end_time = Convert.ToDateTime(eTime);
             List<MsgData> list = weiXin.MsgDatas.Where(x => x.publish_date >= begin_time && x.publish_date <= end_time).ToList();
-           
+
             ViewBag.DataList = JsonConvert.SerializeObject(list, iso);
             return View();
-          
-          
+
+
         }
         //?action=all&begin_date=2016-09-18&end_date=2016-09-21&order_by=1&order_direction=2&token=798083537&lang=zh_CN&f=json&ajax=1&random=0.03687752467231431
 
@@ -196,9 +196,9 @@ namespace WeiXinMvcWeb.Controllers
 
             string msgid1 = Request.QueryString["msgid"];
             MsgDataRetrun model = new MsgDataRetrun();
-            model.genders= weiXin.Genders.Where(x => x.msgid == msgid1).ToList();
-           
-            var list12=  weiXin.Regions.Where(x => x.msgid == msgid1).ToList();
+            model.genders = weiXin.Genders.Where(x => x.msgid == msgid1).ToList();
+
+            var list12 = weiXin.Regions.Where(x => x.msgid == msgid1).ToList();
 
             foreach (var it in list12)
             {
@@ -215,17 +215,17 @@ namespace WeiXinMvcWeb.Controllers
             m2.region = r;
             model.regions.Add(m2);
             model.devices = weiXin.Devices.Where(x => x.msgid == msgid1).ToList();
-          
-            model.platforms=weiXin.Platforms.Where(x => x.msgid == msgid1).ToList();
+
+            model.platforms = weiXin.Platforms.Where(x => x.msgid == msgid1).ToList();
             string t = DateTime.Now.ToString("yyyy-MM-dd");
-            string str=JsonConvert.SerializeObject(model, iso);
-            msg.detail_data = "{\"portrait\":{\"ref_date\":\""+t+"\",\"msgid\":\""+ msgid1 + "\",$TTTT$}}";
+            string str = JsonConvert.SerializeObject(model, iso);
+            msg.detail_data = "{\"portrait\":{\"ref_date\":\"" + t + "\",\"msgid\":\"" + msgid1 + "\",$TTTT$}}";
             msg.detail_data = msg.detail_data.Replace("$TTTT$", str.TrimEnd('}').TrimStart('{')).ToLower().
                 Replace("gendername", "attr_name").Replace("gendervalue", "attr_value").
                 Replace("gendercount", "user_count").Replace("platformname", "attr_name").
-                Replace("platformvalue", "attr_value").Replace("platformcount", "user_count")                
+                Replace("platformvalue", "attr_value").Replace("platformcount", "user_count")
                 .Replace("devicevalue", "attr_value").Replace("devicecount", "user_count");
-            return  JsonConvert.SerializeObject(msg, iso); ;
+            return JsonConvert.SerializeObject(msg, iso); ;
         }
 
         public string faq()
@@ -238,12 +238,19 @@ namespace WeiXinMvcWeb.Controllers
         public string AppmsganalysisAction(string action, DateTime begin_date, DateTime end_date, string order_by, string order_direction, string token, string lang, string f, string ajax, string random)
         {
             string s = "";
-            AppmsganalysisRetrun appModel = new AppmsganalysisRetrun();
+            AppmsganalysisRetrunAjax appModel = new AppmsganalysisRetrunAjax();
+            //string bTime =Convert.ToDateTime(Request.QueryString["begin_date"].ToString);
+            //  string eTime = DateTime.Now.ToString("yyyy-MM-dd");
+            DateTime begin_time = Convert.ToDateTime(Request.QueryString["begin_date"]);
+            DateTime end_time = Convert.ToDateTime(Request.QueryString["end_date"]);
+            List<MsgData> list = weiXin.MsgDatas.Where(x => x.publish_date >= begin_time && x.publish_date <= end_time).ToList();
 
+            appModel.total_article_data = "{ \"list\": " + JsonConvert.SerializeObject(list, iso) +"}";
             var baseModel = weiXin.Base_Resps.FirstOrDefault();
             var userInfo = weiXin.User_Infos.Include("wb_info").FirstOrDefault();
             appModel.base_resp = baseModel;
             appModel.user_info = userInfo;
+            appModel.user_acl = new Base_Acl();
             s = JsonConvert.SerializeObject(appModel, iso);
             return s;
         }
