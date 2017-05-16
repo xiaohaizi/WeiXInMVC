@@ -13,6 +13,7 @@ namespace WeiXinMvcWeb.Controllers
         // GET: Cgibin
         public ActionResult Index()
         {
+          //  WeiXinMvcWeb.Models.Class1.jiami();
             return View();
         }
 
@@ -29,6 +30,7 @@ namespace WeiXinMvcWeb.Controllers
               var newsList= wxDb.NewsNotices.OrderByDescending(x => x.ref_date).Skip((start-1)*27).Take(27).ToList();
                 ViewBag.NewsList = newsList;
                 ViewBag.BaseInfo=  wxDb.BaseInfos.FirstOrDefault();
+                ViewBag.User_SourceItem = wxDb.User_SourceItems.OrderByDescending(l=>l.date).FirstOrDefault();
             }
             int pages =(int)Math.Ceiling(Convert.ToDecimal(count)/Convert.ToDecimal("27"));
             ViewBag.PageCount = pages;
@@ -44,10 +46,12 @@ namespace WeiXinMvcWeb.Controllers
             LoginReturn base_resp = new LoginReturn();
             base_resp.err_msg = "acct/password error";
             base_resp.ret = 200023;
-            using (WeiXinModelDB weixin=new WeiXinModelDB())
+
+            //hesong 注释
+            using (WeiXinModelDB weixin = new WeiXinModelDB())
             {
-              var user=  weixin.User_Infos.Where(x => x.user_name == username && x.pwd == pwd).FirstOrDefault();
-                  base_resp.ret  = 0;
+                var user = weixin.User_Infos.Where(x => x.user_name == username && x.pwd == pwd).FirstOrDefault();
+                base_resp.ret = 0;
                 base_resp.redirect_url = "/cgibin/home?t=home/index&lang=zh_CN&token=1941453980";
                 // redirect_url
             }
@@ -71,16 +75,23 @@ namespace WeiXinMvcWeb.Controllers
 
         public ActionResult Message()
         {
+            ViewBag.Title = "消息管理";
             return View();
         }
 
         public ActionResult Messages()
         {
+            ViewBag.Title = "消息管理";
             return View();
         }
 
         public ActionResult User_Tag()
         {
+            using (WeiXinModelDB wxDb = new WeiXinModelDB())
+            {
+                ViewBag.User_SourceItem = wxDb.User_SourceItems.OrderByDescending(l => l.date).FirstOrDefault();
+            }
+            ViewBag.Title = "用户管理";
             return View();
         }
 
@@ -109,6 +120,10 @@ namespace WeiXinMvcWeb.Controllers
             return View();
         }
 
+        public ActionResult framead_system()
+        {
+            return View();
+        }
         public ActionResult Settingpage()
         {
             return View();

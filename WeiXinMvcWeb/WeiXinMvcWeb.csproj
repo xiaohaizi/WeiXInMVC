@@ -92,6 +92,10 @@
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Management, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Hesong\Desktop\System.Management.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -135,6 +139,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="404\404.html" />
+    <Content Include="404\css\404.css" />
+    <Content Include="404\css\404.png" />
+    <Content Include="404\css\wx_logo.png" />
+    <Content Include="bin\WeiXinMvcWeb.dll" />
+    <Content Include="bin\WeiXinMvcWeb.pdb" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\base318f29.css" />
@@ -170,7 +180,19 @@
     <Content Include="Content\css\cgi-bin\widget\rich_buddy2f2f7f.css" />
     <Content Include="Content\css\cgi-bin\widget\upload22a2de.css" />
     <Content Include="Content\css\cgi-bin\widget\verifycode244d4b.css" />
+    <Content Include="Content\css\comm_htmledition\adSystem_common.css" />
+    <Content Include="Content\css\comm_htmledition\ad_sell.css" />
+    <Content Include="Content\css\comm_htmledition\base.css" />
+    <Content Include="Content\css\comm_htmledition\button_group.css" />
+    <Content Include="Content\css\comm_htmledition\layout_head.css" />
+    <Content Include="Content\css\comm_htmledition\lib.css" />
+    <Content Include="Content\css\comm_htmledition\style-moment-edit-template.5b7682da.css" />
     <Content Include="Content\css\index2b2fad.css" />
+    <Content Include="Content\css\mpres\htmledition\adSystem\adSystem_common.css" />
+    <Content Include="Content\css\mpres\htmledition\adSystem\ad_sell.css" />
+    <Content Include="Content\css\mpres\htmledition\adSystem\button_group.css" />
+    <Content Include="Content\css\mpres\htmledition\adSystem\style-moment-edit-template.5b7682da.css" />
+    <Content Include="Content\css\mpres\htmledition\dropdown.css" />
     <Content Include="Content\css\mpres\htmledition\images\base_z2b638f.png" />
     <Content Include="Content\css\mpres\htmledition\index.css" />
     <Content Include="Content\css\mpres\htmledition\base2fde18.css" />
@@ -222,6 +244,10 @@
     <Content Include="Content\images\page_service_package_intro_z21b651.png" />
     <Content Include="Content\images\vote_empty236287.png" />
     <Content Include="Content\js\app-2cd8742134.js" />
+    <Content Include="Content\js\highcharts\highcharts-3d.js" />
+    <Content Include="Content\js\highcharts\highcharts-more.js" />
+    <Content Include="Content\js\highcharts\highcharts-zh_CN.js" />
+    <Content Include="Content\js\highcharts\highcharts.js" />
     <Content Include="Content\js\lib-4cfcf54380.js" />
     <Content Include="Content\js\mpres\htmledition\add\member_info_flag25676c.js" />
     <Content Include="Content\js\mpres\htmledition\add\msg_operate_type_html2ebf96.js" />
@@ -264,13 +290,20 @@
     <Content Include="Content\js\mpres\htmledition\cardticket\send_card2d3016.js" />
     <Content Include="Content\js\mpres\htmledition\cardticket\send_card_table2ef103.js" />
     <Content Include="Content\js\mpres\htmledition\cardticket\store_cgi2f12f7.js" />
+    <Content Include="Content\js\mpres\htmledition\chart\empty-pie2bff4a.js" />
     <Content Include="Content\js\mpres\htmledition\chart\jquery-chart2f2f7f.js" />
     <Content Include="Content\js\mpres\htmledition\chart\pie2bff4a.js" />
+    <Content Include="Content\js\mpres\htmledition\common\lib.js" />
     <Content Include="Content\js\mpres\htmledition\common\lib27616c.js" />
+    <Content Include="Content\js\mpres\htmledition\common\sea.js" />
+    <Content Include="Content\js\mpres\htmledition\common\wx.js" />
     <Content Include="Content\js\mpres\htmledition\common\wx301ae4.js" />
+    <Content Include="Content\js\mpres\htmledition\components\date-range22edfc1.js" />
     <Content Include="Content\js\mpres\htmledition\components\event-emitter271dfd.js" />
+    <Content Include="Content\js\mpres\htmledition\components\misc-date2bff4a.js" />
     <Content Include="Content\js\mpres\htmledition\components\tab-bar22a0043.js" />
     <Content Include="Content\js\mpres\htmledition\components\tab-bar2a4e1d.js" />
+    <Content Include="Content\js\mpres\htmledition\components\table-date2bff4a.js" />
     <Content Include="Content\js\mpres\htmledition\components\trapezoid27cccc.js" />
     <Content Include="Content\js\mpres\htmledition\detail\all310742.js" />
     <Content Include="Content\js\mpres\htmledition\detail\article-item2f2f7f.js" />
@@ -299,6 +332,7 @@
     <Content Include="Content\js\mpres\htmledition\homepage\cateList23b289.js" />
     <Content Include="Content\js\mpres\htmledition\homepage\importAppmsgList2a4e1d.js" />
     <Content Include="Content\js\mpres\htmledition\home\index310742.js" />
+    <Content Include="Content\js\mpres\htmledition\host_report.js" />
     <Content Include="Content\js\mpres\htmledition\importAppmsgList\item.html2ebf96.js" />
     <Content Include="Content\js\mpres\htmledition\importAppmsgList\layout.html23b289.js" />
     <Content Include="Content\js\mpres\htmledition\input\lentips26a308.js" />
@@ -434,8 +468,13 @@
     <Content Include="Content\js\mpres\htmledition\statistics\article-table.html2c21e2.js" />
     <Content Include="Content\js\mpres\htmledition\statistics\bubble-tips.html2f2f7f.js" />
     <Content Include="Content\js\mpres\htmledition\statistics\common2f2f7f.js" />
+    <Content Include="Content\js\mpres\htmledition\statistics\common_util2bff4a.js" />
+    <Content Include="Content\js\mpres\htmledition\statistics\date-submenu.html2a4e1d.js" />
+    <Content Include="Content\js\mpres\htmledition\statistics\keydata.html27cccc.js" />
+    <Content Include="Content\js\mpres\htmledition\statistics\misc-date.html2bff4a.js" />
     <Content Include="Content\js\mpres\htmledition\statistics\tab-bar.html2a4e1d.js" />
     <Content Include="Content\js\mpres\htmledition\statistics\tab-bar2.html2a0043.js" />
+    <Content Include="Content\js\mpres\htmledition\statistics\tooltip265438.js" />
     <Content Include="Content\js\mpres\htmledition\statistics\user_stat\common.js" />
     <Content Include="Content\js\mpres\htmledition\statistics\video-stat-block.html2f2f7f.js" />
     <Content Include="Content\js\mpres\htmledition\tpl10\date-range22edfc1.js" />
@@ -587,6 +626,7 @@
     <Content Include="Content\js\mpres\htmledition\ui\dropdown.html218877.js" />
     <Content Include="Content\js\mpres\htmledition\ui\dropdown218878.js" />
     <Content Include="Content\js\mpres\htmledition\ui\map271dfd.js" />
+    <Content Include="Content\js\mpres\htmledition\ui\timeRange.html30bddd.js" />
     <Content Include="Content\js\mpres\htmledition\user\grouplist_tag.html2e206b.js" />
     <Content Include="Content\js\mpres\htmledition\user\group_cgi_tag308b2e.js" />
     <Content Include="Content\js\mpres\htmledition\user\index_tag2f2f7f.js" />
@@ -603,6 +643,7 @@
     <Content Include="Content\js\mpres\htmledition\wx\ban3025fc.js" />
     <Content Include="Content\js\mpres\htmledition\wx\cgiReport218877.js" />
     <Content Include="Content\js\mpres\htmledition\wx\cgiReport30c893.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\cgiReport32caa3.js" />
     <Content Include="Content\js\mpres\htmledition\wx\Idcheck29f8fd.js" />
     <Content Include="Content\js\mpres\htmledition\wx\inputCounter2a0043.js" />
     <Content Include="Content\js\mpres\htmledition\wx\liveTooltip29d335.js" />
@@ -616,6 +657,7 @@
     <Content Include="Content\js\mpres\htmledition\wx\region2c2080.js" />
     <Content Include="Content\js\mpres\htmledition\wx\remark264f38.js" />
     <Content Include="Content\js\mpres\htmledition\wx\report_util2edfc1.js" />
+    <Content Include="Content\js\mpres\htmledition\wx\report_util31aed1.js" />
     <Content Include="Content\js\mpres\htmledition\wx\RichBuddy27b666.js" />
     <Content Include="Content\js\mpres\htmledition\wx\RichBuddy_tag2f2f7f.js" />
     <Content Include="Content\js\mpres\htmledition\wx\searchInput280571.js" />
@@ -638,18 +680,26 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="index11.html" />
+    <Content Include="mpres\htmledition\images\stat\arrow-spr265437.png" />
+    <Content Include="promotion\res\zh_CN\htmledition\js\ad_system\deparam.js" />
+    <Content Include="promotion\res\zh_CN\htmledition\js\biz_common\jquery.ui\jquery.ui.draggable.js" />
+    <Content Include="promotion\res\zh_CN\htmledition\js\common\report\badjs-wrap.js" />
+    <Content Include="promotion\res\zh_CN\htmledition\js\common\report\badjs.js" />
+    <Content Include="promotion\res\zh_CN\htmledition\js\nappmsg\publisher\host_report.js" />
     <Content Include="scripts\ai.0.22.19-build00125.js" />
     <Content Include="scripts\ai.0.22.19-build00125.min.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="json.json" />
-    <None Include="Properties\PublishProfiles\hhhh.pubxml" />
-    <None Include="Properties\PublishProfiles\ww.pubxml" />
+    <None Include="Properties\PublishProfiles\hai.pubxml" />
+    <None Include="Properties\PublishProfiles\hs.pubxml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -659,24 +709,9 @@
     <Compile Include="Controllers\MerchantController.cs" />
     <Compile Include="Controllers\MiscController.cs" />
     <Compile Include="Controllers\PromotionController.cs" />
+    <Compile Include="Controllers\PublisherController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201609211606529_InitialCreate.cs" />
-    <Compile Include="Migrations\201609211606529_InitialCreate.Designer.cs">
-      <DependentUpon>201609211606529_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201609221147105_AddUser.cs" />
-    <Compile Include="Migrations\201609221147105_AddUser.Designer.cs">
-      <DependentUpon>201609221147105_AddUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610131212429_InitialCreate1.cs" />
-    <Compile Include="Migrations\201610131212429_InitialCreate1.Designer.cs">
-      <DependentUpon>201610131212429_InitialCreate1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610131256143_InitialCreate2.cs" />
-    <Compile Include="Migrations\201610131256143_InitialCreate2.Designer.cs">
-      <DependentUpon>201610131256143_InitialCreate2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppmsganalysisHourRetrun.cs" />
@@ -687,10 +722,12 @@
     <Compile Include="Models\Base_Acl.cs" />
     <Compile Include="Models\CategoryList.cs" />
     <Compile Include="Models\Class1.cs" />
+    <Compile Include="Models\Computer.cs" />
     <Compile Include="Models\MsgDataRetrun.cs" />
     <Compile Include="Models\MsgDetail.cs" />
     <Compile Include="Models\WeiXinDB\AppmsgItemHour.cs" />
     <Compile Include="Models\WeiXinDB\BaseInfo.cs" />
+    <Compile Include="Models\WeiXinDB\Cost.cs" />
     <Compile Include="Models\WeiXinDB\Device.cs" />
     <Compile Include="Models\FdevreportReturn.cs" />
     <Compile Include="Models\Func_Ban_Info.cs" />
@@ -710,15 +747,23 @@
     <Compile Include="Models\WebpageanalysisRetrun.cs" />
     <Compile Include="Models\WeiXinDB\AppmsgItem.cs" />
     <Compile Include="Models\WeiXinDB\Daily.cs" />
+    <Compile Include="Models\WeiXinDB\deviceUser.cs" />
     <Compile Include="Models\WeiXinDB\Gender.cs" />
+    <Compile Include="Models\WeiXinDB\genderUser.cs" />
     <Compile Include="Models\WeiXinDB\Intf_Stat.cs" />
     <Compile Include="Models\WeiXinDB\Lang.cs" />
+    <Compile Include="Models\WeiXinDB\LangUser.cs" />
     <Compile Include="Models\WeiXinDB\Menu_Summary.cs" />
     <Compile Include="Models\WeiXinDB\MsgData.cs" />
+    <Compile Include="Models\WeiXinDB\MsgDataDay.cs" />
     <Compile Include="Models\WeiXinDB\NewsNotice.cs" />
     <Compile Include="Models\WeiXinDB\Platform.cs" />
+    <Compile Include="Models\WeiXinDB\PlatformUser.cs" />
+    <Compile Include="Models\WeiXinDB\Promotion_Publisher.cs" />
     <Compile Include="Models\WeiXinDB\Region.cs" />
+    <Compile Include="Models\WeiXinDB\RegionUser.cs" />
     <Compile Include="Models\WeiXinDB\SendMsg.cs" />
+    <Compile Include="Models\WeiXinDB\ShareItem.cs" />
     <Compile Include="Models\WeiXinDB\User_SourceItem.cs" />
     <Compile Include="Models\WeiXinDB\Base_Resp.cs" />
     <Compile Include="Models\WeiXinDB\Nav.cs" />
@@ -760,7 +805,6 @@
     <Content Include="Views\Cgibin\Appmsg.cshtml" />
     <Content Include="Views\Cgibin\Filepage.cshtml" />
     <Content Include="Views\Cgibin\Filepage3.cshtml" />
-    <Content Include="Views\Cgibin\Frame.cshtml" />
     <Content Include="Views\Promotion\Readtemplate.cshtml" />
     <Content Include="Views\Merchant\Ad_Host_Index.cshtml" />
     <Content Include="Views\Cgibin\Settingpage.cshtml" />
@@ -774,6 +818,15 @@
     <Content Include="Views\Cgibin\Frame1.cshtml" />
     <Content Include="Views\Advanced\diagram.cshtml" />
     <Content Include="Views\Advanced\advanced1.cshtml" />
+    <Content Include="Views\Misc\Appmsganalysis_Report123.cshtml" />
+    <Content Include="Views\Cgibin\Frame.cshtml" />
+    <Content Include="Views\Publisher\Index.cshtml" />
+    <Content Include="Views\Publisher\Readtemplate.cshtml" />
+    <Content Include="Views\Cgibin\framead_system.cshtml" />
+    <Content Include="Views\Promotion\Index.cshtml" />
+    <Content Include="Views\Promotion\Readtemplate_t.cshtml" />
+    <Content Include="Views\Promotion\Readtemplate_t1.cshtml" />
+    <Content Include="Views\Promotion\readtemplate_1.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -784,25 +837,15 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\images\pic\date_range\" />
+    <Folder Include="Content\js\mpres\htmledition\analyse\" />
+    <Folder Include="Content\js\mpres\htmledition\tab-bar\" />
+    <Folder Include="Controllers\Promotionss\" />
+    <Folder Include="mmopen\" />
     <Folder Include="Views\Appmsganalysis\" />
     <Folder Include="Views\Part\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201609211606529_InitialCreate.resx">
-      <DependentUpon>201609211606529_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201609221147105_AddUser.resx">
-      <DependentUpon>201609221147105_AddUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610131212429_InitialCreate1.resx">
-      <DependentUpon>201610131212429_InitialCreate1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610131256143_InitialCreate2.resx">
-      <DependentUpon>201610131256143_InitialCreate2.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

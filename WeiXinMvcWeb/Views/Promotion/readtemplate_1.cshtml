@@ -1,0 +1,135 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta charset="utf-8">
+    <title>微信公众平台</title>
+    <script type="text/javascript">window._points=[+new Date];// 初始测速点</script>
+    <link rel="stylesheet" type="text/css" href="//res.wx.qq.com/promotion/res/zh_CN/htmledition/comm_htmledition/style/base/layout_head.css">
+    <link rel="stylesheet" type="text/css" href="//res.wx.qq.com/promotion/res/zh_CN/htmledition/comm_htmledition/style/base/base.css">
+    <link rel="stylesheet" type="text/css" href="//res.wx.qq.com/promotion/res/zh_CN/htmledition/comm_htmledition/style/base/lib.css">
+    <link rel="stylesheet" type="text/css" href="//res.wx.qq.com/promotion/res/zh_CN/htmledition/comm_htmledition/style/page/mpad/mpad_host_push.css">
+    <link rel="stylesheet" type="text/css" href="//wximg.qq.com/tmt/mpa/beta/css/style-moment-edit-template.5b7682da.css">
+
+
+    <style type="text/css">
+        .pop_ad_helper .popover_arrow {
+            left: 280px;
+            margin-top: -8px;
+        }
+    </style>
+    <script type="text/javascript">window._points[1]=+new Date;// css加载完成</script>
+    <style></style>
+</head>
+
+<body class="zh_CN">
+    <div id="body" class="body">
+        <div id="js_container_box" class="container_box cell_layout side_l">
+            <div class="col_main">
+                <div class="main_hd">
+                    <h2>流量主</h2>
+                    <div id="topTab" class="title_tab" style="margin-top: 0px;">
+                        <ul class="mod-frame__tab-nav" data-index="0">
+                            <li data-index="0" class="mod-frame__tab-item first js_top mod-frame__tab-item_current" data-id="adhostreport">
+                                <a class="mod-frame__tab-link" href="/Publisher/Readtemplate?t=ad_system/common_frame&amp;t1=publisher/host_report&amp;token=903939300" target="mpIFrame">报表统计</a>
+                            </li>
+                            <li data-index="2" class="mod-frame__tab-item  js_top " data-id="adhostmanage" style="">
+                                <a class="mod-frame__tab-link" href="/promotion/readtemplate?t=ad_system/common_frame&amp;t1=publisher/host_manage&amp;token=903939300" target="mpIFrame">
+                                    流量管理
+                                </a>
+                            </li>
+                            <li data-index="3" class="mod-frame__tab-item  js_top" data-id="adhostpay"><a class="mod-frame__tab-link" href="/Promotion/Readtemplate_t?t=ad_system/common_frame&amp;t1=publisher/host_pay&amp;token=903939300" target="mpIFrame">财务管理</a></li>
+                        </ul>
+                    </div>
+                    <p class="extra_info mini_tips icon_after">
+                        <label class="mini_tips icon_after" id="js_ad_helper" data-flag="host">帮助<i class="icon_msg_mini ask"></i></label>
+                    </p>
+                </div>
+                <div class="main_hd">
+                    <div class="highlight_box">
+                        <ul class="links">
+                            <li class="links_item no_extra"><a id="host_report_link" href="/publisher/readtemplate?t=ad_system/common_frame&amp;t1=publisher/host_report&amp;token=763438000" target="mpIFrame">报表统计</a></li>
+                            <li class="links_item selected"><a href="javascript:;">数据推送</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--数据推送-->
+                <div class="main_bd">
+                    <div class="global_mod float_layout gap_top">
+                        <div class="global_info gap_top_item mini_tips weak_text">绑定微信号后可接收每日广告数据推送，最多可绑定5个微信号</div>
+                        <div class="global_extra">
+                            <div class="bubble_tips bubble_right gap_right">
+                                <div class="bubble_tips_inner">
+                                    <p class="mass_send_tips" id="tips">还可绑定<span>5</span>个</p>
+                                </div>
+                                <i class="bubble_tips_arrow out"></i>
+                                <i class="bubble_tips_arrow in"></i>
+                            </div>
+                            <a class="btn btn_primary btn_add js_bind" href="javascript:;"><i class="icon14_common add_white"></i>绑定微信号</a>
+                        </div>
+                    </div>
+                    <div class="table_wrp with_table_list">
+                        <table class="table">
+                            <thead class="thead">
+                                <tr>
+                                    <th class="table_cell wx_account">微信号</th>
+                                    <th class="table_cell nickname tl">昵称</th>
+                                    <th class="table_cell last_child">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="js_list" class="tbody">
+                                <tr class="empty_item">
+                                    <td colspan="3" class="empty_tips">你现在尚未绑定公众号,<a class="js_bind" href="javascript:;">马上绑定</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+             
+            </div>
+        </div>
+    </div>
+    <div class="scale_tips" id="zoom_tips" style="display:none;">
+        <div class="scale_tips_inner">
+            <i class="icon_scale_tips"></i>
+            <p class="scale_tips_content"><span id="zoom_msg"></span><a href="javascript:;" id="zoom_prompt">不再提示</a></p>
+        </div>
+    </div>
+    <div style="position: absolute; right: 0px; bottom: 0px; visibility: visible;"><object type="application/x-shockwave-flash" data="https://res.wx.qq.com/promotion/res/zh_CN/htmledition/plprecorder/biz_web/zoom.swf" id="ZoomFlash" width="10" height="10"><param name="movie" value="https://res.wx.qq.com/promotion/res/zh_CN/htmledition/plprecorder/biz_web/zoom.swf"><param name="allowscriptaccess" value="always"><param name="wmode" value="transparent"><param name="scale" value="noScale"></object></div><div class="popover pop_ad_helper" style="display:none;position:absolute;left:647px;top:63px;">
+        <div class="popover_inner">
+            <div class="popover_content">
+                <style type="text/css">
+                    #js_ad_helper {
+                        cursor: pointer;
+                    }
+
+                    .pop_ad_helper {
+                        width: 330px;
+                    }
+
+                    .wrp_exp {
+                        margin-top: 20px;
+                        color: #8d8d8d;
+                        height: 95px;
+                        position: relative;
+                        padding-left: 100px;
+                    }
+
+                        .wrp_exp strong {
+                            font-weight: 400;
+                            font-style: normal;
+                            color: #222222;
+                        }
+                </style><div class="inner_ad_helper"><p>了解流量主详细功能，查看<a href="http://mp.weixin.qq.com/promotion/readtemplate?t=faq/ad_host_faq_1_tmpl" target="_blank">流量主帮助文档</a></p><p style="margin-top: 15px;">了解互选广告功能，查看<a href="http://wximg.qq.com/wxp/assets/data/huxuan/OA_MutualSelectedAds_SupplierManual_20170307.pdf" target="_blank">互选广告合作指引</a></p><p class="wrp_exp" style=""><img src="https://res.wx.qq.com/mpres/htmledition/images/pic/ad/ad_helper_qrcode.jpg" style="position: absolute;left:-5px;top: 0;" width="90" height="90"><span><strong style="font-weight: 400;font-style: normal;color: #222222;">扫一扫关注微信广告助手</strong><br>获得更多使用秘籍，随时反馈使用意见</span></p></div>
+            </div>
+        </div><i class="popover_arrow popover_arrow_out"></i><i class="popover_arrow popover_arrow_in"></i>
+    </div>
+</body>
+</html>

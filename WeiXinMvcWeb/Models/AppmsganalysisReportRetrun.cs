@@ -8,7 +8,7 @@ namespace WeiXinMvcWeb.Models
     public class AppmsganalysisReportRetrun:BaseReturncs
     {
         public List<AppmsgItem> item=new List<AppmsgItem>();
-        public string[] share_item = { };
+        public List<ShareItem> share_item = new List<ShareItem>();
         public int load_done = 1;
     }
 }

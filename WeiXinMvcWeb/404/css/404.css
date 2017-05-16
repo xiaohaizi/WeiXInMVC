@@ -1,0 +1,38 @@
+body{
+	margin:0px;
+	padding:0px;
+	font-size:14px;
+	color:#696969;
+	background:#E7E8EB;
+	font-family:"Microsoft YaHei","Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+}
+@font-face {
+    font-family: 'akzidenz';  /*���Զ�����������*/
+    src: url('akzidenz.eot');
+    src: url('akzidenz.eot?#iefix') format('eot'),
+         url('akzidenz.woff') format('woff'),
+         url('akzidenz.ttf') format('truetype'),
+         url('akzidenz.svg#webfontjKg17VrE') format('svg');
+}
+
+a:link,a:visited{color:#696969;text-decoration:none;}
+a:hover {color:#333;text-decoration:underline;}
+
+a.backhome:link,a.backhome:visited{color:#459AE9;text-decoration:none;}
+a.backhome:hover {color:#459AE9;text-decoration:underline;}
+
+
+ul,li,dl,dt,dd,p,h1,h2,h3,img{margin:0px;padding:0px;border:none;}
+ul,li{list-style-type: none;}
+.clear{clear:both;}
+
+.div_common{ width:1080px;margin:0 auto;}
+#div_hd{ width:100%; height:55px;background:#FFFFFF; border-bottom:1px solid #D9DADC; border-top:2px solid #44B549}
+
+.div_404{ width:1078px; height:433px;background:#FFFFFF; border:1px solid #D9DADC; margin:30px 0 80px 0; text-align:center; padding-top:200px;}
+.div_404 p{ line-height:48px;}
+
+.footer{width:100%; height:60px;background:#B8B9B9; text-align:center; color:#F1F1F1; line-height:60px; font-size:12px;}
+.footer a{ color:#F1F1F1}
+.footer span{ padding:0 10px;}
+

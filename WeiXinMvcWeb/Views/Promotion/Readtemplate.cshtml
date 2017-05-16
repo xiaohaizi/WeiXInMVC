@@ -1,64 +1,165 @@
-﻿@{ 
-    Layout=null;
+﻿@using WeiXinMvcWeb.Models.WeiXinDB;
+@{
+    Layout = null;
+    string str = DateTime.Now.ToString("yyyy-MM-dd");
+    Random ran = new Random();
+    str= str +" 17:"+(ran.Next(0, 60).ToString().PadLeft(2, '0'));
+
 }
+
 <!DOCTYPE html>
-<head lang="zh-CN">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta charset="utf-8">
+    <title>微信公众平台</title>
     <script type="text/javascript">window._points=[+new Date];// 初始测速点</script>
-    <title>广告投放</title>
+    <link rel="stylesheet" type="text/css" href="//res.wx.qq.com/promotion/res/zh_CN/htmledition/comm_htmledition/style/base/layout_head.css" />
+    <link rel="stylesheet" type="text/css" href="//res.wx.qq.com/promotion/res/zh_CN/htmledition/comm_htmledition/style/base/base.css" />
+    <link rel="stylesheet" type="text/css" href="//res.wx.qq.com/promotion/res/zh_CN/htmledition/comm_htmledition/style/base/lib.css" />
 
-    <link rel="stylesheet" href="//wximg.qq.com/tmt/mpa/dist/css/style-agency.22500c38.css" />
-    <link rel="stylesheet" href="//wximg.gtimg.com/tmt/mpa/dist/css/style-moment-edit-template.f67a9dfe.css" />
-
-    <style>
-        a, a:hover {
-            cursor: pointer;
+    <style type="text/css">
+        .black_list {
+            margin-bottom: 40px;
         }
 
-        html {
-            height: auto;
+        .pop_ad_helper .popover_arrow {
+            left: 280px;
+            margin-top: -8px;
         }
     </style>
-    <script type="text/javascript">window._points[1]=+new Date;// css加载完成</script>
-
 </head>
-<body>
-    <div class="" id="container"></div>
-    <script type="text/html" id="tpl-apply-dialog">
-        <div class="mod-dialog__body ui-ta-c">
-            <p class="mod-dialog__label">输入联系方式，快速开通</p>
-            <div class="mod-form__group">
-                <label class="mod-form__label">
-                    联系人
-                </label>
-                <div class="mod-form__controls">
-                    <span class="mod-form__box">
-                        <input id="person_name" type="text" class="input" />
-                    </span>
-                </div>
-            </div>
+<body class="zh_CN">
+    <div id="body" class="body container_box">
+        <link href="~/Content/css/mpres/htmledition/adSystem/adSystem_common.css" rel="stylesheet" />
+        <link href="~/Content/css/mpres/htmledition/adSystem/ad_sell.css" rel="stylesheet" />
+        <link href="~/Content/css/mpres/htmledition/adSystem/button_group.css" rel="stylesheet" />
+        <link href="~/Content/css/mpres/htmledition/adSystem/style-moment-edit-template.5b7682da.css" rel="stylesheet" />
 
-            <div class="mod-form__group">
-                <label class="mod-form__label">
-                    联系电话
-                </label>
-                <div class="mod-form__controls">
-                    <span class="mod-form__box">
-                        <input id="person_tele" type="text" class="input" />
-                    </span>
+         <div class="main_hd">
+            <h2>流量主</h2>
+             <div id="topTab" class="title_tab" style="margin-top: 0px;">
+                 <ul class="mod-frame__tab-nav" data-index="0">
+                     <li data-index="0" class="mod-frame__tab-item first js_top " data-id="adhostreport">
+                         <a class="mod-frame__tab-link" href="/Publisher/Readtemplate?t=ad_system/common_frame&amp;t1=publisher/host_report&amp;token=903939300" target="mpIFrame">报表统计</a>
+                     </li>
+                     <li data-index="2" class="mod-frame__tab-item  js_top mod-frame__tab-item_current" data-id="adhostmanage" style="">
+                         <a class="mod-frame__tab-link" href="/promotion/readtemplate?t=ad_system/common_frame&amp;t1=publisher/host_manage&amp;token=903939300" target="mpIFrame">
+                             流量管理
+                         </a>
+                     </li>
+                     <li data-index="3" class="mod-frame__tab-item  js_top" data-id="adhostpay"><a class="mod-frame__tab-link" href="/Promotion/Readtemplate_t?t=ad_system/common_frame&amp;t1=publisher/host_pay&amp;token=903939300" target="mpIFrame">财务管理</a></li>
+           </ul>
+             </div>
+            <p class="extra_info mini_tips icon_after">
+                <label class="mini_tips icon_after" id="js_ad_helper" data-flag="host">帮助<i class="icon_msg_mini ask"></i></label>
+            </p>
+            <div class="highlight_box icon_wrap dn">
+                <div class="opr">
+
+                    <a href="javascript:;" id="closeBt" style="display:none;" class="btn btn_default  btn_close btn_apply">关闭</a>
+                    <a href="javascript:;" id="openBt" style="display:none;" class="btn btn_primary  btn_open  btn_apply">开启</a>
                 </div>
+                <span class="icon" style="background-image:url(//res.wx.qq.com/mpres/htmledition/images/icon/service/host_ico48.png);">
+                </span>
+                <h4 class="title">
+                    流量开关
+                </h4>
+                <p class="desc" id="op_desc">
+                </p>
             </div>
+            <div id="js_forbit_warn"></div>
         </div>
-    </script>
-    <script type="text/javascript">window._points[2]=+new Date;// dom加载完成</script>
-    
+        <div class="main_bd">
+            <div class="wrp_ad_manage">
+                <div class="ad_switch">
+                    <h4 class="manage_item_tit">广告位开关</h4>
+                    <!-- <p class="manage_item_hint">当开启广告位后，相应位置将出现广告，同一个页面只会出现一条广告，优先展示在顶部位置</p> -->
+                    <div class="table_wrp with_border">
+                        <table class="table" cellspacing="0">
+                            <thead class="thead">
+                                <tr>
+                                    <th class="table_cell">广告位</th>
+                                    <th class="table_cell tl">状态</th>
+                                    <th class="table_cell last_child tr no_extra">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody class="tbody">
+                                <!-- <tr>
+                                                        </tr>  -->
+                                <tr id="tr_host">
+                                    <td class="table_cell pos_name">底部广告</td>
+                                    <!--host_status 1开启 2关闭  -->
 
-    <script src="~/Content/js/mpres/htmledition/promotion/lib-4cfcf54380.js"></script>
-    
-    <script src="~/Content/js/mpres/htmledition/promotion/_areas_level.js"></script>
-    <script src="~/Content/js/mpres/htmledition/promotion/app-4526bf0599.js"></script>
+                                    <td class="table_cell tl table_bottom_open" style="display:none;"><a href="javascript:;" class="status on">已开启</a> </td>
+                                    <td class="table_cell last_child tr table_bottom_open" style="display:none;">
+                                        <a href="javascript:;" class="btn_status jsClose" data-pos="bottom">关闭</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="javascript:;" class="btn_status bottomView">查看示例</a>
+                                    </td>
 
-    <script type="text/javascript">window._points[3]=+new Date;// js加载完成</script>
-</body>
+                                    <td class="table_cell tl table_bottom_close" >
+                                        <p>
+                                            <a href="javascript:;" class="status off">已关闭</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <span class="hint_txt" id="bottomOpenTime">@(str)后可再次手动开启</span>
+                                        </p>
+                                    </td>
+                                    <td class="table_cell last_child tr table_bottom_close" >
+                                        <a href="javascript:;" class="btn_status" id="buttomOpen">开启</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="javascript:;" class="btn_status bottomView">查看示例</a>
+                                    </td>
+
+                                </tr>
+
+                                <tr id="tr_freetrade" style="display:none;">
+                                    <td class="table_cell pos_name">互选广告</td>
+                                    <!--host_status 1开启 2关闭  -->
+
+                                    <td class="table_cell tl table_freetrade_open" style="display:none;"><a href="javascript:;" class="status on">已开启</a> </td>
+                                    <td class="table_cell last_child tr table_freetrade_open" style="display:none;">
+                                        <a href="javascript:;" class="btn_status jsClose" data-pos="freetrade">关闭</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="javascript:;" class="btn_status freetradeView">查看示例</a>
+                                    </td>
+
+                                    <td class="table_cell tl table_freetrade_close" style="display:none;">
+                                        <p>
+                                            <a href="javascript:;" class="status off">已关闭</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <span class="hint_txt" id="freetradeOpenTime"></span>
+                                        </p>
+                                    </td>
+                                    <td class="table_cell last_child tr table_freetrade_close" style="display:none;">
+                                        <a href="javascript:;" class="btn_status" id="freetradeOpen">开启</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="javascript:;" class="btn_status freetradeView">查看示例</a>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="black_list">
+                    <h4 class="manage_item_tit">广告主黑名单</h4>
+                    <p class="manage_item_hint">最多可添加100个公众号，名单中的公众号所发布的广告将不会出现在你的图文消息中。</p>
+                    <ul class="manage_list" id="list">
+
+                        <li class="list_item add_item">
+                            <a class="create_access_primary" href="javascript:;" title="添加公众号" id="add">
+                                <i class="icon20_common add_gray">添加公众号</i>
+                            </a>
+                            <!--
+                            <div class="inner_list_item">
+                                <a href="javascript:;" id="add" class="add_area"> 添加公众号</a>
+                            </div>
+                            -->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+
+       </div>
 </html>

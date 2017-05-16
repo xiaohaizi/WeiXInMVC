@@ -955,7 +955,7 @@
         }
 
         .info_bd .clear_sub_content .line_wrp_table {
-            width: 470px;
+            width: 400px;
             float: right;
         }
 
@@ -983,7 +983,7 @@
     }
 
     .info_bd .line_wrp_table_phone {
-        width: 560px;
+        width: 500px;
         float: right;
     }
 

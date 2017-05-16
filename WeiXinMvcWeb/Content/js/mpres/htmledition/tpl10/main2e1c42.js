@@ -226,7 +226,7 @@ define("statistics/article/analyse/main.js", ["statistics/article/top.js", "stat
                 }
             }), a = "&begin_date=%s&end_date=%s".sprintf(nt.compare_begin_date, nt.compare_end_date),
             O("load mssage data compare 2"), F.get({
-                url: "/misc/appmsganalysisation_report?action=report&type=%s%s".sprintf(nt.type, a),
+                url: "/misc/appmsganalysisaction_report?action=report&type=%s%s".sprintf(nt.type, a),
                 success: function (t) {
                     var a = Y("load mssage data compare 2");
                     I(z, a, K), U.hideLoading(), 0 == t.base_resp.ret ? (n(t.item), D()) : (F.show(t), i++), e();

@@ -1,0 +1,411 @@
+﻿@using WeiXinMvcWeb.Models.WeiXinDB;
+@{
+    Layout = null;
+    List<Cost> clist = (List<Cost>)ViewBag.costList;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta charset="utf-8">
+    <title>微信公众平台</title>
+    <script type="text/javascript">window._points = [+new Date];// 初始测速点</script>
+    <link rel="stylesheet" type="text/css" href="//res.wx.qq.com/promotion/res/zh_CN/htmledition/comm_htmledition/style/base/layout_head.css" />
+    <link rel="stylesheet" type="text/css" href="//res.wx.qq.com/promotion/res/zh_CN/htmledition/comm_htmledition/style/base/base.css" />
+    <link rel="stylesheet" type="text/css" href="//res.wx.qq.com/promotion/res/zh_CN/htmledition/comm_htmledition/style/base/lib.css" />
+    <style type="text/css">
+        .pop_ad_helper .popover_arrow {
+            left: 280px;
+            margin-top: -8px;
+        }
+    </style>
+</head>
+<body class="zh_CN" style="background:#ffffff">
+    <div id="body" class="body container_box ">
+        <link href="~/Content/css/mpres/htmledition/dropdown.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="//res.wx.qq.com/mpres/zh_CN/htmledition/comm_htmledition/style/page/adSystem/adSystem_common.css" />
+        <link rel="stylesheet" type="text/css" href="//res.wx.qq.com/mpres/zh_CN/htmledition/comm_htmledition/style/page/adSystem/ad_sell.css" />
+        <link rel="stylesheet" type="text/css" href="//res.wx.qq.com/mpres/htmledition/style/widget/button_group.css" />
+        <link rel="stylesheet" type="text/css" href="//wximg.qq.com/tmt/mpa/beta/css/style-moment-edit-template.5b7682da.css" />
+
+        <div class="main_hd">
+            <h2>流量主</h2>
+            <div id="topTab" class="title_tab" style="margin-top: 0px;">
+                <ul class="mod-frame__tab-nav" data-index="0">
+                    <li data-index="0" class="mod-frame__tab-item first js_top mod-frame__tab-item_current" data-id="adhostreport">
+                        <a class="mod-frame__tab-link" href="/Publisher/Readtemplate?t=ad_system/common_frame&amp;t1=publisher/host_report&amp;token=903939300" target="mpIFrame">报表统计</a>
+                    </li>
+                    <li data-index="2" class="mod-frame__tab-item  js_top" data-id="adhostmanage" style="">
+                    <a class="mod-frame__tab-link"  href="/promotion/readtemplate?t=ad_system/common_frame&amp;t1=publisher/host_manage&amp;token=903939300" target="mpIFrame">
+                        流量管理</a></li>
+                    <li data-index="3" class="mod-frame__tab-item  js_top" data-id="adhostpay"><a class="mod-frame__tab-link" href="/Promotion/Readtemplate_t?t=ad_system/common_frame&amp;t1=publisher/host_pay&amp;token=903939300" target="mpIFrame">财务管理</a></li>
+                </ul>
+            </div>
+            <p class="extra_info mini_tips icon_after">
+                <label class="mini_tips icon_after" id="js_ad_helper" data-flag="host">帮助<i class="icon_msg_mini ask"></i></label>
+            </p>
+        </div>
+        <!-- <div class="highlight_box">
+                <ul class="links">
+                    <li class="links_item no_extra selected"><a href="javascript:;">报表统计</a></li>
+                    <li class="links_item"><a id="host_push_link" href="//mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=publisher/host_push" target="_top">数据推送</a></li>
+                </ul>
+        </div> -->
+
+        <ul class="mod-frame__sub-tab" style="display: block;">
+            <li class="mod-frame__sub-tab-item mod-frame__sub-tab-item_current"><a href="javascript:;">报表统计</a></li>
+            <li class="mod-frame__sub-tab-item"><a id="host_push_link" href="/Promotion/readtemplate_1?t=ad_system/common_frame&amp;t1=publisher/host_report&amp;token=763438000" target="mpIFrame">数据推送</a></li>
+        </ul>
+
+        <div class="mod-highlight-box ui-bfc ui-mt-20" style="display:none;" id="freetrade_open">
+            <div>
+                <div class="mod-highlight-box__button ui-fl-r"><a role="button" class="button button_primary" id="open_freetrade_btn">立即开启</a></div><div class="mod-highlight-box__content ui-bfc__content" style="padding-left: 0px;">
+                    <h4>互选广告</h4>
+                    <p class="ui-c-gray">开通互选广告，自由选择你想要的广告合作，查看<a href="http://wximg.qq.com/wxp/assets/data/huxuan/OA_MutualSelectedAds_SupplierManual_20170307.pdf" target="_blank"> 互选广告合作指引</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrp_select_box">
+            <div class="select_box">
+
+
+                <!-- <div class="dropdown_menu" id="posDr"></div> -->
+
+                <div class="button_group  cascade_dropdown first">
+                    <a class="btn btn_default jsDay selected" data-start="-6" data-end="0" href="javascript:;">最近7日</a><a class="btn btn_default jsDay" data-start="-29" data-end="0" href="javascript:;">最近30日</a>
+                    <div class="btn_group_item td_data_container" id="dateRange"></div>
+                </div>
+            </div>
+        </div>
+        <div class="main_bd page_host_report">
+            <!--<div class="wrp_select_box">
+                    <div class="select_box">
+                       <div class="frm_control_group">
+                           <label for="" class="frm_label">计费方式：</label>
+                           <div class="frm_controls">
+                               <a href="#" class="btn select_btn selected">按曝光计费</a>
+                               <a href="#" class="btn select_btn">按曝光计费</a>
+                           </div>
+                       </div>
+                    </div>
+
+                    <div class="select_box last">
+                       <div class="frm_control_group">
+                           <label for="" class="frm_label">商品类型：</label>
+                           <div class="frm_controls">
+                               <a href="#" class="btn select_btn selected">全部</a>
+                               <a href="#" class="btn select_btn">品牌活动</a>
+                               <a href="#" class="btn select_btn">ios应用</a>
+                               <a href="#" class="btn select_btn">Android应用</a>
+                               <a href="#" class="btn select_btn">公众号</a>
+                           </div>
+                       </div>
+                    </div>
+            </div>-->
+
+            <div class="wrp_sub_ads_data pt_interval">
+                <span>当日数据仅供参考，请以前一天数据为准。</span>
+            </div>
+
+            <div class="key_info_box">
+                <div class="inner">
+                    <div class="info_hd rel">
+                        <h4>关键指标</h4>
+                        <!--<i class="icon_msg_mini ask abs" id="js_target"></i>
+                        <div class="pop_keywords" style="display:none">
+                            <h5>商品指标量</h5>
+                            <p>XXXX</p>
+                            <h5>成本</h5>
+                            <p>XXXX</p>
+                            <h5>平均价格</h5>
+                            <p>XXXX</p>
+                        </div>-->
+                    </div>
+                    <div class="info_bd" id="table_0">
+                        <div class="basic_data_wrapper">
+                            <ul class="basic_data_list sizeof_col4">
+                                <li class="basic_data_item first_data-item">
+                                    <p class="basic_data_key">曝光量</p>
+                                    <p class="basic_data_val totalVal jsTotal" data-type="show">@ViewBag.viewCountSum</p>
+                                </li>
+                                <li class="basic_data_item">
+                                    <p class="basic_data_key">点击量</p>
+                                    <p class="basic_data_val totalVal jsTotal" data-type="click">@ViewBag.clickCountSum</p>
+                                </li>
+                                <li class="basic_data_item">
+                                    <p class="basic_data_key">点击率</p>
+                                    <p class="basic_data_val totalVal jsTotal" data-type="click_per">
+                                        @if (ViewBag.viewCountSum == 0)
+                                        {
+                                            @Html.Raw("0%")
+                                        }
+                                        else
+                                        {
+                                            @Html.Raw((ViewBag.clickCountSum / ViewBag.viewCountSum) + "%");
+                                            //@(ViewBag.clickCountSum / ViewBag.viewCountSum)%
+                                        }
+
+
+                                    </p>
+                                </li>
+                                <!--<li class="basic_data_item sizeof_col5 dn">
+                                   <p class="basic_data_key">关注量</p>
+                                   <p class="basic_data_val totalVal jsTotal" data-type="care"></p>
+                                </li>-->
+                                <li class="basic_data_item last">
+                                    <p class="basic_data_key">总收入(元)<span class="fee_unit"> </span></p>
+                                    <p class="basic_data_val totalVal jsTotal" data-type="total">¥@ViewBag.costMoney</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="no_data jsTotalNo" style="display:none">暂无数据</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="key_info_box wrp_keywords_trend">
+                <div class="inner">
+                    <div class="info_hd with_tabs">
+                        <h4><span>关键指标趋势图</span></h4>
+                        <div class="query_opr">
+                            <div class="button_group in_info_box">
+                                <div class="dropdown_menu btn_group_item" id="posTypeSelect"></div>
+                                <div class="dropdown_menu btn_group_item" id="chartSelect">
+                                <a href="javascript:;" onclick="dropdown_switch()" class="btn dropdown_switch jsDropdownBt">
+                                    <label class="jsBtLabel">
+                                    曝光量</label><i class="arrow"></i></a>
+                                <div class="dropdown_data_container jsDropdownList" style="display: none;">
+                                    <ul class="dropdown_data_list">
+                                    <li class="dropdown_data_item ">
+                                        <a onclick="return false;" href="javascript:;" class="jsDropdownItem" data-value="show" data-index="0" data-name="曝光量">曝光量</a></li>
+                                    <li class="dropdown_data_item "><a onclick="return false;" href="javascript:;" class="jsDropdownItem" data-value="click" data-index="1" data-name="点击量">点击量</a></li>
+                                    <li class="dropdown_data_item "><a onclick="return false;" href="javascript:;" class="jsDropdownItem" data-value="click_per" data-index="2" data-name="点击率">点击率</a></li>
+                                    <li class="dropdown_data_item "><a onclick="return false;" href="javascript:;" class="jsDropdownItem" data-value="total" data-index="3" data-name="总收入">总收入</a></li></ul></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info_bd">
+                        <div class="chart_info" id="chartContain"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="key_info_box wrp_keywords_trend">
+                 <div class="inner">
+                     <div class="info_hd with_tabs">
+                        <div class="dropdown_menu tab_dropdown_menu" id=""></div>
+                     </div>
+                     <div class="info_bd">
+                        <div class="chart_info" id=""></div>
+                     </div>
+                 </div>
+            </div> -->
+
+            <div class="key_info_box wrp_keywords_chart dn" id="table_3">
+                <div class="inner">
+                    <div class="info_hd">
+                        <h4 class="block">
+                            <span class="fl">互选广告指标明细</span>
+                            <a href="javascript:;" pos_type="3" id='downBt_3' class="hd_download fl downBt">下载</a>
+                        </h4>
+
+                    </div>
+                    <div class="wrp_tab_keywords_chart info_bd">
+                        <table class="tab_keywords_chart" cellspacing="0" cellspadding="0">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">时间</th>
+                                    <th>曝光量</th>
+                                    <th>点击量</th>
+                                    <th>点击率</th>
+                                    <th class="dn">关注量</th>
+                                    <th>总收入(元)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="detail_3"></tbody>
+                        </table>
+                        <p class="no_data jsTotalNo">暂无数据</p>
+                    </div>
+                </div>
+                <div class="turn_page pos_right pr_none" id="pageBar_3"> </div>
+            </div>
+            <div class="key_info_box wrp_keywords_chart" id="table_1">
+                <div class="inner">
+                    <div class="info_hd">
+                        <h4 class="block">
+                            <span class="fl">底部广告指标明细</span>
+                            <a href="javascript:;" pos_type='1' id='downBt_1' class="hd_download fl downBt">下载</a>
+                        </h4>
+
+                    </div>
+                    <div class="wrp_tab_keywords_chart info_bd">
+                        <table class="tab_keywords_chart" cellspacing="0" cellspadding="0">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">时间</th>
+                                    <th>曝光量</th>
+                                    <th>点击量</th>
+                                    <th>点击率</th>
+                                    <th class="dn">关注量</th>
+                                    <th>总收入(元)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="detail_1">
+                                @foreach (var citem in clist)
+                                {
+
+                                    <tr>
+                                        <td colspan="2">@(citem.start_time.ToString("yyyy-MM-dd")) </td>
+                                        <td>@citem.view_count</td>
+                                        <td>@citem.click_count</td>
+                                        <td>
+                                            @if (citem.view_count == 0)
+                                            { Html.Raw("0%"); }
+                                            else
+                                            {
+                                                Html.Raw((citem.click_count / citem.view_count) + "%");
+                                            }
+                                        </td>
+                                        <td>@citem.cost_money</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <p class="no_data jsTotalNo" style="display:none">暂无数据</p>
+                    </div>
+                </div>
+                <div class="turn_page pos_right pr_none" id="pageBar_1"> </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<style>
+    .highcharts-legend-item {
+        display: none;
+    }
+</style>
+<script src="~/scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Content/js/mpres/htmledition/components/date-range22edfc1.js"></script>
+<script src="~/Content/js/mpres/htmledition/components/table-date2bff4a.js"></script>
+<script src="~/Content/js/highcharts/highcharts.js"></script>
+
+<script src="~/Content/js/mpres/htmledition/components/date-range22edfc1.js"></script>
+<script src="~/Content/js/mpres/htmledition/components/table-date2bff4a.js"></script>
+<script>
+    /**
+  * Highcharts 在 4.2.0 开始已经不依赖 jQuery 了，直接用其构造函数既可创建图表
+ **/
+    var chart = new Highcharts.Chart('chartContain', {
+        chart: {
+            type: 'area'
+        },
+        title: {
+            text: "",
+            x: -20
+        },
+        subtitle: {
+            text: '',
+            x: -20
+        },
+        xAxis: {
+            categories: @(Html.Raw(ViewBag.timeList))
+            },
+
+        yAxis: {
+            title: {
+                text: ''
+            }
+        },
+        tooltip: {
+            pointFormat: '<div style="color:#ffffff">{series.name}: <b>{point.y}</b><br/></div>',
+            backgroundColor: '#555556',
+
+            borderWidth: 0,
+            style: {                      // 文字内容相关样式
+                color: "#ffffff"
+            }
+        },
+        plotOptions: {
+            series: {
+                lineColor: '#44B549',
+                color: '#44B549',
+
+                fillColor: "rgba(192,192,192,0.1)",
+                trackByArea: true,
+                stickyTracking: false // to show the difference in tracking
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+
+
+        },
+        series: [{
+            name: '曝光量',
+            data:@ViewBag.viewList
+
+
+            }]
+    });
+
+   
+
+    function dropdown_switch()
+    {
+        $(".dropdown_data_container").show();
+    }
+    $(function(){
+        $(".dropdown_data_list").find("li").on("click",function(){
+            var a_html= $(this).find("a");
+          var dataindex= a_html.attr("data-index");
+           $(".jsBtLabel").text(a_html.text());
+           $(".dropdown_data_container").hide();
+           var url1="/Publisher/Readtemplatejson";
+         
+           switch(parseInt(dataindex)){
+               case 0: //曝光量
+                   url1=url1+"?type=0";
+                   
+                   break;
+
+               case 1: //点击量
+                   url1=url1+"?type=1";
+                  
+                   break;
+
+
+               case 2: //点击率
+                   url1=url1+"?type=2";
+                   
+                   break;
+
+               case 3: //总收入
+                   url1=url1+"?type=3";
+                   
+                   break;
+                  
+              
+           }
+           var a = []; 
+          
+          // alert(url1);
+           $.ajax({ url: url1,dataType:"json", success: function(msg){
+               //console.log(msg);
+               $(msg).each(function(){
+                   console.log(this);
+               });           
+               chart.series[0].setData(msg);
+           }
+           });
+            // console.log( $(this).find("a").text());
+        });
+    });
+</script>
+</html>

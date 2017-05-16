@@ -185,7 +185,8 @@ t=Math.round(t),t!=J.currentPage&&(J.currentPage=t,M(),m(),ae={},D());
 }
 });
 }
-function C(){
+function C() {
+    console.log(123);
 te=new ee,te.hide(),J.vtTable=te,$("#js_all_table").html(te.dom);
 }
 function M(){

@@ -20,7 +20,8 @@ namespace WeiXinMvcWeb.Models.WeiXinDB
         public string Region_Name { get; set; }
         public DateTime DTime { get; set; }
         public int UserID { get; set; }
-        public int RegionCount { get; set; }
+        public int user_count { get; set; }
+        public int? RegionCount { get; set; }
         [MaxLength(100)]
         public string msgid { get; set; }
         public int attr_type { get; set; }

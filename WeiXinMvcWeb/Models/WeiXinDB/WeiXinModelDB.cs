@@ -31,15 +31,24 @@
         public virtual DbSet<Daily> Dailes { get; set; }
         public virtual DbSet<Intf_Stat> Intf_Stats { get; set; }
         public virtual DbSet<Device> Devices { get; set; }
+        public virtual DbSet<DeviceUser> DeviceUsers { get; set; }
         public virtual DbSet<Region> Regions { get; set; }
+        public virtual DbSet<RegionUser> RegionUsers { get; set; }
         public virtual DbSet<Platform> Platforms { get; set; }
+        public virtual DbSet<PlatformUser> PlatformUsers { get; set; }
         public virtual DbSet<Lang> Langs { get; set; }
+        public virtual DbSet<LangUser> LangUsers { get; set; }
         public virtual DbSet<Gender> Genders { get; set; }
+        public virtual DbSet<GenderUser> GenderUsers { get; set; }
         public virtual DbSet<MsgData> MsgDatas { get; set; }
+        public virtual DbSet<MsgDataDay> MsgDataDays { get; set; }
         public virtual DbSet<SendMsg> SendMsgs { get; set; }
         public virtual DbSet<AppmsgItemHour> AppmsgItemHours { get; set; }
         public virtual DbSet<NewsNotice> NewsNotices { get; set; }
         public virtual DbSet<BaseInfo> BaseInfos { get; set; }
+        public virtual DbSet<ShareItem> ShareItems { get; set; }
+        public virtual DbSet<Cost> Costs { get; set; }
+
 
 
 

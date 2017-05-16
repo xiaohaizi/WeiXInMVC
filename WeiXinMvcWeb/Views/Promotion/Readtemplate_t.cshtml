@@ -1,0 +1,215 @@
+﻿@using WeiXinMvcWeb.Models.WeiXinDB;
+@{
+    Layout = null;
+    List<Cost> clist = (List<Cost>)ViewBag.costList;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta charset="utf-8">
+    <title>微信公众平台</title>
+    <script type="text/javascript">window._points = [+new Date];// 初始测速点</script>
+    <link rel="stylesheet" type="text/css" href="//res.wx.qq.com/promotion/res/zh_CN/htmledition/comm_htmledition/style/base/layout_head.css" />
+    <link rel="stylesheet" type="text/css" href="//res.wx.qq.com/promotion/res/zh_CN/htmledition/comm_htmledition/style/base/base.css" />
+    <link rel="stylesheet" type="text/css" href="//res.wx.qq.com/promotion/res/zh_CN/htmledition/comm_htmledition/style/base/lib.css" />
+
+    <style type="text/css">
+        .pop_ad_helper .popover_arrow {
+            left: 280px;
+            margin-top: -8px;
+        }
+    </style>
+</head>
+<body class="zh_CN">
+    <div id="body" class="body container_box">
+        <link href="~/Content/css/mpres/htmledition/adSystem/adSystem_common.css" rel="stylesheet" />
+        <link href="~/Content/css/mpres/htmledition/adSystem/ad_sell.css" rel="stylesheet" />
+        <link href="~/Content/css/mpres/htmledition/adSystem/button_group.css" rel="stylesheet" />
+        <link href="~/Content/css/mpres/htmledition/adSystem/style-moment-edit-template.5b7682da.css" rel="stylesheet" />
+        
+       <script type="text/javascript">window._points[1] = +new Date;// css加载完成</script>
+
+        <div class="main_hd">
+            <h2>流量主</h2>
+            <div id="topTab" class="title_tab" style="margin-top: 0px;">
+                <ul class="mod-frame__tab-nav" data-index="0">
+                    <li data-index="0" class="mod-frame__tab-item first js_top " data-id="adhostreport">
+                        <a class="mod-frame__tab-link" href="/Publisher/Readtemplate?t=ad_system/common_frame&amp;t1=publisher/host_report&amp;token=903939300" target="mpIFrame">报表统计</a>
+                    </li>
+                    <li data-index="2" class="mod-frame__tab-item  js_top" data-id="adhostmanage" style="">
+                        <a class="mod-frame__tab-link" href="/promotion/readtemplate?t=ad_system/common_frame&amp;t1=publisher/host_manage&amp;token=903939300" target="mpIFrame">
+                            流量管理
+                        </a>
+                    </li>
+                    <li data-index="3" class="mod-frame__tab-item  js_top mod-frame__tab-item_current" data-id="adhostpay"><a class="mod-frame__tab-link" href="/Promotion/Readtemplate_t?t=ad_system/common_frame&amp;t1=publisher/host_pay&amp;token=903939300" target="mpIFrame">财务管理</a></li>
+
+                </ul>
+            </div>
+            <p class="extra_info mini_tips">
+                <label class="mini_tips icon_after" id="js_ad_helper" data-flag="host">帮助<i class="icon_msg_mini ask"></i></label>
+            </p>
+            <div class="highlight_box">
+                <ul class="links">
+                    <li class="links_item selected jsNav1 no_extra"><a id="income_link" href="/Promotion/Readtemplate_t?t=ad_system/common_frame&t1=publisher/host_pay&lang=zh_CN&type=income&action=ad_host_pay" target="mpIFrame">收入数据</a></li>
+                    <li class="links_item jsNav2"><a id="flow_link" href="/Promotion/Readtemplate_t1?t=ad_system/common_frame&t1=publisher/host_pay&lang=zh_CN&type=flow&action=ad_host_pay" target="mpIFrame">结算数据</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="main_bd finance_manage_page" id="js_income_form" style="display:none;">
+            <!--截止日期-->
+            <div class="wrp_sub_ads_data pt_none">
+                <div class="sub_ads_data ">
+                    <span id="">
+                        当日数据仅供参考，请以前一天数据为准。
+                    </span>
+                </div>
+            </div>
+            <!--收入概况-->
+            <div class="key_info_box">
+                <div class="inner">
+                    <div class="info_hd">
+                        <h4 class="">收入概况</h4>
+                    </div>
+                    <div class="info_bd">
+                        <div class="basic_data_wrapper">
+                            <ul class="basic_data_list">
+                                <li class="basic_data_item first_data_item">
+                                    <p class="basic_data_key">昨日收入（元）</p>
+                                    <p class="basic_data_val totalVal" id="js_income_today"></p>
+                                </li>
+                                <li class="basic_data_item last">
+                                    <p class="basic_data_key">累计收入（元）</p>
+                                    <p class="basic_data_val totalVal" id="js_total_income"></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--收入明细-->
+            <div class="key_info_box wrp_keywords_chart finance_chart">
+                <div class="inner br_bottom_none">
+                    <div class="info_hd with_tabs br_bottom_none">
+                        <div class="title_tab">
+                            <h4>收入明细</h4>
+                            <div class="wrp_select_days r">
+                                <div class="button_group in_info_box">
+                                    <div class="td_data_container btn_group_item no_extra">
+                                        <!--<span class="days jsDay selected" id="aRecent7Days">7天</span>
+                                        <span class="days jsDay" id="aRecent15Days">15天</span>
+                                        <span class="days jsDay" id="aRecent30Days">30天</span>-->
+                                        <div class="date_nav ver_middle" id="dateRangeDetail"></div>
+                                        <!--<a href="javascript:;"class="btn btn_default btn_mini hd_download" id="js_detail_down" style="display:none;">下载报表</a>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrp_tab1" id="detail">
+                        <div class="wrp_income">
+                            <table class="tab_keywords_chart table_1 jsDetail" cellspacing="0" cellspadding="0">
+                                <thead>
+                                    <tr>
+                                        <th>日期</th>
+                                        <th class="wrp_th_opr th_last">收入（元）</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="detailList"></tbody>
+                            </table>
+                            <p class="no_data br_bottom" id="noListDetail" style="display:none;">暂无数据</p>
+                            <div class="turn_page pos_right br_bottom dn" id="pageBarDetail"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="main_bd finance_manage_page" id="js_income_form" style="">
+            <!--截止日期-->
+            <div class="wrp_sub_ads_data pt_none">
+                <div class="sub_ads_data ">
+                    <span id="">
+                        当日数据仅供参考，请以前一天数据为准。
+                    </span>
+                </div>
+            </div>
+            <!--收入概况-->
+            <div class="key_info_box">
+                <div class="inner">
+                    <div class="info_hd">
+                        <h4 class="">收入概况</h4>
+                    </div>
+                    <div class="info_bd">
+                        <div class="basic_data_wrapper">
+                            <ul class="basic_data_list">
+                                <li class="basic_data_item first_data_item">
+                                    <p class="basic_data_key">昨日收入（元）</p>
+                                    <p class="basic_data_val totalVal" id="js_income_today">0</p>
+                                </li>
+                                <li class="basic_data_item last">
+                                    <p class="basic_data_key">累计收入（元）</p>
+                                    <p class="basic_data_val totalVal" id="js_total_income">2.36</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--收入明细-->
+            <div class="key_info_box wrp_keywords_chart finance_chart">
+                <div class="inner br_bottom_none">
+                    <div class="info_hd with_tabs br_bottom_none">
+                        <div class="title_tab">
+                            <h4>收入明细</h4>
+                            <div class="wrp_select_days r">
+                                <div class="button_group in_info_box">
+                                    <div class="td_data_container btn_group_item no_extra">
+                                        <!--<span class="days jsDay selected" id="aRecent7Days">7天</span>
+                                        <span class="days jsDay" id="aRecent15Days">15天</span>
+                                        <span class="days jsDay" id="aRecent30Days">30天</span>-->
+                                        <div class="date_nav ver_middle" id="dateRangeDetail">
+                                           
+                                        <!--<a href="javascript:;"class="btn btn_default btn_mini hd_download" id="js_detail_down" style="display:none;">下载报表</a>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrp_tab1" id="detail">
+                        <div class="wrp_income">
+                            <table class="tab_keywords_chart table_1 jsDetail" cellspadding="0" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>日期</th>
+                                        <th class="wrp_th_opr th_last">收入（元）</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="detailList">
+                                   
+                                    @foreach (var citem in clist)
+                                    {
+
+                                        <tr>
+                                            <td>@(citem.start_time.ToString("yyyy-MM-dd")) </td>
+                                            <td>@citem.cost_money</td>
+                                        </tr>
+                                        
+                                    }
+                                </tbody>
+                            </table>
+                            <p class="no_data br_bottom" id="noListDetail" style="display: none;">暂无数据</p>
+                            <div class="turn_page pos_right br_bottom dn" id="pageBarDetail"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</html>

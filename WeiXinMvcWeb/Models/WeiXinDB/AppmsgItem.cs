@@ -20,6 +20,7 @@ namespace WeiXinMvcWeb.Models.WeiXinDB
         public long int_page_read_count { get; set; }
         public long ori_page_read_user { get; set; }
         public long ori_page_read_count { get; set; }
+
       
         public long share_user { get; set; }
         public long share_count { get; set; }

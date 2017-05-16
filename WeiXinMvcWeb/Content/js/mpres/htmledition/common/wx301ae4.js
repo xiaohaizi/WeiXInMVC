@@ -214,7 +214,7 @@
                 res: e.requestUri,
                 page: location.pathname + "?" + location.search
             }, t = encodeURIComponent("res[{res}]; page[{page}]".format(e));
-            (new Image).src = wx.url("/misc/jslog?content=" + t + "&id=59&level=error");
+            (new Image).src = "";
         }
     }), function () {
         function _isArray(e) {

@@ -2,6 +2,12 @@
 @{ 
     List<NewsNotice> newsList = ViewBag.NewsList as List<NewsNotice>;
     BaseInfo infos = ViewBag.BaseInfo as BaseInfo;
+    User_SourceItem us = ViewBag.User_SourceItem as User_SourceItem;
+    var total = 0;
+    if (infos != null&& us!=null)
+    {
+        total = us.cumulate_user + infos.newuser;
+    }
 
 }
 
@@ -15,7 +21,7 @@
 <div id="body" class="body page_index">
     <div id="js_container_box" class="container_box cell_layout side_l">
         <div class="col_side">
-            @Html.Partial("Menu");
+            @Html.Partial("Menu")
             <script type="text/javascript">
                 var _new_comment_num = "" || 0;
             </script>
@@ -37,7 +43,7 @@
                     <ul class="inner">
                         <li class="grid_item size1of2 index_tap_item added_message">
 
-                            <a href="/cgi-bin/message?t=message/list&count=20&day=7&token=1941453980&lang=zh_CN">
+                            <a href="/cgibin/message?t=message/list&count=20&day=7&token=1802258335&lang=zh_CN">
                                 <span class="tap_inner">
                                     <i class="icon_index_tap"></i>
                                     <em class="number"> @infos.new_msg  </em>
@@ -46,7 +52,7 @@
                             </a>
                         </li>
                         <li class="grid_item size1of2 no_extra index_tap_item added_fans">
-                            <a href="/cgi-bin/contactmanage?t=user/index&pagesize=10&pageidx=0&type=0&groupid=0&token=1941453980&lang=zh_CN">
+                            <a href="/cgibin/user_tag?action=get_all_data&lang=zh_CN&token=620941923">
                                 <span class="tap_inner no_extra">
                                     <i class="icon_index_tap"></i>
                                     <em class="number">@infos.newuser </em>
@@ -58,10 +64,10 @@
                 </div>&nbsp;    <div class="index_tap total">
                     <ul class="inner">
                         <li class="index_tap_item total_fans extra">
-                            <a href="/cgi-bin/contactmanage?t=user/index&pagesize=10&pageidx=0&type=0&groupid=0&token=1941453980&lang=zh_CN">
+                            <a href="/cgibin/user_tag?action=get_all_data&lang=zh_CN&token=620941923">
                                 <span class="tap_inner">
                                     <i class="icon_index_tap"></i>
-                                    <em class="number">@infos.totaluser</em>
+                                    <em class="number">@total</em>
                                     <strong class="title">总用户数</strong>
                                 </span>
                             </a>

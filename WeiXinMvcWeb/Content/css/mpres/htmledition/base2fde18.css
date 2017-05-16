@@ -329,12 +329,11 @@ body.scaled {
 }
 
 .container_hd.border, .main_hd.border {
-    border-bottom: 1px solid #e7e7eb;
     margin-bottom: 40px;
 }
 
 .container_hd.border_primary h2, .main_hd.border_primary h2 {
-    border: 1px solid #e7e7eb;
+ 
 }
 
 .page_news .container_hd h2, .page_simple .container_hd h2, .page_news .main_hd h2, .page_simple .main_hd h2 {

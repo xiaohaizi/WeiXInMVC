@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - 微信公众平台</title>
+    @*<script onerror="wx_loaderror(this)" type="text/javascript" src="~/Content/js/jserr331295.js"></script>*@
+<title>@ViewBag.Title - 微信公众平台</title>
     <link href="https://res.wx.qq.com/mpres/htmledition/images/favicon218877.ico" rel="Shortcut Icon">
     <link onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="~/Content/css/mpres/htmledition/layout_head2880f5.css" />
     <link onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="~/Content/css/mpres/htmledition/base2fde18.css" />
@@ -12,6 +13,7 @@
     <link onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="~/Content/css/mpres/htmledition/pagination218878.css" />
     <link onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="~/Content/css/mpres/htmledition/date_range218878.css" />
     <link onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="~/Content/css/mpres/htmledition/dropdown2f12f7.css" />
+@*    <link onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="~/Content/css/mpres/htmledition/base331295.css" />*@
 
    
     <style type="text/css">
@@ -51,11 +53,11 @@
                 <h1 class="logo"><a href="/cgibin/home?t=home/index&lang=zh_CN&token=1941453980" title="微信公众平台"></a></h1>
                 <div class="account">
                     <div class="account_meta account_info account_meta_primary">
-                        <a href="#" class="nickname">飘飘的风</a>                                <span class="type_wrp"><a href="#" class="type icon_service_label">服务号</a>                                                                                                        <a href="/merchant/store?action=detail&t=wxverify/detail&info=verify&lang=zh_CN&token=1456171909" class="type icon_verify_label success">已认证</a>                                                        </span><a href="/cgi-bin/settingpage?t=setting/index&action=index&token=1456171909&lang=zh_CN">
-                            <img src="~/Content/css/mpres/htmledition/images/getheadimg.png" class="avatar">
+                        <a href="/cgibin/settingpage?t=setting/index&action=index&token=1802258335&lang=zh_CN" class="nickname">夜时尚都市</a>                                <span class="type_wrp"><a href="#" class="type icon_subscribe_label">订阅号</a>                                                                                                        <a href="/merchant/store?action=detail&t=wxverify/detail&info=verify&lang=zh_CN&token=1456171909" class="type icon_verify_label fail">未认证</a>                                                        </span><a href="/cgi-bin/settingpage?t=setting/index&action=index&token=1456171909&lang=zh_CN">
+                            <img src="~/Content/css/mpres/htmledition/images/getheadimg.jpg" class="avatar">
                         </a>
                     </div>
-                    <div id="accountArea" class="account_meta account_inbox account_meta_primary"><a href="#" class="account_inbox_switch"><span class="icon_dot_notices">14                        <span class="icon_dot_notices_left"></span><span class="icon_dot_notices_right"></span></span></a></div>
+                    <div id="accountArea" class="account_meta account_inbox account_meta_primary"><a href="#" class="account_inbox_switch"><i class="icon_inbox">通知</i>&nbsp;</span></span></a></div>
                     <div class="account_meta account_logout account_meta_primary"><a id="logout" href="#">退出</a></div>
                 </div>
             </div>

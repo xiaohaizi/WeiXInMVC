@@ -4,7 +4,8 @@ var t=a("common/wx/top.js"),s=a("biz_common/moment.js"),i=(s().add("d",-1).forma
 [{
 id:"article_detail",
 name:"单篇图文",
-url: "/misc/AppmsganalysisAction?action=all"
+    //url:"/misc/appmsganalysis?action=all"
+   url:"/misc/appmsganalysis?action=all&order_direction=2&token=1493886297&lang=zh_CN"
 },{
 id:"article_analyse",
 name:"全部图文",

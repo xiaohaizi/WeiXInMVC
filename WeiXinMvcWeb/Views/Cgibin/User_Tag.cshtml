@@ -1,4 +1,11 @@
-﻿<link href="~/Content/css/page/page_user2f2f7f.css" rel="stylesheet" />
+﻿@using WeiXinMvcWeb.Models.WeiXinDB;
+@{ 
+    User_SourceItem us = ViewBag.User_SourceItem as User_SourceItem;
+    var total = us.cumulate_user;
+
+}
+
+<link href="~/Content/css/page/page_user2f2f7f.css" rel="stylesheet" />
 <link href="~/Content/css/cgi-bin/cardticket/emoji218878.css" rel="stylesheet" />
 <link href="~/Content/css/cgi-bin/widget/dropdown2f12f7.css" rel="stylesheet" />
 <link href="~/Content/css/cgi-bin/widget/rich_buddy2f2f7f.css" rel="stylesheet" />
@@ -8,12 +15,13 @@
 <div id="body" class="body page_user">
     <div id="js_container_box" class="container_box cell_layout side_l">
         <div class="col_side">
-            @Html.Partial("Menu");    <script type="text/javascript">
+            @Html.Partial("Menu")
+    <script type="text/javascript">
                     var _new_comment_num = "" || 0;
             </script>
         </div>                                                <div class="col_main">                    <div class="main_hd">    <h2>用户管理</h2>    <div class="title_tab">    <ul class="tab_navs title_tab">        <li class="tab_nav first js_top selected"><a href="javascript:;" id="reloadTop">已关注</a></li>        <li class="tab_nav js_top"><a href="javascript:;" id="blackTop">黑名单</a></li>    </ul>    </div></div><div class="main_bd">    <div class="global_mod user_global_opr float_layout">        <div class="global_info">            <div class="search_bar" id="searchBar">                            </div>        </div>        <div class="global_extra">            <a href="javascript:;" data-y="3" class="btn btn_primary btn_add" id="js_tag_add_btn"><i class="icon14_common add_white"></i>新建标签</a>        </div>    </div>    <div class="inner_container_box side_r cell_layout">        <div class="inner_main">            <div class="bd">                <div class="global_mod user_group_opr">                    <span class="group_name" id="js_groupName"></span>                    <span class="js_groupCommand" style="display:none;">                        <a href="javascript:;" class="mod_link js_tag_edit_btn">重命名</a><a class="mod_link js_tag_del_btn" href="javascript:;">删除</a>                    </span>                </div>                <div class="table_wrp user_list">                    <table class="table" cellspacing="0">                        <thead class="thead">                            <tr>                                <th class="table_cell user no_extra" colspan="2">                                    <div class="group_select">                                        <label for="selectAll" class="group_select_label frm_checkbox_label">                                            <i class="icon_checkbox"></i>                                            <input type="checkbox" class="frm_checkbox" id="selectAll">                                            全选                                        </label>&nbsp;                                        <a class="btn btn_default btn_disabled js_tag_putOn_btn" href="javascript:;">打标签</a>                                                                                <a class="btn btn_default btn_disabled js_tag_toBanList_btn" href="javascript:;">加入黑名单</a>                                                                            </div>                                </th>                            </tr>                        </thead>                        <tbody class="tbody" id="userGroups"></tbody>                    </table>                </div>                <div class="tool_area">                    <div class="pagination_wrp js_pageNavigator"></div>                </div>            </div>        </div>        <div class="inner_side">            <div class="bd">                <div class="group_list">                    <div class="inner_menu_box" id="groupsList"></div>                </div>            </div>        </div>    </div></div>                </div>
     </div>                                                <div class="faq">                <ul class="links">                                        <li class="links_item"><a href="http://kf.qq.com/faq/120911VrYVrA1509086vyumm.html" target="_blank">客服中心</a></li>                    <li class="links_item"><a href="/acct/infringement?action=getmanual&t=infringement/manual&type=1&lang=zh_CN&token=1701759037" target="_blank">侵权投诉</a></li>                </ul>                <p class="tail">反馈官号weixingongzhong</p>            </div>
-</div>        <div class="foot" id="footer"><ul class="links ft"><li class="links_item no_extra"><a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">关于腾讯</a></li><li class="links_item"><a href="/cgi-bin/readtemplate?t=home/agreement_tmpl&type=info&lang=zh_CN&token=1701759037" target="_blank">服务协议</a></li><li class="links_item"><a href="/cgi-bin/readtemplate?t=business/faq_operation_tmpl&type=info&lang=zh_CN&token=1701759037" target="_blank">运营规范</a></li><li class="links_item"><a href="/cgi-bin/opshowpage?action=dispelinfo&lang=zh_CN&begin=1&count=9" target="_blank">辟谣中心</a></li><li class="links_item"><a href="http://kf.qq.com/faq/120911VrYVrA1509086vyumm.html" target="_blank">客服中心</a></li>                        <li class="links_item"><a href="mailto:weixinmp@qq.com" target="_blank">联系邮箱</a></li>                            <li class="links_item"><p class="copyright">Copyright &copy; 2012-2016 Tencent. All Rights Reserved.</p> </li>                </ul>    </div>
+</div>        <div class="foot" id="footer"><ul class="links ft"><li class="links_item no_extra"><a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">关于腾讯</a></li><li class="links_item"><a href="/cgi-bin/readtemplate?t=home/agreement_tmpl&type=info&lang=zh_CN&token=1701759037" target="_blank">服务协议</a></li><li class="links_item"><a href="/cgi-bin/readtemplate?t=business/faq_operation_tmpl&type=info&lang=zh_CN&token=1701759037" target="_blank">运营规范</a></li><li class="links_item"><a href="/cgi-bin/opshowpage?action=dispelinfo&lang=zh_CN&begin=1&count=9" target="_blank">辟谣中心</a></li><li class="links_item"><a href="http://kf.qq.com/faq/120911VrYVrA1509086vyumm.html" target="_blank">客服中心</a></li>                        <li class="links_item"><a href="mailto:weixinmp@qq.com" target="_blank">联系邮箱</a></li>                            <li class="links_item"><p class="copyright">Copyright &copy; 2012-2017 Tencent. All Rights Reserved.</p> </li>                </ul>    </div>
 <script type="text/javascript">
 
         window._points && (window._points[2] = +new Date());
@@ -201,7 +209,7 @@
             group_list: [
                                                                                     {
                                                                                         name: "未分组",
-                                                                                        cnt: "786" * 1,
+                                                                                        cnt: "@total" * 1,
                                                                                         create_time: "1415499494" * 1,
                                                                                         id: "0"
                                                                                     }
@@ -260,7 +268,7 @@
                                                                 ]
                                                             }
                                                             , {
-                                                                id: "ocbPDt5WIoNdASzGHihRyAWNXLNg",
+                                                                id: "ocbPDt5WIoNdASzGHihRyAWNXLN1",
                                                                 nick_name: "🇨🇳tomyang亮🇨🇳",
                                                                 remark_name: "",
                                                                 create_time: "1475608123",
@@ -268,7 +276,7 @@
                                                                 ]
                                                             }
                                                             , {
-                                                                id: "ocbPDt6CMClvzH2xuiXHQ1F656GA",
+                                                                id: "ocbPDt6CMClvzH2xuiXHQ1F656G9",
                                                                 nick_name: "杜野",
                                                                 remark_name: "",
                                                                 create_time: "1475587202",
@@ -276,7 +284,7 @@
                                                                 ]
                                                             }
                                                             , {
-                                                                id: "ocbPDtxZ2Oi2TntCt6HkAtPjeVFg",
+                                                                id: "ocbPDtxZ2Oi2TntCt6HkAtPjeVF2",
                                                                 nick_name: "青龙小子",
                                                                 remark_name: "",
                                                                 create_time: "1475583028",
@@ -284,7 +292,7 @@
                                                                 ]
                                                             }
                                                             , {
-                                                                id: "ocbPDt9GagHtdVhNhKraYgtedkHI",
+                                                                id: "ocbPDt9GagHtdVhNhKraYgtedkH8",
                                                                 nick_name: "顺哥",
                                                                 remark_name: "",
                                                                 create_time: "1475579639",
@@ -300,7 +308,7 @@
                                                                 ]
                                                             }
                                                             , {
-                                                                id: "ocbPDt15bU8A3TUCHGqOD94vTi9k",
+                                                                id: "ocbPDt15bU8A3TUCHGqOD94vTi9z",
                                                                 nick_name: "前卫",
                                                                 remark_name: "",
                                                                 create_time: "1475316418",
@@ -308,7 +316,7 @@
                                                                 ]
                                                             }
                                                             , {
-                                                                id: "ocbPDt1aybZBCdbDwKa-X4uXzsNg",
+                                                                id: "ocbPDt1aybZBCdbDwKa-X4uXzsN3",
                                                                 nick_name: "A00鑫源实业有限公司",
                                                                 remark_name: "",
                                                                 create_time: "1474817764",
@@ -332,7 +340,7 @@
                                                                 ]
                                                             }
                                                             , {
-                                                                id: "ocbPDt0E0GxALM_4zh9kGWBOlDgs",
+                                                                id: "ocbPDt0E0GxALM_4zh9kGWBOlDg5",
                                                                 nick_name: "蒋利群",
                                                                 remark_name: "",
                                                                 create_time: "1474294187",
@@ -340,7 +348,7 @@
                                                                 ]
                                                             }
                                                             , {
-                                                                id: "ocbPDtz31t-M_IhliiwN4-hWHGzg",
+                                                                id: "ocbPDtz31t-M_IhliiwN4-hWHGz6",
                                                                 nick_name: "不求人生辉煌，只求一生无悔",
                                                                 remark_name: "",
                                                                 create_time: "1474268430",
@@ -356,7 +364,7 @@
                                                                 ]
                                                             }
                                                             , {
-                                                                id: "ocbPDt_wdrKwKjof1LQ6NUgExXzg",
+                                                                id: "ocbPDt_wdrKwKjof1LQ6NUgExXz7",
                                                                 nick_name: "广拽",
                                                                 remark_name: "",
                                                                 create_time: "1473600087",
@@ -380,7 +388,7 @@
                                                                 ]
                                                             }
             ],
-            total_user_num: "786"
+            total_user_num: "@total"
         };
         seajs.use('user/index_tag', wx_main);;
 

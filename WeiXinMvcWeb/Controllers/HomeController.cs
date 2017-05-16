@@ -12,6 +12,8 @@ namespace WeiXinMvcWeb.Controllers
         // GET: Home
         public ActionResult Index()
         {
+           // WeiXinMvcWeb.Models.Class1.jiami();
+
             string str = "";
             //  Newtonsoft
             List<Base_Resp> Base_RespList = new List<Base_Resp>();

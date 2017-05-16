@@ -9,6 +9,8 @@ using System.Web.Mvc;
 using WeiXinMvcWeb.Models;
 using WeiXinMvcWeb.Models.WeiXinDB;
 using System.Text;
+using System.IO;
+
 namespace WeiXinMvcWeb.Controllers
 {
     public class MiscController : Controller
@@ -50,11 +52,16 @@ namespace WeiXinMvcWeb.Controllers
             string end_date = Request.Params["end_date"];
             DateTime bdate = Convert.ToDateTime(begin_date);
             DateTime edate = Convert.ToDateTime(end_date);
-            var DeviceList = weiXin.Devices.Where(x => x.DTime >= bdate && x.DTime <= edate).ToList();
-            var GendersList = weiXin.Genders.Where(x => x.DTime >= bdate && x.DTime <= edate).ToList();
-            var LangList = weiXin.Langs.Where(x => x.DTime >= bdate && x.DTime <= edate).ToList();
-            var PlatformList = weiXin.Platforms.Where(x => x.DTime >= bdate && x.DTime <= edate).ToList();
-            var RegionList = weiXin.Regions.Where(x => x.DTime >= bdate && x.DTime <= edate).ToList();
+            //bdate = DateTime.Now.Date.AddDays(-1);
+            //edate = DateTime.Now.Date.AddDays(-1);
+
+            var DeviceList = weiXin.DeviceUsers.Where(x => x.DTime >= bdate && x.DTime <= edate).ToList();
+            var GendersList = weiXin.GenderUsers.Where(x => x.DTime >= bdate && x.DTime <= edate).ToList();
+            var LangList = weiXin.LangUsers.Where(x => x.DTime >= bdate && x.DTime <= edate).ToList();
+            var PlatformList = weiXin.PlatformUsers.Where(x => x.DTime >= bdate && x.DTime <= edate).ToList();
+            //var RegionList = weiXin.RegionUsers.Where(x => x.DTime >= bdate && x.DTime <= edate).ToList();
+            var RegionList = weiXin.Regions.Take(271).ToList();
+
             string temp = " name: \"{0}\",value: \"{1}\", count: +(\"{2}\") || 0";
             string temp1 = " name: \"{0}\"||\"未知\",value: \"{1}\", count: +(\"{2}\") || 0";
             string temp2 = "region: $1 parent_region_id: \"{0}\", region_id: \"{1}\", region_name: \"{2}\"   $2,count: +(\"{3}\") || 0";
@@ -128,26 +135,29 @@ namespace WeiXinMvcWeb.Controllers
             UserReturnModel returnModel = new UserReturnModel();
 
             var baseModel = weiXin.Base_Resps.FirstOrDefault();
-            baseModel.nav = new Nav();
-            baseModel.nav.nav_items = weiXin.Nav_Itemes.Include("nav_item").Where(x => x.Base_Respid == baseModel.cgi_id).ToList();
-            returnModel.base_resp = baseModel;
+            if (baseModel != null) {
+                baseModel.nav = new Nav();
+                baseModel.nav.nav_items = weiXin.Nav_Itemes.Include("nav_item").Where(x => x.Base_Respid == baseModel.cgi_id).ToList();
+                returnModel.base_resp = baseModel;
 
 
-            var userInfo = weiXin.User_Infos.Include("wb_info").FirstOrDefault();
-            returnModel.user_info = userInfo;
+                var userInfo = weiXin.User_Infos.Include("wb_info").FirstOrDefault();
+                returnModel.user_info = userInfo;
 
-            returnModel.category_list = new List<CategoryList>();
-            //returnModel.category_list.list = new List<User_ScoureList>();
-            CategoryList catlist = new CategoryList();
-            CategoryList catlist1 = new CategoryList();
-            catlist.list = new List<User_SourceItem>();
-            // User_ScoureList userscoucreList = new User_ScoureList();
-            catlist.list = weiXin.User_SourceItems.Where(x => x.date >= begin_date && x.date <= end_date).ToList();
-            catlist1.list = weiXin.User_SourceItems.Where(x => x.date >= begin_date && x.date <= end_date).ToList();
-            // catlist.list.Add(userscoucreList);
-            returnModel.category_list.Add(catlist);
-            returnModel.category_list.Add(catlist1);
+                returnModel.category_list = new List<CategoryList>();
+                //returnModel.category_list.list = new List<User_ScoureList>();
+                CategoryList catlist = new CategoryList();
+                CategoryList catlist1 = new CategoryList();
+                catlist.list = new List<User_SourceItem>();
+                // User_ScoureList userscoucreList = new User_ScoureList();
+                catlist.list = weiXin.User_SourceItems.Where(x => x.date >= begin_date && x.date <= end_date).ToList();
+                catlist1.list = weiXin.User_SourceItems.Where(x => x.date >= begin_date && x.date <= end_date).ToList();
+                // catlist.list.Add(userscoucreList);
+                returnModel.category_list.Add(catlist);
+                returnModel.category_list.Add(catlist1);
+            
             s = JsonConvert.SerializeObject(returnModel, iso);
+        }
 
             return s;
 
@@ -181,6 +191,7 @@ namespace WeiXinMvcWeb.Controllers
             List<MsgData> list = weiXin.MsgDatas.Where(x => x.publish_date >= begin_time && x.publish_date <= end_time).ToList();
 
             ViewBag.DataList = JsonConvert.SerializeObject(list, iso);
+            ViewBag.DataList2 = JsonConvert.SerializeObject(list, iso).Replace("publish_date", "ref_date");
             return View();
 
 
@@ -199,23 +210,33 @@ namespace WeiXinMvcWeb.Controllers
             model.genders = weiXin.Genders.Where(x => x.msgid == msgid1).ToList();
 
             var list12 = weiXin.Regions.Where(x => x.msgid == msgid1).ToList();
-
+            string s1 = "{\"region\":{\"region_id\":\"#region_id#\",\"region_name\":\"#region_name#\",\"parent_region_id\":\"#parent_region_id#\"},\"user_count\":#user_count#} ";
+            string str_arr = "";
             foreach (var it in list12)
             {
                 MM1 m1 = new MM1();
-                m1.region = it;
+                MM2 m2 = new MM2();
+                m1.region = m2;
+                m2.region_id = it.Region_Id;
+                m2.parent_region_id = it.Parent_Region_Id;
+                m2.region_name = it.Region_Name;
+                m1.user_count = it.user_count;
                 model.regions.Add(m1);
             }
-            Region r = new Region();
-            r.Region_Name = "全国";
-            r.Region_Id = "all";
-            r.Parent_Region_Id = "-1";
-            r.RegionCount = 0;
-            MM1 m2 = new MM1();
-            m2.region = r;
-            model.regions.Add(m2);
-            model.devices = weiXin.Devices.Where(x => x.msgid == msgid1).ToList();
+            string qgstr = @"{""region"":{""region_id"":""all"",""region_name"":""全国"",""parent_region_id"":"" - 1""},""user_count"":0}";
 
+            MM1 m11 = new MM1();
+            MM2 m22 = new MM2();
+            m11.region = m22;
+            m22.region_id = "all";
+            m22.parent_region_id = "-1";
+            m22.region_name = "全国";
+            m11.user_count = 0;
+            model.regions.Add(m11);
+
+            model.devices = weiXin.Devices.Where(x => x.msgid == msgid1).ToList();
+            //{"region":{"region_id":"38","region_name":"陕西省","parent_region_id":"-1"},"user_count":13}
+            //{"region":{"region_id":"all","region_name":"全国","parent_region_id":"-1"},"user_count":0}
             model.platforms = weiXin.Platforms.Where(x => x.msgid == msgid1).ToList();
             string t = DateTime.Now.ToString("yyyy-MM-dd");
             string str = JsonConvert.SerializeObject(model, iso);
@@ -225,7 +246,9 @@ namespace WeiXinMvcWeb.Controllers
                 Replace("gendercount", "user_count").Replace("platformname", "attr_name").
                 Replace("platformvalue", "attr_value").Replace("platformcount", "user_count")
                 .Replace("devicevalue", "attr_value").Replace("devicecount", "user_count");
-            return JsonConvert.SerializeObject(msg, iso); ;
+            string re_str = JsonConvert.SerializeObject(msg, iso);
+            //  re_str= re_str.Replace("##regions##", str_arr);
+            return re_str;
         }
 
         public string faq()
@@ -234,6 +257,7 @@ namespace WeiXinMvcWeb.Controllers
             return str;
         }
 
+        //twfx
         [HttpGet]
         public string AppmsganalysisAction(string action, DateTime begin_date, DateTime end_date, string order_by, string order_direction, string token, string lang, string f, string ajax, string random)
         {
@@ -245,7 +269,19 @@ namespace WeiXinMvcWeb.Controllers
             DateTime end_time = Convert.ToDateTime(Request.QueryString["end_date"]);
             List<MsgData> list = weiXin.MsgDatas.Where(x => x.publish_date >= begin_time && x.publish_date <= end_time).ToList();
 
-            appModel.total_article_data = "{ \"list\": " + JsonConvert.SerializeObject(list, iso) +"}";
+            DateTime begin_time1 = begin_date;// begin_date.AddDays(2);
+            DateTime end_time1 = end_time.AddDays(7);
+
+            if (end_time1 > System.DateTime.Now.Date)
+                end_time1 = System.DateTime.Now.Date.AddDays(-1);
+
+            List<MsgDataDay> list1 = weiXin.MsgDataDays.Where(x => x.publish_date >= begin_time1 && x.publish_date <= end_time1).ToList();
+
+            appModel.total_article_data = "{ \"list\": " + JsonConvert.SerializeObject(list, iso) + "}";
+            appModel.article_summary_data = "{ \"list\": " + JsonConvert.SerializeObject(list1, iso).Replace("publish_date", "ref_date") + "}";
+
+            //appModel.article_summary_data = null;// weiXin.MsgDataDays.Take(3).ToList();
+
             var baseModel = weiXin.Base_Resps.FirstOrDefault();
             var userInfo = weiXin.User_Infos.Include("wb_info").FirstOrDefault();
             appModel.base_resp = baseModel;
@@ -255,24 +291,24 @@ namespace WeiXinMvcWeb.Controllers
             return s;
         }
 
-
+        //qbtw
         public ActionResult Appmsganalysis_Report()
         {
             ViewBag.Title = "图文分析";
-            DateTime bTime =Convert.ToDateTime( DateTime.Now.AddDays(-30).ToString("yyyy-MM-dd"));
+            DateTime bTime = Convert.ToDateTime(DateTime.Now.AddDays(-30).ToString("yyyy-MM-dd"));
             DateTime eTime = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"));
             var baseModel = weiXin.Base_Resps.FirstOrDefault();
             var userInfo = weiXin.User_Infos.Include("wb_info").FirstOrDefault();
-            DateTime curTime= Convert.ToDateTime(DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd"));
+            DateTime curTime = Convert.ToDateTime(DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd"));
             var curModel = new AppmsgItem();
 
-            curModel =   weiXin.AppmsgItems.Where(x => x.ref_date == curTime).FirstOrDefault();
+            curModel = weiXin.AppmsgItems.Where(x => x.ref_date == curTime).FirstOrDefault();
             if (curModel == null)
             {
                 curModel = new AppmsgItem();
             }
 
-                   var item = weiXin.AppmsgItems.Where(x=>x.ref_date>=bTime&&x.ref_date<=eTime).ToList();
+            var item = weiXin.AppmsgItems.Where(x => x.ref_date >= bTime && x.ref_date <= eTime).ToList();
             //  appreportModdel.item
             StringBuilder sbstr = new StringBuilder();
 
@@ -292,23 +328,24 @@ namespace WeiXinMvcWeb.Controllers
             foreach (var sitem in item)
             {
                 sbstr.Append("{");
-                sbstr.Append("\"ref_date\":\""+ sitem.ref_date.ToString("yyyy-MM-dd")+"\",");
-                sbstr.Append("\"user_source\":\"" + sitem.user_source+ "\",");
-                sbstr.Append("\"int_page_read_user\":\"" + sitem.int_page_read_user+ "\"*1||0,");
+                sbstr.Append("\"ref_date\":\"" + sitem.ref_date.ToString("yyyy-MM-dd") + "\",");
+                sbstr.Append("\"user_source\":\"" + sitem.user_source + "\",");
+                sbstr.Append("\"int_page_read_user\":\"" + sitem.int_page_read_user + "\"*1||0,");
                 sbstr.Append("\"int_page_read_count\":\"" + sitem.int_page_read_count + "\"*1||0,");
                 sbstr.Append("\"ori_page_read_user\":\"" + sitem.ori_page_read_user + "\"*1||0,");
                 sbstr.Append("\"ori_page_read_count\":\"" + sitem.ori_page_read_count + "\"*1||0,");
+
                 sbstr.Append("\"share_user\":\"" + sitem.share_user + "\"*1||0,");
                 sbstr.Append("\"share_count\":\"" + sitem.share_count + "\"*1||0,");
                 sbstr.Append("\"add_to_fav_user\":\"" + sitem.add_to_fav_user + "\"*1||0,");
                 sbstr.Append("\"add_to_fav_count\":\"" + sitem.add_to_fav_count + "\"*1||0,");
 
                 sbstr.Append("\"total_online_time\":\"" + sitem.total_online_time + "\"*1||0");
-                
+
                 sbstr.Append("}"); sbstr.Append(",");
             }
             //string    s = JsonConvert.SerializeObject(item, iso);
-           string s ="["+ sbstr.ToString().TrimEnd(',')+"]";
+            string s = "[" + sbstr.ToString().TrimEnd(',') + "]";
             ViewBag.Str = s;
             ViewBag.AppmsgItemList = item;
             ViewBag.curModel = curModel;
@@ -331,7 +368,7 @@ namespace WeiXinMvcWeb.Controllers
         public string AppmsganalysisAction_Report()
         {
             string s = "";
-          //  if(Request.QueryString["type"]!=null&& Request.QueryString["type"]=="")
+            //  if(Request.QueryString["type"]!=null&& Request.QueryString["type"]=="")
             var baseModel = weiXin.Base_Resps.FirstOrDefault();
             var userInfo = weiXin.User_Infos.Include("wb_info").FirstOrDefault();
             string bTimeStr = Request.Params["begin_date"].ToString();
@@ -340,13 +377,13 @@ namespace WeiXinMvcWeb.Controllers
             DateTime bTime = Convert.ToDateTime(bTimeStr);
             DateTime eTime = Convert.ToDateTime(eTimeStr);
             if (Request.QueryString["type"] == null)
-
             {
                 AppmsganalysisReportRetrun appreportModdel = new AppmsganalysisReportRetrun();
                 appreportModdel.base_resp = baseModel;
                 appreportModdel.user_info = userInfo;
 
                 appreportModdel.item = weiXin.AppmsgItems.Where(x => x.ref_date >= bTime && x.ref_date <= eTime).ToList();
+                appreportModdel.share_item = weiXin.ShareItems.Where(x => x.ref_date >= bTime && x.ref_date <= eTime).ToList();
                 //  appreportModdel.item
                 s = JsonConvert.SerializeObject(appreportModdel, iso);
             }
@@ -356,7 +393,21 @@ namespace WeiXinMvcWeb.Controllers
                 appreportModdelh.base_resp = baseModel;
                 appreportModdelh.user_info = userInfo;
                 appreportModdelh.item = weiXin.AppmsgItemHours.Where(x => x.ref_date >= bTime && x.ref_date <= eTime).ToList();
+                // appreportModdel.share_item = weiXin.ShareItems.Where(x => x.ref_date >= bTime && x.ref_date <= eTime).ToList();
+
                 s = JsonConvert.SerializeObject(appreportModdelh, iso);
+            }
+            else if (Request.QueryString["type"] == "daily")
+            {
+                AppmsganalysisReportRetrun appreportModdel = new AppmsganalysisReportRetrun();
+                appreportModdel.base_resp = baseModel;
+                appreportModdel.user_info = userInfo;
+
+                appreportModdel.item = weiXin.AppmsgItems.Where(x => x.ref_date >= bTime && x.ref_date <= eTime).ToList();
+                appreportModdel.share_item = weiXin.ShareItems.Where(x => x.ref_date >= bTime && x.ref_date <= eTime).ToList();
+
+                //  appreportModdel.item
+                s = JsonConvert.SerializeObject(appreportModdel, iso);
             }
             else
             {
@@ -365,16 +416,32 @@ namespace WeiXinMvcWeb.Controllers
                 appreportModdel.user_info = userInfo;
 
                 appreportModdel.item = weiXin.AppmsgItems.Where(x => x.ref_date >= bTime && x.ref_date <= eTime).ToList();
+                appreportModdel.share_item = weiXin.ShareItems.Where(x => x.ref_date >= bTime && x.ref_date <= eTime).ToList();
+
                 //  appreportModdel.item
                 s = JsonConvert.SerializeObject(appreportModdel, iso);
             }
-            
+
             return s;
         }
 
         public ActionResult Menuanalysis()
         {
+            DateTime begin_date = DateTime.Now.Date.AddMonths(-1);
+            DateTime end_date = DateTime.Now.Date.AddDays(-1);
+
+
             ViewBag.Title = "菜单分析";
+
+            string s = "";
+            Menu_SummaryList menuList = new Menu_SummaryList();
+            MenuanalysisReturn menuReturn = new MenuanalysisReturn();
+            menuReturn.InitBaseInfo();
+
+            List<Menu_Summary> list = weiXin.Menu_Summares.Where(x => x.ref_date >= begin_date && x.ref_date <= end_date).ToList();
+            //menuReturn.menu_summary = menuList;
+            //s = JsonConvert.SerializeObject(menuReturn, iso);
+            ViewBag.DataList = JsonConvert.SerializeObject(list, iso);
             return View();
         }
 
@@ -401,7 +468,7 @@ namespace WeiXinMvcWeb.Controllers
         }
         //type=daily&begin_date=2016-09-16&end_date=2016-09-20&token=444349084&lang=zh_CN&token=444349084&lang=zh_CN&f=json&ajax=1&random=0.7852470562930663          
         [HttpGet]
-        public string MessageanalysisAction(string type,  string token, string lang, string f, string ajax, string random)
+        public string MessageanalysisAction(string type, string token, string lang, string f, string ajax, string random)
         {
             string s = "";
             DateTime begin_date = DateTime.Now; DateTime end_date = DateTime.Now;
@@ -461,6 +528,29 @@ namespace WeiXinMvcWeb.Controllers
             return s;
         }
 
+        public string jslog()
+        {
+            return "";
+        }
 
+        [HttpGet]
+        public void getheadimg()
+        {
+            string msgId = Request.QueryString["fakeid"];
+            string fileName = System.Web.HttpContext.Current.Server.MapPath("/mmopen/" + msgId + ".jpg");
+            FileInfo fl = new FileInfo(fileName);
+
+            if (!fl.Exists)
+            {
+                fileName = System.Web.HttpContext.Current.Server.MapPath("/mmopen/" + msgId.Substring(msgId.Length-1) + ".jpg");
+            }
+            Response.WriteFile(fileName);
+        }
+
+        public int Rnd(int l, int u)
+        {
+            Random R = new Random(Guid.NewGuid().GetHashCode());
+            return R.Next(l, u);
+        }
     }
 }
